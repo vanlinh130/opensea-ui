@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 :root {
-    --primary: #fe2c55;
+    --text-color: rgb(4, 17, 29);
 }
 
 * {
@@ -20,4 +20,15 @@ body {
     font-size: 1.4rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
+}
+
+ul,
+li {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
 }
