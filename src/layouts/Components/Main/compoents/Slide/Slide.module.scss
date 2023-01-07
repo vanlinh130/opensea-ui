@@ -1,0 +1,121 @@
+// Slide
+.slide {
+    width: 100%;
+}
+
+.slide-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 44px;
+    margin-top: 32px;
+
+    h1 {
+        height: 40px;
+        font-size: 4rem;
+        font-weight: 700;
+        color: var(--text-color);
+        line-height: 40px;
+    }
+}
+
+.slide-list {
+    position: relative;
+    height: 351px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.chevron-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    box-shadow: rgb(0 0 0 / 15%) 0px 4px 10px;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    height: 38px;
+    width: 38px;
+    font-size: 1.8rem;
+    cursor: pointer;
+
+    &:hover {
+        color: rgb(100, 96, 96);
+        box-shadow: rgb(0 0 0 / 25%) 0px 4px 10px;
+    }
+}
+
+.icon-right {
+    right: -20px;
+}
+
+.icon-left {
+    left: -20px;
+}
+
+// slide item
+.slide-item {
+    position: relative;
+    width: 351.75px;
+    height: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 1;
+
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+
+        &:hover {
+            transform: scale(1.08);
+            transition-duration: 0.4s;
+        }
+    }
+
+    // .box {
+    //     top: 0;
+    //     left: 0;
+    //     right: 0;
+    //     bottom: 0;
+    //     position: absolute;
+    //     background: linear-gradient(rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
+    // }
+
+    .info {
+        position: absolute;
+        gap: 2px;
+        bottom: 0px;
+        padding-bottom: 12px;
+        padding-left: 16px;
+
+        h5 {
+            display: inline-flex;
+            font-weight: 600;
+            font-size: 16px;
+            color: rgb(255, 255, 255);
+        }
+
+        span {
+            color: white;
+            font-weight: 400;
+            font-size: 1.4rem;
+            list-style: 20px;
+        }
+    }
+}
+
+.icon {
+    margin-left: 4px;
+    color: var(--white);
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    font-size: -2px;
+    padding: 2px 2px;
+    font-size: x-small;
+}

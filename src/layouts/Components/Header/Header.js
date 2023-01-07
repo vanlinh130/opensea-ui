@@ -1,12 +1,12 @@
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
+import { faCartShopping, faCircleUser, faMagnifyingGlass, faWallet } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './Header.module.scss';
 import config from '~/config';
 import images from '~/assets/images';
 import { LogoIcon } from '~/components/Icons/Icons';
-import { faCartShopping, faCircleUser, faMagnifyingGlass, faWallet } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 

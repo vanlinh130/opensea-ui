@@ -1,0 +1,36 @@
+// NFT item
+.nft-item {
+    width: 278.2px;
+    height: 100%;
+    margin-right: 16px;
+
+    background-color: rgb(255, 255, 255);
+    border-radius: 12px;
+    box-shadow: rgb(0 0 0 / 8%) 0px 4px 16px;
+    transition: box-shadow 0.25s ease-in-out 0s, transform 0.25s ease 0s;
+
+    &:hover {
+        box-shadow: rgb(0 0 0 / 12%) 0px 4px 16px;
+        transform: translate(0px, -4px);
+    }
+}
+
+.item-image {
+    img {
+        width: 100%;
+        height: 185px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+}
+
+.item-content {
+    padding: 16px;
+
+    div {
+        height: 46px;
+        color: rgb(4, 17, 29);
+        font-weight: 600;
+        font-size: 16px;
+    }
+}

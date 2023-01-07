@@ -1,0 +1,69 @@
+// collector item
+.collector-item {
+    width: 278.2px;
+    height: 100%;
+    margin-right: 16px;
+
+    background-color: rgb(255, 255, 255);
+    border-radius: 12px;
+    box-shadow: rgb(0 0 0 / 8%) 0px 4px 16px;
+    transition: box-shadow 0.25s ease-in-out 0s, transform 0.25s ease 0s;
+
+    &:hover {
+        box-shadow: rgb(0 0 0 / 12%) 0px 4px 16px;
+        transform: translate(0px, -4px);
+    }
+}
+
+.item-image {
+    img {
+        width: 100%;
+        height: 185px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+}
+
+.item-content {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+}
+
+.content-heading {
+    display: flex;
+    align-items: center;
+    padding-bottom: 16px;
+
+    h3 {
+        font-weight: 600;
+    }
+
+    .icon {
+        margin-left: 6px;
+        color: var(--white);
+        background-color: var(--primary-color);
+        border-radius: 50%;
+        font-size: -2px;
+        padding: 2px 2px;
+        font-size: x-small;
+    }
+}
+
+.item-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    span {
+        color: rgb(112, 122, 131);
+        font-weight: 600;
+        font-size: 12px;
+    }
+
+    div {
+        color: rgb(4, 17, 29);
+        font-weight: 600;
+        font-size: 16px;
+    }
+}
