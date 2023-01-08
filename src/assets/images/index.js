@@ -13,6 +13,15 @@ const images = {
 
     detail_cover: require('~/assets/images/image-details/cover.avif'),
     detail_avatar: require('~/assets/images/image-details/avatar.avif'),
+    detail_item: require('~/assets/images/image-details/item.avif'),
+
+    explore_1: require('~/assets/images/image-menus/explore-1.svg').default,
+    explore_2: require('~/assets/images/image-menus/explore-2.svg').default,
+    explore_3: require('~/assets/images/image-menus/explore-3.svg').default,
+    explore_4: require('~/assets/images/image-menus/explore-4.svg').default,
+    explore_5: require('~/assets/images/image-menus/explore-5.svg').default,
+    explore_6: require('~/assets/images/image-menus/explore-6.svg').default,
+    explore_7: require('~/assets/images/image-menus/explore-7.svg').default,
 };
 
 export default images;

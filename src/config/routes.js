@@ -5,6 +5,8 @@ const routers = {
     drop: '/drops',
     start: '/starts',
     resource: '/resources',
+    login: '/login',
+    register: '/register',
 };
 
 export default routers;

@@ -5,6 +5,7 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { IconOne, IconServer, IconSix, IconThree, IconTow, Iconeight, Iconfive, Iconfour } from '~/components/Icons';
 import styles from './HomeTable.module.scss';
 import TableItems from './TableItems/TableItems';
+import ChainsIcons from './ChainsIcons';
 
 const cx = classNames.bind(styles);
 
@@ -29,30 +30,14 @@ function HomeTable() {
                         <div className={cx('chains-btn')}>
                             <span>All chains</span>
                         </div>
-                        <div className={cx('chains-btn')}>
-                            <IconOne />
-                        </div>
-                        <div className={cx('chains-btn')}>
-                            <IconTow />
-                        </div>
-                        <div className={cx('chains-btn')}>
-                            <IconThree />
-                        </div>
-                        <div className={cx('chains-btn')}>
-                            <Iconfour />
-                        </div>
-                        <div className={cx('chains-btn')}>
-                            <Iconfive />
-                        </div>
-                        <div className={cx('chains-btn')}>
-                            <IconSix />
-                        </div>
-                        <div className={cx('chains-btn')}>
-                            <IconServer />
-                        </div>
-                        <div className={cx('chains-btn')}>
-                            <Iconeight />
-                        </div>
+                        <ChainsIcons icon={<IconOne />} />
+                        <ChainsIcons icon={<IconTow />} />
+                        <ChainsIcons icon={<IconThree />} />
+                        <ChainsIcons icon={<Iconfour />} />
+                        <ChainsIcons icon={<Iconfive />} />
+                        <ChainsIcons icon={<IconSix />} />
+                        <ChainsIcons icon={<IconServer />} />
+                        <ChainsIcons icon={<Iconeight />} />
                     </button>
 
                     <button className={cx('view-btn')}>
