@@ -7,6 +7,10 @@ const routers = {
     resource: '/resources',
     login: '/login',
     register: '/register',
+
+    create: '/create',
+    createId: '/posts/:id',
+    
 };
 
 export default routers;

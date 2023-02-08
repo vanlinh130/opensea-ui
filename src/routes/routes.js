@@ -14,6 +14,7 @@ import Resource from '~/pages/Resource/Resource';
 // pages admin
 import Login from '~/layouts/Components/admin/Login';
 import Register from '~/layouts/Components/admin/Register';
+import Create from '~/layouts/Components/Create';
 
 // Public routes : ko can dang nhap vao dc
 const publicRoutes = [
@@ -26,6 +27,9 @@ const publicRoutes = [
 
     { path: config.routes.login, component: Login, layout: null },
     { path: config.routes.register, component: Register, layout: null },
+
+    { path: config.routes.create, component: Create, layout: null },
+    { path: config.routes.createId, component: Create, layout: null },
 ];
 
 // Private routes : dang nhap vao dc

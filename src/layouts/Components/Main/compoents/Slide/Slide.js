@@ -1,13 +1,15 @@
 import classNames from 'classnames/bind';
-import styles from './Slide.module.scss';
-import images from '~/assets/images';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
+import styles from './Slide.module.scss';
+import images from '~/assets/images';
+
 const cx = classNames.bind(styles);
 
 function Slide() {
+
     return (
         <div className={cx('slide')}>
             <div className={cx('slide-content')}>

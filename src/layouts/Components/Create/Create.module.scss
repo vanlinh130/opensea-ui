@@ -1,0 +1,67 @@
+.wrapper {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 70%;
+    margin: auto;
+    margin-top: 50px;
+
+}
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 15px;
+
+    h3 {
+        margin: auto;
+    }
+
+    input {
+        width: 100%;
+        margin: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 14px 12px;
+    }
+
+    input:focus {
+        outline:none;
+        border: 1px solid rgb(159, 157, 157);
+    }
+
+    input:last-child {
+        border: none;
+        padding: 0;
+        border-radius: 0;
+    }
+
+}
+
+.file-input {
+    width: 97%;
+    margin: 10px 10px;
+}
+
+
+.btn {
+    margin-bottom: 10px;
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 5px ;
+    color: #fff;
+    border-radius: 5px;
+    margin: 5px 10px;
+    cursor: pointer;
+}
+
+.btn-submit {
+    background-color: #2e4cac;
+    font-size: large;
+
+}
+
+.btn-clear {
+    font-size: small;
+    background-color: #ff2351;
+
+}

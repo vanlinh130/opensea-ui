@@ -1,15 +1,20 @@
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { useSelector } from 'react-redux';
 
 import { IconOne, IconServer, IconSix, IconThree, IconTow, Iconeight, Iconfive, Iconfour } from '~/components/Icons';
 import styles from './HomeTable.module.scss';
 import TableItems from './TableItems/TableItems';
 import ChainsIcons from './ChainsIcons';
+import Create from '~/layouts/Components/Create';
 
 const cx = classNames.bind(styles);
 
-function HomeTable() {
+function HomeTable({ currentId, setCurrentId}) {
+
+    const posts = useSelector((state) => state.posts)
+
     return (
         <div className={cx('main')}>
             <header className={cx('header-table')}>
@@ -61,29 +66,19 @@ function HomeTable() {
                             <span>VOLUME</span>
                         </div>
                     </div>
-                    <TableItems />
-                    <TableItems />
-                    <TableItems />
-                    <TableItems />
-                    <TableItems />
+
+                    { !posts.length ? <div/> : (
+                        <> 
+                            {posts.map(post => (
+                                <div key={post._id}>
+                                    <TableItems post={post} setCurrentId={setCurrentId}/>
+                                </div>
+                            ))}
+                        </>
+                    ) }
                 </div>
                 <div className={cx('table-list')}>
-                    <div className={cx('table-header')}>
-                        <div className={cx('header-collection')}>
-                            <span>COLLECTION</span>
-                        </div>
-                        <div className={cx('header-floor')}>
-                            <span>FLOOR PRICE</span>
-                        </div>
-                        <div className={cx('header-volume')}>
-                            <span>VOLUME</span>
-                        </div>
-                    </div>
-                    <TableItems />
-                    <TableItems />
-                    <TableItems />
-                    <TableItems />
-                    <TableItems />
+                    <Create currentId={currentId} setCurrentId={setCurrentId} />
                 </div>
             </div>
         </div>

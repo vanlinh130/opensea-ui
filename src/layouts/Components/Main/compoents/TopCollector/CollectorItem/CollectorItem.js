@@ -4,19 +4,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
 import style from './CollectorItem.module.scss';
-import images from '~/assets/images';
 
 const cx = classNames.bind(style);
 
-const CollectorItem = () => {
+const CollectorItem = ({ post }) => {
     return (
         <div className={cx('collector-item')}>
             <div className={cx('item-image')}>
-                <img src={images.collector_1} alt="images" />
+                <img src={post.selectedFile} alt="images" />
             </div>
             <div className={cx('item-content')}>
                 <div className={cx('content-heading')}>
-                    <h3>Spider Tanks</h3>
+                    <h3>{post.creator}</h3>
                     <FontAwesomeIcon className={cx('icon')} icon={faCheck} />
                 </div>
                 <div className={cx('item-text')}>

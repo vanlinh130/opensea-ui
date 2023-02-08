@@ -79,12 +79,13 @@ export const MENU_ITEMS_PROFILE = [
         to: './login',
     },
     {
-        icon: <FontAwesomeIcon icon={faHeart} />,
-        title: 'Favorites',
-    },
-    {
         icon: <FontAwesomeIcon icon={faPen} />,
         title: 'Create',
+        to:'./create',
+    },
+    {
+        icon: <FontAwesomeIcon icon={faHeart} />,
+        title: 'Favorites',
     },
     {
         icon: <FontAwesomeIcon icon={faEye} />,
