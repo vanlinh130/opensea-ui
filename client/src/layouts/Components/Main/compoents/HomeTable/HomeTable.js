@@ -8,12 +8,12 @@ import styles from './HomeTable.module.scss';
 import TableItems from './TableItems/TableItems';
 import ChainsIcons from './ChainsIcons';
 import Create from '~/layouts/Components/Create';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
-function HomeTable({ currentId, setCurrentId}) {
-
-    const posts = useSelector((state) => state.posts)
+function HomeTable({ currentId, setCurrentId }) {
+    const posts = useSelector((state) => state.posts);
 
     return (
         <div className={cx('main')}>
@@ -67,15 +67,19 @@ function HomeTable({ currentId, setCurrentId}) {
                         </div>
                     </div>
 
-                    { !posts.length ? <div/> : (
-                        <> 
-                            {posts.map(post => (
+                    {!posts.length ? (
+                        <div />
+                    ) : (
+                        <>
+                            {posts.map((post) => (
                                 <div key={post._id}>
-                                    <TableItems post={post} setCurrentId={setCurrentId}/>
+                                    <Link to="/detail">
+                                        <TableItems post={post} setCurrentId={setCurrentId} />
+                                    </Link>
                                 </div>
                             ))}
                         </>
-                    ) }
+                    )}
                 </div>
                 <div className={cx('table-list')}>
                     <Create currentId={currentId} setCurrentId={setCurrentId} />

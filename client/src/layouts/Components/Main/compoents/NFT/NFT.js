@@ -4,12 +4,12 @@ import classNames from 'classnames/bind';
 import styles from './NFT.module.scss';
 import NFTItem from './NFTItem/NFTItem';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
-const NFT = () => { 
-
-    const posts = useSelector((state) => state.posts)
+const NFT = () => {
+    const posts = useSelector((state) => state.posts);
 
     return (
         <div className={cx('nft')}>
@@ -21,11 +21,15 @@ const NFT = () => {
                 <button>Learn more</button>
             </div>
             <div className={cx('nft-wrapper')}>
-                { !posts.length ? <div/> : (
+                {!posts.length ? (
+                    <div />
+                ) : (
                     <>
-                        {posts.map(post => (
+                        {posts.map((post) => (
                             <div key={post._id}>
-                                <NFTItem post={post} />
+                                <Link to="/detail">
+                                    <NFTItem post={post} />
+                                </Link>
                             </div>
                         ))}
                     </>
