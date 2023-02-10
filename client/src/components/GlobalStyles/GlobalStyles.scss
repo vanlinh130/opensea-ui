@@ -38,10 +38,12 @@ a {
     color: var(--text-color);
     text-decoration: none;
 }
+//
 
 .overlay::before,
 .overlay::after {
     background: transparent !important;
+    z-index: 0 !important;
 }
 
 .marquee {

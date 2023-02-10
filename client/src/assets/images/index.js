@@ -18,6 +18,10 @@ const images = {
     explore_5: require('~/assets/images/image-menus/explore-5.svg').default,
     explore_6: require('~/assets/images/image-menus/explore-6.svg').default,
     explore_7: require('~/assets/images/image-menus/explore-7.svg').default,
+
+    faceBook: require('~/assets/images/image-icons/facebook.png'),
+    google: require('~/assets/images/image-icons/google.png'),
+    apple: require('~/assets/images/image-icons/apple.svg').default,
 };
 
 export default images;

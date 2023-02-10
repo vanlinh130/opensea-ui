@@ -75,13 +75,13 @@ export const MENU_ITEMS_RESOURCE = [
 export const MENU_ITEMS_PROFILE = [
     {
         icon: <FontAwesomeIcon icon={faUser} />,
-        title: 'Profile',
+        title: 'Login',
         to: './login',
     },
     {
         icon: <FontAwesomeIcon icon={faPen} />,
         title: 'Create',
-        to:'./create',
+        to: './create',
     },
     {
         icon: <FontAwesomeIcon icon={faHeart} />,
