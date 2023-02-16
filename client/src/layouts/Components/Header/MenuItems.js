@@ -75,7 +75,7 @@ export const MENU_ITEMS_RESOURCE = [
 export const MENU_ITEMS_PROFILE = [
     {
         icon: <FontAwesomeIcon icon={faUser} />,
-        title: 'Login',
+        title: 'Profile',
         to: './auth',
     },
     {
@@ -114,7 +114,7 @@ export const MENU_ITEMS_PROFILE = [
 export const MENU_ITEMS_PROFILE_LOGOUT = [
     {
         icon: <FontAwesomeIcon icon={faUser} />,
-        title: 'Log Out',
+        title: 'Profile',
     },
     {
         icon: <FontAwesomeIcon icon={faPen} />,

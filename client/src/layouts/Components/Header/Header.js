@@ -1,7 +1,8 @@
+import { useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link } from 'react-router-dom';
-import { faCartShopping, faCircleUser, faWallet } from '@fortawesome/free-solid-svg-icons';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { faCartShopping, faCircleUser } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './Header.module.scss';
 import config from '~/config';
@@ -19,11 +20,37 @@ import {
 } from './MenuItems';
 import MenuLanguage from '~/components/Popper/Menu/MenuLanguges';
 import MenuResource from './../../../components/Popper/Menu/MenuResoures';
+import { useDispatch } from 'react-redux';
+import Button from '~/components/Button';
 
 const cx = classNames.bind(styles);
 
 function Header() {
-    const user = false;
+    const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const logout = () => {
+        dispatch({ type: 'LOGOUT' });
+
+        navigate('/');
+        setUser(null);
+    };
+
+    useEffect(() => {
+        const token = user?.token;
+
+        // JWT
+        // if (token) {
+        //     const decodedToken = decode(token);
+
+        //     if (decodedToken.exp * 1000 < new Date().getTime()) logout();
+        // }
+
+        setUser(JSON.parse(localStorage.getItem('profile')));
+    }, [location]);
+
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -72,24 +99,43 @@ function Header() {
                     <div className={cx('fresnel-list')}>
                         <li>
                             {user ? (
-                                <MenuLanguage items={MENU_ITEMS_PROFILE_LOGOUT}>
-                                    <Link className={cx('fresnel-item', 'item-icon')}>
-                                        <img src={images.slide_1} alt="user-images" />
-                                    </Link>
-                                </MenuLanguage>
+                                <>
+                                    <MenuLanguage items={MENU_ITEMS_PROFILE_LOGOUT}>
+                                        <Link className={cx('fresnel-item', 'item-icon')}>
+                                            <img src={user.result.imageUrl} alt={user.result.name} />
+                                        </Link>
+                                    </MenuLanguage>
+                                    <div>
+                                        <Link className={cx('fresnel-item', 'item-icon')}>
+                                            <h6>{user.result.name}</h6>
+                                        </Link>
+                                    </div>
+                                    <div>
+                                        <Link onClick={logout} className={cx('fresnel-item', 'item-icon')}>
+                                            <Button outline rounded>
+                                                Log out
+                                            </Button>
+                                        </Link>
+                                    </div>
+                                </>
                             ) : (
-                                <MenuLanguage items={MENU_ITEMS_PROFILE}>
-                                    <Link className={cx('fresnel-item', 'item-icon')}>
-                                        <FontAwesomeIcon icon={faCircleUser} />
-                                    </Link>
-                                </MenuLanguage>
+                                <>
+                                    <MenuLanguage items={MENU_ITEMS_PROFILE}>
+                                        <Link className={cx('fresnel-item', 'item-icon')}>
+                                            <FontAwesomeIcon icon={faCircleUser} />
+                                        </Link>
+                                    </MenuLanguage>
+                                    <div>
+                                        <Link to={config.routes.auth} className={cx('fresnel-item', 'item-icon')}>
+                                            <Button primary rounded>
+                                                Sign in
+                                            </Button>
+                                        </Link>
+                                    </div>
+                                </>
                             )}
                         </li>
-                        <li>
-                            <Link className={cx('fresnel-item', 'item-icon')}>
-                                <FontAwesomeIcon icon={faWallet} />
-                            </Link>
-                        </li>
+
                         <li>
                             <Link className={cx('fresnel-item', 'item-icon')}>
                                 <FontAwesomeIcon icon={faCartShopping} />

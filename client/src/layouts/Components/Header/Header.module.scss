@@ -38,7 +38,7 @@
 
 // fresnel-container
 .fresnel-container {
-    width: 552px;
+    // width: 552px;
     display: flex;
 }
 
@@ -65,6 +65,10 @@
             min-width: 64px;
             height: 72px;
             cursor: pointer;
+
+            img {
+                height: 50%;
+            }
         }
         .item-icon {
             font-size: 25px;

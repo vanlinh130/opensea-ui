@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import { GoogleLogin } from 'react-google-login';
+
 import { gapi } from 'gapi-script';
+import { useDispatch } from 'react-redux';
 
 import styles from './Auth.module.scss';
 import images from '~/assets/images';
@@ -14,8 +16,10 @@ import Input from './Input';
 const cx = classNames.bind(styles);
 
 const Auth = () => {
-    const [isSignup, setIsSignup] = useState(false);
     const clientId = '387544023335-7r4dbg893fk5otknebjthiv1n0r2mfad.apps.googleusercontent.com';
+    const [isSignup, setIsSignup] = useState(false);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     useEffect(() => {
         gapi.load('client:auth2', () => {
@@ -28,7 +32,15 @@ const Auth = () => {
     };
 
     const googleSuccess = async (res) => {
-        console.log(res);
+        const result = res?.profileObj;
+        const token = res?.tokenId;
+
+        try {
+            dispatch({ type: 'AUTH', data: { result, token } });
+            navigate('/');
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     const googleFailure = (error) => {
