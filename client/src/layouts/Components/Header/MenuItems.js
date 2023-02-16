@@ -76,7 +76,45 @@ export const MENU_ITEMS_PROFILE = [
     {
         icon: <FontAwesomeIcon icon={faUser} />,
         title: 'Login',
-        to: './login',
+        to: './auth',
+    },
+    {
+        icon: <FontAwesomeIcon icon={faPen} />,
+        title: 'Create',
+        to: './create',
+    },
+    {
+        icon: <FontAwesomeIcon icon={faHeart} />,
+        title: 'Favorites',
+    },
+    {
+        icon: <FontAwesomeIcon icon={faGear} />,
+        title: 'Settings',
+    },
+
+    {
+        icon: <FontAwesomeIcon icon={faLanguage} />,
+        title: 'Languages',
+        language: {
+            title: 'Language',
+            data: [
+                {
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    code: 'en',
+                    title: 'Tiếng việt',
+                },
+            ],
+        },
+    },
+];
+
+export const MENU_ITEMS_PROFILE_LOGOUT = [
+    {
+        icon: <FontAwesomeIcon icon={faUser} />,
+        title: 'Log Out',
     },
     {
         icon: <FontAwesomeIcon icon={faPen} />,

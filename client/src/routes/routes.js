@@ -12,8 +12,9 @@ import Start from '~/pages/Start/Start';
 import Resource from '~/pages/Resource/Resource';
 
 // pages admin
-import Login from '~/layouts/Components/admin/Login';
-import Register from '~/layouts/Components/admin/Register';
+// import Login from '~/layouts/Components/admin/Login';
+// import Register from '~/layouts/Components/admin/Register';
+import Auth from '~/layouts/Components/Auth';
 import Create from '~/layouts/Components/Create';
 
 // Public routes : ko can dang nhap vao dc
@@ -25,8 +26,9 @@ const publicRoutes = [
     { path: config.routes.start, component: Start, layout: HeaderOnly },
     { path: config.routes.resource, component: Resource, layout: null },
 
-    { path: config.routes.login, component: Login, layout: null },
-    { path: config.routes.register, component: Register, layout: null },
+    // { path: config.routes.login, component: Login, layout: null },
+    // { path: config.routes.register, component: Register, layout: null },
+    { path: config.routes.auth, component: Auth, layout: null },
 
     { path: config.routes.create, component: Create, layout: null },
     { path: config.routes.createId, component: Create, layout: null },

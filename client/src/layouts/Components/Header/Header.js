@@ -15,17 +15,15 @@ import {
     MENU_ITEMS_STARTS,
     MENU_ITEMS_RESOURCE,
     MENU_ITEMS_PROFILE,
+    MENU_ITEMS_PROFILE_LOGOUT,
 } from './MenuItems';
 import MenuLanguage from '~/components/Popper/Menu/MenuLanguges';
 import MenuResource from './../../../components/Popper/Menu/MenuResoures';
 
 const cx = classNames.bind(styles);
 
-const handleMenuChange = (menuItem) => {
-    // console.log(menuItem);
-};
-
 function Header() {
+    const user = false;
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -73,11 +71,19 @@ function Header() {
                     </div>
                     <div className={cx('fresnel-list')}>
                         <li>
-                            <MenuLanguage items={MENU_ITEMS_PROFILE} onChange={handleMenuChange}>
-                                <Link className={cx('fresnel-item', 'item-icon')}>
-                                    <FontAwesomeIcon icon={faCircleUser} />
-                                </Link>
-                            </MenuLanguage>
+                            {user ? (
+                                <MenuLanguage items={MENU_ITEMS_PROFILE_LOGOUT}>
+                                    <Link className={cx('fresnel-item', 'item-icon')}>
+                                        <img src={images.slide_1} alt="user-images" />
+                                    </Link>
+                                </MenuLanguage>
+                            ) : (
+                                <MenuLanguage items={MENU_ITEMS_PROFILE}>
+                                    <Link className={cx('fresnel-item', 'item-icon')}>
+                                        <FontAwesomeIcon icon={faCircleUser} />
+                                    </Link>
+                                </MenuLanguage>
+                            )}
                         </li>
                         <li>
                             <Link className={cx('fresnel-item', 'item-icon')}>

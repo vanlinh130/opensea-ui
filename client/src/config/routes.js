@@ -5,12 +5,12 @@ const routers = {
     drop: '/drops',
     start: '/starts',
     resource: '/resources',
-    login: '/login',
-    register: '/register',
+    // login: '/login',
+    // register: '/register',
+    auth: '/auth',
 
     create: '/create',
     createId: '/posts/:id',
-    
 };
 
 export default routers;

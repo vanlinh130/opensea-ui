@@ -69,6 +69,11 @@
         .item-icon {
             font-size: 25px;
             color: var(--text-color);
+
+            img {
+                width: 100%;
+                border-radius: 50%;
+            }
         }
     }
 }
