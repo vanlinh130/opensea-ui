@@ -10,6 +10,7 @@ import images from '~/assets/images';
 import { LogoIcon } from '~/components/Icons/Icons';
 import Search from './Search/Search';
 import Menu from '~/components/Popper/Menu';
+import { Avatar } from '@material-ui/core';
 import {
     MENU_ITEMS_EXPLORE,
     MENU_ITEMS_DROPS,
@@ -102,7 +103,9 @@ function Header() {
                                 <>
                                     <MenuLanguage items={MENU_ITEMS_PROFILE_LOGOUT}>
                                         <Link className={cx('fresnel-item', 'item-icon')}>
-                                            <img src={user.result.imageUrl} alt={user.result.name} />
+                                            <Avatar src={user.result.imageUrl} alt={user.result.name}>
+                                                {user.result.name.charAt(0)}
+                                            </Avatar>
                                         </Link>
                                     </MenuLanguage>
                                     <div>

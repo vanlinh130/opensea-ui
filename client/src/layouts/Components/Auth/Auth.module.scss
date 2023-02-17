@@ -85,6 +85,15 @@
     border-radius: 5px;
     margin: auto;
 
+    .input-name {
+        display: flex;
+        justify-content: space-between;
+
+        .input-name-info {
+            width: 48%;
+        }
+    }
+
     h3 {
         padding: 22px 30px;
         font-size: 1.8rem;
@@ -99,19 +108,9 @@
     }
 
     input {
-        width: 100%;
-        padding: 12px;
-        margin-bottom: 25px;
-        border-radius: 2px;
         outline: none;
         color: #858484;
         font-weight: 500;
-        border: 1px solid rgba(0, 0, 0, 0.14);
-        box-shadow: inset 0 4px 0 rgb(0 0 0 / 2%);
-
-        &:focus {
-            border-color: rgba(0, 0, 0, 0.54);
-        }
     }
 
     button {
@@ -185,4 +184,10 @@
         font-weight: 500;
         cursor: pointer;
     }
+}
+
+// input
+.input {
+    margin-bottom: 15px;
+    // width: 100%;
 }

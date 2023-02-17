@@ -1,19 +1,25 @@
 import React from 'react';
+import { IconButton, InputAdornment, TextField } from '@material-ui/core';
+
 import classNames from 'classnames/bind';
 import styles from './Auth.module.scss';
 
 const cx = classNames.bind(styles);
 
-const Input = ({ name, handleChange, placeholder, autoFocus, type }) => {
+const Input = ({ name, handleChange, label, autoFocus, type, className }) => {
     return (
         <div className={cx('input')}>
-            <input
+            <TextField
                 name={name}
+                variant="outlined"
+                label={label}
+                required
+                fullWidth
                 onChange={handleChange}
-                placeholder={placeholder}
                 autoFocus={autoFocus}
+                className={className}
                 type={type}
-            ></input>
+            ></TextField>
         </div>
     );
 };

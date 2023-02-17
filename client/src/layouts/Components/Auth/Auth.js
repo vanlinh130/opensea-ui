@@ -91,25 +91,40 @@ const Auth = () => {
                         <h3>{isSignup ? 'Sign Up' : 'Sign In'}</h3>
                         <form onSubmit={handleSubmit}>
                             {isSignup && (
-                                <>
-                                    <Input
-                                        name="firstName"
-                                        placeholder="First Name"
-                                        handleChange={handleChange}
-                                        autoFocus
-                                    />
-                                    <Input name="lastName" placeholder="Last Name" handleChange={handleChange} />
-                                </>
+                                <div className={cx('input-name')}>
+                                    <div className={cx('input-name-info')}>
+                                        <Input
+                                            name="firstName"
+                                            label="First Name"
+                                            handleChange={handleChange}
+                                            autoFocus
+                                        />
+                                    </div>
+                                    <div className={cx('input-name-info')}>
+                                        <Input name="lastName" label="Last Name" handleChange={handleChange} />
+                                    </div>
+                                </div>
                             )}
 
                             <Input
                                 name="email"
-                                placeholder="Email Address"
+                                label="Email Address"
                                 handleChange={handleChange}
                                 type="email"
                                 autoFocus
                             />
-                            <Input name="password" placeholder="Password" handleChange={handleChange} />
+                            <Input name="password" label="Password" handleChange={handleChange} type="password" />
+
+                            {isSignup && (
+                                <>
+                                    <Input
+                                        name="confirmPassword"
+                                        label="Repeat Password"
+                                        handleChange={handleChange}
+                                        type="password"
+                                    />
+                                </>
+                            )}
 
                             <button type="submit">{isSignup ? 'Sign Up' : 'Sign In'}</button>
 
