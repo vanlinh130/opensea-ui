@@ -3,6 +3,7 @@ import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { faCartShopping, faCircleUser } from '@fortawesome/free-solid-svg-icons';
+import decode from 'jwt-decode';
 
 import styles from './Header.module.scss';
 import config from '~/config';
@@ -43,13 +44,14 @@ function Header() {
         const token = user?.token;
 
         // JWT
-        // if (token) {
-        //     const decodedToken = decode(token);
+        if (token) {
+            const decodedToken = decode(token);
 
-        //     if (decodedToken.exp * 1000 < new Date().getTime()) logout();
-        // }
+            if (decodedToken.exp * 1000 < new Date().getTime()) logout();
+        }
 
         setUser(JSON.parse(localStorage.getItem('profile')));
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [location]);
 
     return (

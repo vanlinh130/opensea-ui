@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck, faEllipsis, faThumbsUp, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faEllipsis, faThumbsDown, faThumbsUp, faTrash } from '@fortawesome/free-solid-svg-icons';
 import moment from 'moment';
 import { useDispatch } from 'react-redux';
 
@@ -12,9 +12,32 @@ const cx = classNames.bind(styles);
 
 const CollectionItem = ({ post, setCurrentId }) => {
     const dispatch = useDispatch();
+    const user = JSON.parse(localStorage.getItem('profile'));
 
-    const handleUpdate = (_id) => {
-        setCurrentId(post._id);
+    const Likes = () => {
+        if (post.likes.length > 0) {
+            return post.likes.find((like) => like === (user?.result?.googleId || user?.result?._id)) ? (
+                <>
+                    <FontAwesomeIcon icon={faThumbsUp} />
+                    &nbsp;
+                    {post.likes.length > 2
+                        ? `You & ${post.likes.length - 1} others`
+                        : `${post.likes.length} like${post.likes.length > 1 ? 's' : ''}`}
+                </>
+            ) : (
+                <>
+                    <FontAwesomeIcon icon={faThumbsDown} />
+                    &nbsp;{post.likes.length} {post.likes.length === 1 ? 'Like' : 'Likes'}
+                </>
+            );
+        }
+
+        return (
+            <>
+                <FontAwesomeIcon icon={faThumbsDown} />
+                &nbsp;Like
+            </>
+        );
     };
 
     return (
@@ -24,11 +47,13 @@ const CollectionItem = ({ post, setCurrentId }) => {
                 <div className={cx('overlay')}>
                     <p>{moment(post.createdAt).fromNow()}</p>
                 </div>
-                <div className={cx('overlay2')}>
-                    <button onClick={handleUpdate}>
-                        <FontAwesomeIcon icon={faEllipsis} />
-                    </button>
-                </div>
+                {(user?.result?.googleId === post?.creator || user?.result?._id === post?.creator) && (
+                    <div className={cx('overlay2')}>
+                        <button onClick={() => setCurrentId(post._id)}>
+                            <FontAwesomeIcon icon={faEllipsis} />
+                        </button>
+                    </div>
+                )}
             </div>
 
             <div className={cx('item-content')}>
@@ -45,14 +70,23 @@ const CollectionItem = ({ post, setCurrentId }) => {
                 </div>
 
                 <div className={cx('card-actions')}>
-                    <button className={cx('btn-link')} size="small" onClick={() => dispatch(likePost(post._id))}>
-                        <FontAwesomeIcon icon={faThumbsUp} />
-                        &nbsp; Link &nbsp; {post.likeCount}
+                    <button
+                        className={cx('btn-link')}
+                        size="small"
+                        disabled={!user?.result}
+                        onClick={() => dispatch(likePost(post._id))}
+                    >
+                        <Likes />
                     </button>
-
-                    <button className={cx('btn-delete')} size="small" onClick={() => dispatch(deletePost(post._id))}>
-                        <FontAwesomeIcon icon={faTrash} /> Delete
-                    </button>
+                    {(user?.result?.googleId === post?.creator || user?.result?._id === post?.creator) && (
+                        <button
+                            className={cx('btn-delete')}
+                            size="small"
+                            onClick={() => dispatch(deletePost(post._id))}
+                        >
+                            <FontAwesomeIcon icon={faTrash} /> Delete
+                        </button>
+                    )}
                 </div>
             </div>
         </div>
