@@ -5,6 +5,11 @@
     margin: auto;
     margin-top: 50px;
 
+    h2 {
+        padding: 30px;
+        text-align: center;
+        font-size: 20px;
+    }
 }
 .form {
     display: flex;
@@ -24,7 +29,7 @@
     }
 
     input:focus {
-        outline:none;
+        outline: none;
         border: 1px solid rgb(159, 157, 157);
     }
 
@@ -33,7 +38,6 @@
         padding: 0;
         border-radius: 0;
     }
-
 }
 
 .file-input {
@@ -41,13 +45,12 @@
     margin: 10px 10px;
 }
 
-
 .btn {
     margin-bottom: 10px;
     width: 100%;
     outline: none;
     border: none;
-    padding: 5px ;
+    padding: 5px;
     color: #fff;
     border-radius: 5px;
     margin: 5px 10px;
@@ -57,11 +60,9 @@
 .btn-submit {
     background-color: #2e4cac;
     font-size: large;
-
 }
 
 .btn-clear {
     font-size: small;
     background-color: #ff2351;
-
 }

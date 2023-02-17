@@ -20,6 +20,7 @@ const initialState = { firstName: '', lastName: '', email: '', password: '' };
 const Auth = () => {
     const clientId = '387544023335-7r4dbg893fk5otknebjthiv1n0r2mfad.apps.googleusercontent.com';
     const [isSignup, setIsSignup] = useState(false);
+    const [showPassword, setShowPassword] = useState(false);
     const [formData, setFormDate] = useState(initialState);
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -40,12 +41,17 @@ const Auth = () => {
         }
     };
 
+    const handleShowPassword = () => {
+        setShowPassword((prevShowPassword) => !prevShowPassword);
+    };
+
     const handleChange = (e) => {
         setFormDate({ ...formData, [e.target.name]: e.target.value });
     };
 
     const switchMode = () => {
         setIsSignup((prevIsSignup) => !prevIsSignup);
+        setShowPassword(false);
     };
 
     const googleSuccess = async (res) => {
@@ -78,6 +84,7 @@ const Auth = () => {
                     </Link>
                 </div>
             </div>
+
             <div className={cx('content')}>
                 <div className={cx('content-login')}>
                     <div className={cx('content-link')}>
@@ -87,6 +94,8 @@ const Auth = () => {
                             Favorite e-commerce platform <br /> in Southeast Asia & Vietnam
                         </h3>
                     </div>
+
+                    {/* form */}
                     <div className={cx('content-form')}>
                         <h3>{isSignup ? 'Sign Up' : 'Sign In'}</h3>
                         <form onSubmit={handleSubmit}>
@@ -113,7 +122,13 @@ const Auth = () => {
                                 type="email"
                                 autoFocus
                             />
-                            <Input name="password" label="Password" handleChange={handleChange} type="password" />
+                            <Input
+                                name="password"
+                                label="Password"
+                                handleChange={handleChange}
+                                type={showPassword ? 'text' : 'password'}
+                                handleShowPassword={handleShowPassword}
+                            />
 
                             {isSignup && (
                                 <>

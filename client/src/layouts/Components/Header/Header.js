@@ -115,7 +115,7 @@ function Header() {
                                     </div>
                                     <div>
                                         <Link onClick={logout} className={cx('fresnel-item', 'item-icon')}>
-                                            <Button outline rounded>
+                                            <Button outline rounded className={cx('btn-log')}>
                                                 Log out
                                             </Button>
                                         </Link>
@@ -130,7 +130,7 @@ function Header() {
                                     </MenuLanguage>
                                     <div>
                                         <Link to={config.routes.auth} className={cx('fresnel-item', 'item-icon')}>
-                                            <Button primary rounded>
+                                            <Button primary rounded className={cx('btn-log')}>
                                                 Sign in
                                             </Button>
                                         </Link>

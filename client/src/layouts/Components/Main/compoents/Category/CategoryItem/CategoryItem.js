@@ -12,7 +12,7 @@ const CategoryItem = ({ post }) => {
                 <img src={post.selectedFile} alt="images" />
             </div>
             <div className={cx('item-content')}>
-                <div>{post.creator}</div>
+                <div>{post.name}</div>
             </div>
         </div>
     );

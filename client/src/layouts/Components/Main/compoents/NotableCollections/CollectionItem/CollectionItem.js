@@ -11,18 +11,16 @@ import { deletePost, likePost } from '~/actions/posts';
 const cx = classNames.bind(styles);
 
 const CollectionItem = ({ post, setCurrentId }) => {
-
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
 
     const handleUpdate = (_id) => {
-        setCurrentId(post._id)
-    }
+        setCurrentId(post._id);
+    };
 
     return (
         <div className={cx('collection-item')}>
-            
             <div className={cx('item-image')}>
-                <img src={post.selectedFile}  alt="images" />
+                <img src={post.selectedFile} alt="images" />
                 <div className={cx('overlay')}>
                     <p>{moment(post.createdAt).fromNow()}</p>
                 </div>
@@ -35,7 +33,7 @@ const CollectionItem = ({ post, setCurrentId }) => {
 
             <div className={cx('item-content')}>
                 <div className={cx('content-heading')}>
-                    <h3>{post.creator}</h3>
+                    <h3>{post.name}</h3>
                     <FontAwesomeIcon className={cx('icon')} icon={faCheck} />
                 </div>
                 <h3>{post.title}</h3>
@@ -47,13 +45,14 @@ const CollectionItem = ({ post, setCurrentId }) => {
                 </div>
 
                 <div className={cx('card-actions')}>
-                    <button className={cx('btn-link')} size="small" 
-                        onClick={() => dispatch(likePost(post._id))}> 
-                        <FontAwesomeIcon icon={faThumbsUp} />&nbsp; Link &nbsp; {post.likeCount}</button>
-                        
-                    <button className={cx('btn-delete')} size="small" 
-                        onClick={() => dispatch(deletePost(post._id))}> 
-                        <FontAwesomeIcon icon={faTrash} /> Delete</button>
+                    <button className={cx('btn-link')} size="small" onClick={() => dispatch(likePost(post._id))}>
+                        <FontAwesomeIcon icon={faThumbsUp} />
+                        &nbsp; Link &nbsp; {post.likeCount}
+                    </button>
+
+                    <button className={cx('btn-delete')} size="small" onClick={() => dispatch(deletePost(post._id))}>
+                        <FontAwesomeIcon icon={faTrash} /> Delete
+                    </button>
                 </div>
             </div>
         </div>

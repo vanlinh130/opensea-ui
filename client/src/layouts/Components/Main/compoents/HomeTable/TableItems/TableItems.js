@@ -13,7 +13,7 @@ const TableItems = ({ post }) => {
             <div className={cx('item-collection')}>
                 <span></span>
                 <img src={post.selectedFile} alt="images" />
-                <h3>{post.creator}</h3>
+                <h3>{post.name}</h3>
                 <FontAwesomeIcon className={cx('icon')} icon={faCheck} />
             </div>
             <div className={cx('item-floor')}>

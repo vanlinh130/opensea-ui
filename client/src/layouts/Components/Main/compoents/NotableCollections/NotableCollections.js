@@ -20,7 +20,7 @@ const NotableCollections = ({ setCurrentId }) => {
             <div className={cx('collections')}>
                 {posts.map((post) => (
                     <div key={post._id}>
-                        <Link to="/detail">
+                        <Link to="">
                             <CollectionItem post={post} setCurrentId={setCurrentId} />
                         </Link>
                     </div>

@@ -13,7 +13,7 @@ const SlideItem = ({ post }) => {
             <div className={cx('box')}></div>
             <div className={cx('info')}>
                 <div>
-                    <h5>{post.creator}</h5>
+                    <h5>{post.name}</h5>
                     <FontAwesomeIcon className={cx('icon')} icon={faCheck} />
                 </div>
                 <span>Floor: 0,2 ETH</span>
