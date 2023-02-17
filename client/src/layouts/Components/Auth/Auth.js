@@ -12,12 +12,15 @@ import { LogoIcon } from '~/components/Icons/Icons';
 import config from '~/config';
 import Footer from './../Footer/Footer';
 import Input from './Input';
+import { signup, signin } from '../../../actions/auth';
 
 const cx = classNames.bind(styles);
+const initialState = { firstName: '', lastName: '', email: '', password: '' };
 
 const Auth = () => {
     const clientId = '387544023335-7r4dbg893fk5otknebjthiv1n0r2mfad.apps.googleusercontent.com';
     const [isSignup, setIsSignup] = useState(false);
+    const [formData, setFormDate] = useState(initialState);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -26,6 +29,20 @@ const Auth = () => {
             gapi.auth2.init({ clientId: clientId });
         });
     }, []);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        if (isSignup) {
+            dispatch(signup(formData, navigate));
+        } else {
+            dispatch(signin(formData, navigate));
+        }
+    };
+
+    const handleChange = (e) => {
+        setFormDate({ ...formData, [e.target.name]: e.target.value });
+    };
 
     const switchMode = () => {
         setIsSignup((prevIsSignup) => !prevIsSignup);
@@ -72,16 +89,27 @@ const Auth = () => {
                     </div>
                     <div className={cx('content-form')}>
                         <h3>{isSignup ? 'Sign Up' : 'Sign In'}</h3>
-                        <form>
+                        <form onSubmit={handleSubmit}>
                             {isSignup && (
                                 <>
-                                    <Input name="firstName" placeholder="First Name" autoFocus />
-                                    <Input name="lastName" placeholder="Last Name" />
+                                    <Input
+                                        name="firstName"
+                                        placeholder="First Name"
+                                        handleChange={handleChange}
+                                        autoFocus
+                                    />
+                                    <Input name="lastName" placeholder="Last Name" handleChange={handleChange} />
                                 </>
                             )}
 
-                            <Input name="email" placeholder="Email Address" type="email" autoFocus />
-                            <Input name="password" placeholder="Password" />
+                            <Input
+                                name="email"
+                                placeholder="Email Address"
+                                handleChange={handleChange}
+                                type="email"
+                                autoFocus
+                            />
+                            <Input name="password" placeholder="Password" handleChange={handleChange} />
 
                             <button type="submit">{isSignup ? 'Sign Up' : 'Sign In'}</button>
 
