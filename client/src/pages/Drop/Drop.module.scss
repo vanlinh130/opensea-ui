@@ -1,0 +1,65 @@
+.wrapper {
+    h1 {
+        font-size: 48px;
+    }
+}
+
+.drop-nav {
+    margin: 48px 0;
+    display: flex;
+    justify-content: space-between;
+    width: 15%;
+
+    .nav-btn {
+        background: transparent;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+        font-weight: 600;
+        padding: 0 0 10px;
+        border-bottom: 3px transparent solid;
+
+        &:first-child {
+            border-color: black;
+        }
+
+        &:hover {
+            border-color: black;
+            color: #707a83;
+        }
+    }
+}
+
+.drop-content {
+    position: relative;
+}
+
+.content-img {
+    width: 100%;
+    height: 550px;
+    position: absolute;
+
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+    }
+}
+
+.content-info {
+    position: absolute;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    .info-img {
+        height: 64px;
+        width: 64px;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
