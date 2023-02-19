@@ -1,11 +1,14 @@
 import classNames from 'classnames/bind';
 import styles from './Drop.module.scss';
-import images from '~/assets/images';
-import Button from '~/components/Button';
+import { useSelector } from 'react-redux';
+import DropItem from './DropItem/DropItem';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
 function Drop() {
+    const posts = useSelector((state) => state.posts);
+
     return (
         <div className={cx('wrapper')}>
             <h1>Drops</h1>
@@ -17,34 +20,21 @@ function Drop() {
                     <span>Past</span>
                 </button>
             </div>
-            <div className={cx('drop-content')}>
-                <div className={cx('content-img')}>
-                    <img src={images.collector_1} alt="images-content" />
-                </div>
-                <div className={cx('content-info')}>
-                    <div className={cx('info-img')}>
-                        <img src={images.detail_item} alt="images-info" />
-                    </div>
-                    <div className={cx('info-list')}>
-                        <div className={cx('info-item-left')}>
-                            <h1>NFT Yearbook</h1>
-                            <span>By MetaversePublishing</span>
-                            <span>3.000 items - 0.1195 ETH</span>
-                            <Button className={cx('btn-item-left')}>
-                                <div className={cx('btn-item-heart')}>
-                                    <div className={cx('heart')}></div>
-                                    <span>MINTING NOW</span>
-                                </div>
-                            </Button>
-                        </div>
-                        <div className={cx('info-item-right')}>
-                            <Button className={cx('btn-item-right')}>
-                                <span>View drop</span>
-                            </Button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <>
+                {!posts.length ? (
+                    <div />
+                ) : (
+                    <>
+                        {posts.map((post) => (
+                            <div key={post._id}>
+                                <Link to="">
+                                    <DropItem post={post} />
+                                </Link>
+                            </div>
+                        ))}
+                    </>
+                )}
+            </>
         </div>
     );
 }
