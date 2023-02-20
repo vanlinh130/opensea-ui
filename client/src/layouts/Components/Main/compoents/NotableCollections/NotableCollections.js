@@ -1,11 +1,12 @@
 import React from 'react';
 import classNames from 'classnames/bind';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { Paper } from '@material-ui/core';
 
 import styles from './NotableCollections.module.scss';
 import CollectionItem from './CollectionItem/CollectionItem';
-import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-
+import Pagination from '~/components/Pagination/Pagination';
 const cx = classNames.bind(styles);
 
 const NotableCollections = ({ setCurrentId }) => {
@@ -26,6 +27,9 @@ const NotableCollections = ({ setCurrentId }) => {
                     </div>
                 ))}
             </div>
+            <Paper>
+                <Pagination />
+            </Paper>
         </>
     );
 };

@@ -20,10 +20,10 @@ import Create from '~/layouts/Components/Create';
 // Public routes : ko can dang nhap vao dc
 const publicRoutes = [
     { path: config.routes.home, component: Home },
-    { path: config.routes.detail, component: Detail, layout: HeaderOnly },
     { path: config.routes.explore, component: Explore, layout: HeaderOnly },
     { path: config.routes.drop, component: Drop, layout: HeaderOnly },
     { path: config.routes.start, component: Start, layout: HeaderOnly },
+    { path: config.routes.detail, component: Detail, layout: null },
     { path: config.routes.resource, component: Resource, layout: null },
 
     { path: config.routes.auth, component: Auth, layout: null },

@@ -36,9 +36,11 @@ export const MENU_ITEMS_EXPLORE = [
 export const MENU_ITEMS_DROPS = [
     {
         title: 'Calendar',
+        to: './drops',
     },
     {
         title: 'Learn more',
+        to: './drops',
     },
 ];
 

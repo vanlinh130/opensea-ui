@@ -38,8 +38,8 @@ a {
     color: var(--text-color);
     text-decoration: none;
 }
-//
 
+//
 .overlay::before,
 .overlay::after {
     background: transparent !important;
@@ -48,4 +48,15 @@ a {
 
 .marquee {
     z-index: 0 !important;
+}
+
+// Pagination
+.MuiPaper-elevation1 {
+    width: 10%;
+    margin-top: 13px;
+    box-shadow: none;
+}
+
+.MuiPagination-ul {
+    justify-content: center;
 }
