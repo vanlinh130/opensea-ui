@@ -9,23 +9,4 @@
     display: flex;
     justify-content: space-between;
     width: 15%;
-
-    .nav-btn {
-        background: transparent;
-        border: none;
-        font-size: 16px;
-        cursor: pointer;
-        font-weight: 600;
-        padding: 0 0 10px;
-        border-bottom: 3px transparent solid;
-
-        &:first-child {
-            border-color: black;
-        }
-
-        &:hover {
-            border-color: black;
-            color: #707a83;
-        }
-    }
 }

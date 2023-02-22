@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import Chains from '~/components/Chain/Chains';
 import { ChainsIcons, ChevronDown } from '~/components/Chain';
 import { IconOne, IconTow, IconThree, Iconfour, Iconfive, IconSix, IconServer, Iconeight } from '~/components/Icons';
+import Action from '~/components/Action/Action';
 
 const cx = classNames.bind(styles);
 
@@ -18,12 +19,8 @@ function HomeTable({ currentId, setCurrentId }) {
         <div className={cx('main')}>
             <header className={cx('header-table')}>
                 <div className={cx('trend-top')}>
-                    <button className={cx('table-btn')}>
-                        <span>Trending</span>
-                    </button>
-                    <button className={cx('table-btn')}>
-                        <span>Top</span>
-                    </button>
+                    <Action classes={cx('trend-btn')} title={'Trending'} />
+                    <Action classes={cx('trend-btn')} title={'Top'} />
                 </div>
                 <div className={cx('view')}>
                     <ChevronDown title={'24h'} />

@@ -3,6 +3,7 @@ import styles from './Drop.module.scss';
 import { useSelector } from 'react-redux';
 import DropItem from './DropItem/DropItem';
 import { Link } from 'react-router-dom';
+import Action from '~/components/Action/Action';
 
 const cx = classNames.bind(styles);
 
@@ -13,12 +14,8 @@ function Drop() {
         <div className={cx('wrapper')}>
             <h1>Drops</h1>
             <div className={cx('drop-nav')}>
-                <button className={cx('nav-btn')}>
-                    <span>Action & upcoming</span>
-                </button>
-                <button className={cx('nav-btn')}>
-                    <span>Past</span>
-                </button>
+                <Action title={'Action & upcoming'} />
+                <Action title={'Past'} />
             </div>
             <>
                 {!posts.length ? (
