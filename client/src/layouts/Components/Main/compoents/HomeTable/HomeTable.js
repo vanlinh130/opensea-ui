@@ -1,14 +1,13 @@
 import classNames from 'classnames/bind';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { useSelector } from 'react-redux';
 
-import { IconOne, IconServer, IconSix, IconThree, IconTow, Iconeight, Iconfive, Iconfour } from '~/components/Icons';
 import styles from './HomeTable.module.scss';
 import TableItems from './TableItems/TableItems';
-import ChainsIcons from './ChainsIcons';
 import Create from '~/layouts/Components/Create';
 import { Link } from 'react-router-dom';
+import Chains from '~/components/Chain/Chains';
+import { ChainsIcons, ChevronDown } from '~/components/Chain';
+import { IconOne, IconTow, IconThree, Iconfour, Iconfive, IconSix, IconServer, Iconeight } from '~/components/Icons';
 
 const cx = classNames.bind(styles);
 
@@ -27,14 +26,9 @@ function HomeTable({ currentId, setCurrentId }) {
                     </button>
                 </div>
                 <div className={cx('view')}>
-                    <button className={cx('view-btn', 'time-btn')}>
-                        <h3>24h</h3>
-                        <FontAwesomeIcon icon={faChevronDown} />
-                    </button>
-                    <button className={cx('view-btn')}>
-                        <div className={cx('chains-btn')}>
-                            <span>All chains</span>
-                        </div>
+                    <ChevronDown title={'24h'} />
+
+                    <Chains title={'All Chains'}>
                         <ChainsIcons icon={<IconOne />} />
                         <ChainsIcons icon={<IconTow />} />
                         <ChainsIcons icon={<IconThree />} />
@@ -43,7 +37,7 @@ function HomeTable({ currentId, setCurrentId }) {
                         <ChainsIcons icon={<IconSix />} />
                         <ChainsIcons icon={<IconServer />} />
                         <ChainsIcons icon={<Iconeight />} />
-                    </button>
+                    </Chains>
 
                     <button className={cx('view-btn')}>
                         <div className={cx('chains-btn')}>
