@@ -1,3 +1,19 @@
+//
+h1 {
+    padding: 64px 0 48px;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+// start nav
+.start-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 16%;
+    margin-bottom: 10px;
+    border-bottom: 1px rgb(234, 235, 236) solid;
+}
+
 // start view
 .start-view {
     display: flex;

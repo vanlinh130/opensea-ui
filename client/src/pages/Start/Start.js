@@ -2,6 +2,7 @@ import classNames from 'classnames/bind';
 import styles from './Start.module.scss';
 import { Chains, ChainsIcons, ChevronDown } from '~/components/Chain';
 import { IconOne, IconTow, IconThree, Iconfour, Iconfive, IconSix, IconServer, Iconeight } from '~/components/Icons';
+import Action from '~/components/Action/Action';
 
 const cx = classNames.bind(styles);
 
@@ -9,7 +10,11 @@ function Start() {
     return (
         <div className={cx('start')}>
             <h1>Collection starts</h1>
-            <div className={cx('start-nav')}></div>
+            <div className={cx('start-nav')}>
+                <Action title={'Top'} />
+                <Action title={'Trending'} />
+                <Action title={'Watchlist'} />
+            </div>
             <div className={cx('start-view')}>
                 <div className={cx('start-view-btn')}>
                     <ChevronDown title={'All categories'} />
