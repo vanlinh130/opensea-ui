@@ -4,7 +4,14 @@ import styles from './Start.module.scss';
 const cx = classNames.bind(styles);
 
 function Start() {
-    return <h1>Starts page</h1>;
+    return (
+        <div className={cx('start')}>
+            <h1>Collection starts</h1>
+            <div className={cx('start-nav')}></div>
+            <div className={cx('start-')}></div>
+            <div className={cx('start-nav')}></div>
+        </div>
+    );
 }
 
 export default Start;
