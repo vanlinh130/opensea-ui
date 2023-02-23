@@ -31,6 +31,8 @@ const images = {
     profile_4: require('~/assets/images/image-profile/profile-4.png'),
     profile_5: require('~/assets/images/image-profile/profile-5.png'),
     profile_6: require('~/assets/images/image-profile/profile-6.png'),
+
+    product_cart_no: require('~/assets/images/image-product/cart-no.png'),
 };
 
 export default images;

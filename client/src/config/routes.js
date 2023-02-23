@@ -6,6 +6,7 @@ const routers = {
     start: '/starts',
     resource: '/resources',
     profile: '/profile',
+    product: '/products',
     auth: '/auth',
 
     create: '/create',

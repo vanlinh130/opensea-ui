@@ -146,7 +146,7 @@ function Header() {
                         </li>
 
                         <li>
-                            <Link className={cx('fresnel-item', 'item-icon')}>
+                            <Link to={config.routes.product} className={cx('fresnel-item', 'item-icon')}>
                                 <FontAwesomeIcon icon={faCartShopping} />
                             </Link>
                         </li>

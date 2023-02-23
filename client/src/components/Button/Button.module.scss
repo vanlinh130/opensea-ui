@@ -54,6 +54,15 @@
     }
 }
 
+.outGreen {
+    color: var(--color-white);
+    background-color: var(--primary-color);
+
+    &:hover {
+        opacity: 0.9;
+    }
+}
+
 .text {
     &:hover {
         text-decoration: underline;
