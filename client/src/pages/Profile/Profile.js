@@ -1,26 +1,64 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
+import decode from 'jwt-decode';
+import { useLocation } from 'react-router-dom';
+import { Avatar } from '@material-ui/core';
+
 import styles from './Profile.module.scss';
 import images from '~/assets/images';
 import { IconProfileAvatar, IconProfileNew } from '~/components/Icons';
 import Input from '~/layouts/Components/Auth/Input';
 import { ChevronDown } from '~/components/Chain';
 import Button from './../../components/Button/Button';
+
 const cx = classNames.bind(styles);
 
 const Profile = () => {
+    const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
+    const location = useLocation();
+
+    useEffect(() => {
+        const token = user?.token;
+
+        // JWT
+        if (token) {
+            const decodedToken = decode(token);
+
+            if (decodedToken.exp * 1000 < new Date().getTime());
+        }
+
+        setUser(JSON.parse(localStorage.getItem('profile')));
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [location]);
+
     return (
         <div className={cx('profile')}>
             <div className={cx('profile-info')}>
                 <div className={cx('profile-info-avatar')}>
-                    <img src={images.detail_avatar} alt="avatar" />
-                    <div className={cx('profile-info-name')}>
-                        <h5>nvVanLinh013</h5>
-                        <div className={cx('update-info')}>
-                            <IconProfileAvatar />
-                            <span>Profile Milk</span>
-                        </div>
-                    </div>
+                    {user ? (
+                        <>
+                            <Avatar src={user.result.imageUrl} alt={user.result.name} className={cx('img-avatar')}>
+                                {user.result.name.charAt(0)}
+                            </Avatar>
+                            <div className={cx('profile-info-name')}>
+                                <h5>{user.result.name}</h5>
+                                <div className={cx('update-info')}>
+                                    <IconProfileAvatar />
+                                    <span>Profile Milk</span>
+                                </div>
+                            </div>
+                        </>
+                    ) : (
+                        <>
+                            <Avatar src={images.no_avatar} alt="images"></Avatar>
+                            <div className={cx('profile-info-name')}>
+                                <div className={cx('update-info')}>
+                                    <IconProfileAvatar />
+                                    <span>Profile Milk</span>
+                                </div>
+                            </div>
+                        </>
+                    )}
                 </div>
                 <div className={cx('profile-info-list')}>
                     <div className={cx('profile-info-item')}>
@@ -88,7 +126,7 @@ const Profile = () => {
                             </div>
                             <div className={cx('account-info')}>
                                 <span>Email</span>
-                                <h4>linhvanle@gmail.com</h4>
+                                {user && <h4>{user.result.email}</h4>}
                                 <p>Thay đổi</p>
                             </div>
                             <div className={cx('account-info')}>
@@ -122,7 +160,17 @@ const Profile = () => {
                         </form>
                     </div>
                     <div className={cx('account-avatar')}>
-                        <img src={images.detail_avatar} alt="images" />
+                        {user ? (
+                            <div className={cx('account-avatar-img')}>
+                                <Avatar src={user.result.imageUrl} alt={user.result.name} className={cx('img-account')}>
+                                    {user.result.name.charAt(0)}
+                                </Avatar>
+                            </div>
+                        ) : (
+                            <div className={cx('account-avatar-img')}>
+                                <Avatar src={images.no_avatar} alt="images" className={cx('img-account')}></Avatar>
+                            </div>
+                        )}
                         <Button className={cx('btn-fill')}>
                             <input type="file" name="myImage" />
                         </Button>

@@ -105,7 +105,11 @@ function Header() {
                                 <>
                                     <MenuLanguage items={MENU_ITEMS_PROFILE_LOGOUT}>
                                         <Link to={config.routes.profile} className={cx('fresnel-item', 'item-icon')}>
-                                            <Avatar src={user.result.imageUrl} alt={user.result.name}>
+                                            <Avatar
+                                                src={user.result.imageUrl}
+                                                alt={user.result.name}
+                                                className={cx('img-avatar')}
+                                            >
                                                 {user.result.name.charAt(0)}
                                             </Avatar>
                                         </Link>
@@ -126,7 +130,7 @@ function Header() {
                             ) : (
                                 <>
                                     <MenuLanguage items={MENU_ITEMS_PROFILE}>
-                                        <Link className={cx('fresnel-item', 'item-icon')}>
+                                        <Link to={config.routes.auth} className={cx('fresnel-item', 'item-icon')}>
                                             <FontAwesomeIcon icon={faCircleUser} />
                                         </Link>
                                     </MenuLanguage>

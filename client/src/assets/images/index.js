@@ -1,5 +1,7 @@
 const images = {
     logo: require('~/assets/images/logo.svg').default,
+    no_avatar: require('~/assets/images/no-avatar.jpg'),
+
     slide_1: require('~/assets/images/list-table/slide-1.avif'),
     slide_2: require('~/assets/images/list-table/slide-2.avif'),
     slide_3: require('~/assets/images/list-table/slide-3.avif'),
