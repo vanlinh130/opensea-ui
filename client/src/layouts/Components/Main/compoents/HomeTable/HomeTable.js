@@ -9,6 +9,7 @@ import Chains from '~/components/Chain/Chains';
 import { ChainsIcons, ChevronDown } from '~/components/Chain';
 import { IconOne, IconTow, IconThree, Iconfour, Iconfive, IconSix, IconServer, Iconeight } from '~/components/Icons';
 import Action from '~/components/Action/Action';
+import Collection from '~/components/Collection/Collection';
 
 const cx = classNames.bind(styles);
 
@@ -47,14 +48,10 @@ function HomeTable({ currentId, setCurrentId }) {
             <div className={cx('table')}>
                 <div className={cx('table-list')}>
                     <div className={cx('table-header')}>
-                        <div className={cx('header-collection')}>
-                            <span>COLLECTION</span>
-                        </div>
-                        <div className={cx('header-floor')}>
-                            <span>FLOOR PRICE</span>
-                        </div>
-                        <div className={cx('header-volume')}>
-                            <span>VOLUME</span>
+                        <Collection title={'COLLECTION'} classes={cx('header-collection')} />
+                        <div className={cx('table-header-item')}>
+                            <Collection title={'FLOOR PRICE'} classes={cx('header-price')} />
+                            <Collection title={'VOLUME'} classes={cx('header-volume')} />
                         </div>
                     </div>
 

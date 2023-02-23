@@ -51,20 +51,20 @@
 .table-header {
     display: flex;
     width: 100%;
-    height: 22px;
-    padding: 4px 8px 0px;
-    color: rgb(112, 122, 131);
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 18px;
 
     .header-collection {
         width: 60%;
+        padding-left: 40px;
     }
 
-    .header-floor,
-    .header-volume {
-        width: 20%;
+    .table-header-item {
+        display: flex;
+        width: 40%;
+
+        .header-price,
+        .header-volume {
+            width: 100%;
+        }
     }
 }
 
