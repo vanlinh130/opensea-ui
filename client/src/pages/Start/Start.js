@@ -1,13 +1,22 @@
 import classNames from 'classnames/bind';
+import { faArrowsUpDown, faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+
 import styles from './Start.module.scss';
 import { Chains, ChainsIcons, ChevronDown } from '~/components/Chain';
 import { IconOne, IconTow, IconThree, Iconfour, Iconfive, IconSix, IconServer, Iconeight } from '~/components/Icons';
 import Action from '~/components/Action/Action';
 import Collection from '~/components/Collection/Collection';
+import Paginate from '~/components/Pagination/Pagination';
+import StartItems from './StartItems/StartItems';
 
 const cx = classNames.bind(styles);
 
 function Start() {
+    const posts = useSelector((state) => state.posts);
+
     return (
         <div className={cx('start')}>
             <h1>Collection starts</h1>
@@ -43,9 +52,52 @@ function Start() {
                     </Chains>
                 </div>
             </div>
+
             <div className={cx('start-menu')}>
-                <Collection title={'Collection'} />
+                <div className={cx('menu-info')}>
+                    <Collection title={'COLLECTION'} />
+                </div>
+                <div className={cx('menu-list')}>
+                    <Collection
+                        title={'VOLUME'}
+                        icons={<FontAwesomeIcon icon={faChevronDown} />}
+                        classes={cx('menu-item')}
+                    />
+                    <Collection
+                        title={'% CHANGE'}
+                        icons={<FontAwesomeIcon icon={faArrowsUpDown} />}
+                        classes={cx('menu-item')}
+                    />
+                    <Collection
+                        title={'Titles'}
+                        icons={<FontAwesomeIcon icon={faArrowsUpDown} />}
+                        classes={cx('menu-item')}
+                    />
+                    <Collection
+                        title={'SALES'}
+                        icons={<FontAwesomeIcon icon={faArrowsUpDown} />}
+                        classes={cx('menu-item')}
+                    />
+                </div>
             </div>
+
+            <>
+                {!posts.length ? (
+                    <div />
+                ) : (
+                    <>
+                        {posts.map((post) => (
+                            <div key={post._id}>
+                                <Link to="">
+                                    <StartItems post={post} />
+                                </Link>
+                            </div>
+                        ))}
+                    </>
+                )}
+            </>
+
+            <Paginate />
         </div>
     );
 }
