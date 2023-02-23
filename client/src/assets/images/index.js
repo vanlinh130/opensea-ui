@@ -22,6 +22,13 @@ const images = {
     faceBook: require('~/assets/images/image-icons/facebook.png'),
     google: require('~/assets/images/image-icons/google.png'),
     apple: require('~/assets/images/image-icons/apple.svg').default,
+
+    profile_1: require('~/assets/images/image-profile/profile-1.png'),
+    profile_2: require('~/assets/images/image-profile/profile-2.png'),
+    profile_3: require('~/assets/images/image-profile/profile-3.png'),
+    profile_4: require('~/assets/images/image-profile/profile-4.png'),
+    profile_5: require('~/assets/images/image-profile/profile-5.png'),
+    profile_6: require('~/assets/images/image-profile/profile-6.png'),
 };
 
 export default images;

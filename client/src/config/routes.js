@@ -5,8 +5,7 @@ const routers = {
     drop: '/drops',
     start: '/starts',
     resource: '/resources',
-    // login: '/login',
-    // register: '/register',
+    profile: '/profile',
     auth: '/auth',
 
     create: '/create',

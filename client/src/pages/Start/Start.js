@@ -10,7 +10,7 @@ import { IconOne, IconTow, IconThree, Iconfour, Iconfive, IconSix, IconServer, I
 import Action from '~/components/Action/Action';
 import Collection from '~/components/Collection/Collection';
 import Paginate from '~/components/Pagination/Pagination';
-import StartItems from './StartItems/StartItems';
+import StartItems from './StartItem/StartItems';
 
 const cx = classNames.bind(styles);
 

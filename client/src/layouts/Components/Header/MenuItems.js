@@ -119,6 +119,7 @@ export const MENU_ITEMS_PROFILE_LOGOUT = [
     {
         icon: <FontAwesomeIcon icon={faUser} />,
         title: 'Profile',
+        to: './profile',
     },
     {
         icon: <FontAwesomeIcon icon={faPen} />,
