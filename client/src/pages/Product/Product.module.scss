@@ -80,3 +80,26 @@
         padding: 15px 0;
     }
 }
+
+// product-buy
+.product-buy {
+    padding: 50px 0;
+}
+.product-menu {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.menu-info {
+    width: 45%;
+    padding-left: 40px;
+}
+.menu-list {
+    display: flex;
+    width: 55%;
+
+    .menu-item {
+        width: 25%;
+    }
+}

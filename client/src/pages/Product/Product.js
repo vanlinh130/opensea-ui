@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { Link, useLocation } from 'react-router-dom';
 import decode from 'jwt-decode';
+import { Avatar } from '@material-ui/core';
 
 import styles from './Product.module.scss';
 import { LogoIcon } from '~/components/Icons';
@@ -10,12 +11,17 @@ import images from '~/assets/images';
 import Search from '~/layouts/Components/Header/Search/Search';
 import Button from '~/components/Button/Button';
 import Footer from '~/layouts/Components/Footer/Footer';
-import { Avatar } from '@material-ui/core';
+import Collection from '~/components/Collection/Collection';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown, faArrowsUpDown } from '@fortawesome/free-solid-svg-icons';
+import { useSelector } from 'react-redux';
+import ProductItems from './ProductItems/ProductItems';
 
 const cx = classNames.bind(styles);
 
 const Product = () => {
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
+    const posts = useSelector((state) => state.posts);
     const location = useLocation();
 
     useEffect(() => {
@@ -61,7 +67,47 @@ const Product = () => {
             </div>
             <div className={cx('product-content')}>
                 {user ? (
-                    <div className={cx('product-buy')}></div>
+                    <div className={cx('product-buy')}>
+                        <div className={cx('product-menu')}>
+                            <div className={cx('menu-info')}>
+                                <Collection title={'COLLECTION'} />
+                            </div>
+                            <div className={cx('menu-list')}>
+                                <Collection
+                                    title={'VOLUME'}
+                                    icons={<FontAwesomeIcon icon={faChevronDown} />}
+                                    classes={cx('menu-item')}
+                                />
+                                <Collection
+                                    title={'% CHANGE'}
+                                    icons={<FontAwesomeIcon icon={faArrowsUpDown} />}
+                                    classes={cx('menu-item')}
+                                />
+                                <Collection
+                                    title={'Titles'}
+                                    icons={<FontAwesomeIcon icon={faArrowsUpDown} />}
+                                    classes={cx('menu-item')}
+                                />
+                                <Collection title={'Actions'} classes={cx('menu-item')} />
+                            </div>
+                        </div>
+
+                        <>
+                            {!posts.length ? (
+                                <div />
+                            ) : (
+                                <>
+                                    {posts.map((post) => (
+                                        <div key={post._id}>
+                                            <Link to="">
+                                                <ProductItems post={post} />
+                                            </Link>
+                                        </div>
+                                    ))}
+                                </>
+                            )}
+                        </>
+                    </div>
                 ) : (
                     <div className={cx('product-no-buy')}>
                         <img src={images.product_cart_no} alt="images-no-buy" />
