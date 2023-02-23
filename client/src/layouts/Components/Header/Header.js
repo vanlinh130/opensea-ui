@@ -104,14 +104,14 @@ function Header() {
                             {user ? (
                                 <>
                                     <MenuLanguage items={MENU_ITEMS_PROFILE_LOGOUT}>
-                                        <Link className={cx('fresnel-item', 'item-icon')}>
+                                        <Link to={config.routes.profile} className={cx('fresnel-item', 'item-icon')}>
                                             <Avatar src={user.result.imageUrl} alt={user.result.name}>
                                                 {user.result.name.charAt(0)}
                                             </Avatar>
                                         </Link>
                                     </MenuLanguage>
                                     <div>
-                                        <Link className={cx('fresnel-item', 'item-icon')}>
+                                        <Link to={config.routes.profile} className={cx('fresnel-item', 'item-icon')}>
                                             <h6>{user.result.name}</h6>
                                         </Link>
                                     </div>
