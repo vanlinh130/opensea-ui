@@ -6,10 +6,10 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 
-const CheckName = () => {
+const CheckName = ({ classes }) => {
     return (
         <>
-            <FontAwesomeIcon className={cx('icon')} icon={faCheck} />
+            <FontAwesomeIcon className={cx('icon', classes)} icon={faCheck} />
         </>
     );
 };

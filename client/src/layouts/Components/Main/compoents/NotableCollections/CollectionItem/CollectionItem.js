@@ -1,12 +1,13 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck, faEllipsis, faThumbsDown, faThumbsUp, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faEllipsis, faThumbsDown, faThumbsUp, faTrash } from '@fortawesome/free-solid-svg-icons';
 import moment from 'moment';
 import { useDispatch } from 'react-redux';
 
 import styles from './CollectionItem.module.scss';
 import { deletePost, likePost } from '~/actions/posts';
+import CheckName from '~/components/CheckName/CheckName';
 
 const cx = classNames.bind(styles);
 
@@ -59,7 +60,7 @@ const CollectionItem = ({ post, setCurrentId }) => {
             <div className={cx('item-content')}>
                 <div className={cx('content-heading')}>
                     <h3>{post.name}</h3>
-                    <FontAwesomeIcon className={cx('icon')} icon={faCheck} />
+                    <CheckName classes={cx('icon')} />
                 </div>
                 <h3>{post.title}</h3>
                 <p>{post.message}</p>

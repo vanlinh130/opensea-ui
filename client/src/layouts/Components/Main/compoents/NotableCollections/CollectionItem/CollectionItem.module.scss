@@ -64,7 +64,6 @@
     }
 }
 
-
 // item content
 .item-content {
     display: flex;
@@ -79,7 +78,6 @@
     p {
         padding-bottom: 8px;
     }
-
 }
 
 .content-heading {
@@ -92,18 +90,9 @@
     }
 
     .icon {
-        margin-left: 6px;
         margin-top: -7px;
-        color: var(--color-white);
-        background-color: var(--primary-color);
-        border-radius: 50%;
-        font-size: -2px;
-        padding: 2px 2px;
-        font-size: x-small;
     }
 }
-
-
 
 .item-text {
     display: flex;

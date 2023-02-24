@@ -1,8 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import styles from './SlideItem.module.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import CheckName from '~/components/CheckName/CheckName';
 
 const cx = classNames.bind(styles);
 
@@ -14,7 +13,7 @@ const SlideItem = ({ post }) => {
             <div className={cx('info')}>
                 <div>
                     <h5>{post.name}</h5>
-                    <FontAwesomeIcon className={cx('icon')} icon={faCheck} />
+                    <CheckName />
                 </div>
                 <span>Floor: 0,2 ETH</span>
             </div>

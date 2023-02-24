@@ -1,9 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck } from '@fortawesome/free-solid-svg-icons';
-
 import styles from './TableItems.modules.scss';
+import CheckName from '~/components/CheckName/CheckName';
 
 const cx = classNames.bind(styles);
 
@@ -14,7 +12,7 @@ const TableItems = ({ post }) => {
                 <span></span>
                 <img src={post.selectedFile} alt="images" />
                 <h3>{post.name}</h3>
-                <FontAwesomeIcon className={cx('icon')} icon={faCheck} />
+                <CheckName />
             </div>
             <div className={cx('item-floor')}>
                 <span>1.12 ETH</span>

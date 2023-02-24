@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDown, faCheck, faEllipsis, faShareAlt } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown, faEllipsis, faShareAlt } from '@fortawesome/free-solid-svg-icons';
 
 import images from '~/assets/images';
 import styles from './Detail.module.scss';
@@ -16,6 +16,7 @@ import {
 } from '~/components/Icons';
 import DetailItems from './DetailItems/DetailItems';
 import Header from './../Header/Header';
+import CheckName from '~/components/CheckName/CheckName';
 
 const cx = classNames.bind(styles);
 
@@ -36,7 +37,7 @@ const Detail = () => {
                 <div className={cx('detail-name')}>
                     <div className={cx('name')}>
                         <h1>SmallBrosNFT</h1>
-                        <FontAwesomeIcon className={cx('icon')} icon={faCheck} />
+                        <CheckName classes={cx('icon')} />
                     </div>
                     <div className={cx('icon-lists')}>
                         <div className={cx('icon-list-info')}>
@@ -78,7 +79,7 @@ const Detail = () => {
                     <span>
                         By<h3> SmallBrosNFT_Official</h3>
                     </span>
-                    <FontAwesomeIcon className={cx('icon')} icon={faCheck} />
+                    <CheckName />
                 </div>
 
                 <div className={cx('detail-content')}>
