@@ -9,7 +9,7 @@
     display: flex;
     align-items: center;
     background-color: var(--color-white);
-    border-bottom: 1px solid var(--primary-color);
+    box-shadow: 0 0 2px 0 var(--primary-color);
 }
 
 .nav {
@@ -89,17 +89,18 @@
     display: flex;
     flex-direction: row;
     width: 100%;
+    border-bottom: 1px solid var(--primary-color);
 }
 
 .menu-info {
-    width: 45%;
+    width: 27%;
     padding-left: 40px;
 }
 .menu-list {
     display: flex;
-    width: 55%;
+    width: 73%;
 
     .menu-item {
-        width: 25%;
+        width: 20%;
     }
 }

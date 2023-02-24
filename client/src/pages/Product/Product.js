@@ -73,19 +73,20 @@ const Product = () => {
                                 <Collection title={'COLLECTION'} />
                             </div>
                             <div className={cx('menu-list')}>
+                                <Collection title={'NAMES'} classes={cx('menu-item')} />
+                                <Collection
+                                    title={'TITLES'}
+                                    icons={<FontAwesomeIcon icon={faArrowsUpDown} />}
+                                    classes={cx('menu-item')}
+                                />
                                 <Collection
                                     title={'VOLUME'}
                                     icons={<FontAwesomeIcon icon={faChevronDown} />}
                                     classes={cx('menu-item')}
                                 />
                                 <Collection
-                                    title={'% CHANGE'}
-                                    icons={<FontAwesomeIcon icon={faArrowsUpDown} />}
-                                    classes={cx('menu-item')}
-                                />
-                                <Collection
-                                    title={'Titles'}
-                                    icons={<FontAwesomeIcon icon={faArrowsUpDown} />}
+                                    title={'TIMES'}
+                                    icons={<FontAwesomeIcon icon={faChevronDown} />}
                                     classes={cx('menu-item')}
                                 />
                                 <Collection title={'Actions'} classes={cx('menu-item')} />

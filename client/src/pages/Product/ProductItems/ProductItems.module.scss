@@ -5,6 +5,7 @@
     align-items: center;
     height: 96px;
     padding: 12px 8px;
+    border-bottom: 1px solid var(--primary-color);
 
     &:hover {
         box-shadow: none;
@@ -13,8 +14,9 @@
     }
 }
 
+// list collection
 .list-collection {
-    width: 45%;
+    width: 27%;
     display: flex;
     align-items: center;
 
@@ -38,27 +40,21 @@
         padding-left: 16px;
         font-weight: 600;
     }
-
-    .icon {
-        margin-left: 6px;
-        color: var(--color-white);
-        background-color: var(--primary-color);
-        border-radius: 50%;
-        font-size: -2px;
-        padding: 2px 2px;
-        font-size: x-small;
-    }
 }
 
+// list menu
 .list-menu {
     display: flex;
-    width: 55%;
+    width: 73%;
 
     .item-menu {
         display: flex;
         align-items: center;
-        width: 25%;
-        font-weight: 700;
+        width: 20%;
+
+        span {
+            font-weight: 600;
+        }
     }
 
     .item-menu-change {
