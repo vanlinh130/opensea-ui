@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { Link, useLocation } from 'react-router-dom';
-import decode from 'jwt-decode';
+import { useSelector } from 'react-redux';
 import { Avatar } from '@material-ui/core';
+import decode from 'jwt-decode';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './Product.module.scss';
 import { LogoIcon } from '~/components/Icons';
@@ -12,10 +15,8 @@ import Search from '~/layouts/Components/Header/Search/Search';
 import Button from '~/components/Button/Button';
 import Footer from '~/layouts/Components/Footer/Footer';
 import Collection from '~/components/Collection/Collection';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown, faArrowsUpDown } from '@fortawesome/free-solid-svg-icons';
-import { useSelector } from 'react-redux';
 import ProductItems from './ProductItems/ProductItems';
+import { CollectorItem } from '~/layouts/Components/Main/compoents';
 
 const cx = classNames.bind(styles);
 
@@ -65,6 +66,7 @@ const Product = () => {
                     </div>
                 </div>
             </div>
+
             <div className={cx('product-content')}>
                 {user ? (
                     <div className={cx('product-buy')}>
@@ -73,10 +75,14 @@ const Product = () => {
                                 <Collection title={'COLLECTION'} />
                             </div>
                             <div className={cx('menu-list')}>
-                                <Collection title={'NAMES'} classes={cx('menu-item')} />
+                                <Collection
+                                    title={'NAMES'}
+                                    icons={<FontAwesomeIcon icon={faChevronDown} />}
+                                    classes={cx('menu-item')}
+                                />
                                 <Collection
                                     title={'TITLES'}
-                                    icons={<FontAwesomeIcon icon={faArrowsUpDown} />}
+                                    icons={<FontAwesomeIcon icon={faChevronDown} />}
                                     classes={cx('menu-item')}
                                 />
                                 <Collection
@@ -113,11 +119,32 @@ const Product = () => {
                     <div className={cx('product-no-buy')}>
                         <img src={images.product_cart_no} alt="images-no-buy" />
                         <p>Giỏ hàng của bạn còn trống</p>
-                        <Button outGreen rounded>
-                            MUA NGAY
-                        </Button>
+                        <Link to={config.routes.auth}>
+                            <Button outGreen rounded>
+                                MUA NGAY
+                            </Button>
+                        </Link>
                     </div>
                 )}
+            </div>
+
+            <div className={cx('product-other')}>
+                <h2>Various favorite products</h2>
+                <div className={cx('product-other-item')}>
+                    {!posts.length ? (
+                        <div />
+                    ) : (
+                        <>
+                            {posts.map((post) => (
+                                <div key={post._id} className={cx('collector-item')}>
+                                    <Link to="/detail">
+                                        <CollectorItem post={post} />
+                                    </Link>
+                                </div>
+                            ))}
+                        </>
+                    )}
+                </div>
             </div>
 
             <Footer />

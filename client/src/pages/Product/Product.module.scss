@@ -104,3 +104,19 @@
         width: 20%;
     }
 }
+
+// product other
+.product-other {
+    width: 1200px;
+    margin: auto;
+    padding: 50px 0;
+}
+
+.product-other-item {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.collector-item {
+    margin-bottom: 16px;
+}

@@ -1,15 +1,23 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import styles from './ProductItems.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlobe, faPenToSquare, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { useDispatch } from 'react-redux';
 import moment from 'moment';
+
+import styles from './ProductItems.module.scss';
+import { deletePost } from '~/actions/posts';
 import CheckName from '~/components/CheckName/CheckName';
 
 const cx = classNames.bind(styles);
 
 const ProductItems = ({ post }) => {
     const user = JSON.parse(localStorage.getItem('profile'));
+    const dispatch = useDispatch();
+
+    const handleDelete = () => {
+        dispatch(deletePost(post._id));
+    };
 
     return (
         <>
@@ -45,7 +53,7 @@ const ProductItems = ({ post }) => {
                             <button className={cx('btn-product', 'btn-update')}>
                                 <FontAwesomeIcon icon={faPenToSquare} />
                             </button>
-                            <button className={cx('btn-product', 'btn-delete')}>
+                            <button className={cx('btn-product', 'btn-delete')} onClick={handleDelete}>
                                 <FontAwesomeIcon icon={faTrash} />
                             </button>
                         </div>
