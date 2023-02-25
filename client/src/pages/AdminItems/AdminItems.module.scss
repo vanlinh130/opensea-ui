@@ -1,0 +1,87 @@
+.table-item {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 96px;
+    padding: 12px 8px;
+    border-bottom: 1px solid var(--primary-color);
+
+    &:hover {
+        box-shadow: none;
+        background-color: rgba(229, 232, 235, 0.2);
+        cursor: pointer;
+    }
+}
+
+// list collection
+.list-collection {
+    width: 27%;
+    display: flex;
+    align-items: center;
+
+    span {
+        margin-right: 9px;
+        width: 23px;
+        font-size: 20px;
+        color: rgb(112, 122, 131);
+        font-weight: 600;
+    }
+
+    img {
+        height: 72px;
+        width: 72px;
+        border: 2px solid rgb(255, 255, 255);
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    h3 {
+        padding-left: 16px;
+        font-weight: 600;
+    }
+}
+
+// list menu
+.list-menu {
+    display: flex;
+    width: 73%;
+
+    .item-menu {
+        display: flex;
+        align-items: center;
+        width: 20%;
+
+        span {
+            font-weight: 600;
+        }
+    }
+
+    .item-menu-change {
+        color: rgb(52, 199, 123);
+    }
+
+    .item-menu-sale {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+// button
+.btn-product {
+    height: 35px;
+    width: 35px;
+    background: white;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.btn-update {
+    color: rgb(199, 199, 54);
+}
+
+.btn-delete {
+    color: rgb(202, 82, 82);
+}

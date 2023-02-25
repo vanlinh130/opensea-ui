@@ -12,6 +12,7 @@ import Start from '~/pages/Start/Start';
 import Resource from '~/pages/Resource/Resource';
 import Profile from '~/pages/Profile/Profile';
 import Product from '~/pages/Product/Product';
+import Admin from '~/pages/Admin/Admin';
 
 // pages admin
 // import Login from '~/layouts/Components/admin/Login';
@@ -29,6 +30,7 @@ const publicRoutes = [
     { path: config.routes.detail, component: Detail, layout: null },
     { path: config.routes.resource, component: Resource, layout: null },
     { path: config.routes.product, component: Product, layout: null },
+    { path: config.routes.admin, component: Admin, layout: null },
 
     { path: config.routes.auth, component: Auth, layout: null },
     { path: config.routes.create, component: Create, layout: null },

@@ -8,6 +8,7 @@ const routers = {
     profile: '/profile',
     product: '/products',
     auth: '/auth',
+    admin: '/admin',
 
     create: '/create',
     createId: '/posts/:id',

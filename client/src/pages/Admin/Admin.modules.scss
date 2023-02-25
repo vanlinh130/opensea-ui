@@ -1,0 +1,38 @@
+.admin-content {
+    width: 1200px;
+    margin: auto;
+    padding-top: 110px;
+}
+
+// Admin menu
+.admin-menu {
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.admin-menu-info {
+    display: flex;
+    align-items: center;
+    width: 40%;
+
+    .menu-item {
+        width: 33.3%;
+    }
+}
+
+.admin-menu-message {
+    width: 20%;
+}
+
+.admin-menu-action {
+    display: flex;
+    align-items: center;
+    width: 40%;
+
+    .menu-item {
+        width: 33.3%;
+    }
+}
+
+//
