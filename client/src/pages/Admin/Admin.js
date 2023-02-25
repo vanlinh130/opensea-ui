@@ -5,13 +5,11 @@ import Header from '~/components/Header/Header';
 import Collection from '~/components/Collection/Collection';
 import AdminItems from './AdminItems/AdminItems';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
 const Admin = () => {
     const posts = useSelector((state) => state.posts);
-    console.log(posts);
     return (
         <div>
             <Header title="ADMIN" />
@@ -37,10 +35,8 @@ const Admin = () => {
                 ) : (
                     <>
                         {posts.map((post) => (
-                            <div key={post._id} className={cx('collector-item')}>
-                                <Link to="/detail">
-                                    <AdminItems post={post} />
-                                </Link>
+                            <div key={post._id}>
+                                <AdminItems post={post} />
                             </div>
                         ))}
                     </>
