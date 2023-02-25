@@ -5,6 +5,7 @@ import styles from './Category.module.scss';
 import CategoryItem from './CategoryItem/CategoryItem';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import Marquee from 'react-fast-marquee';
 
 const cx = classNames.bind(styles);
 
@@ -15,19 +16,21 @@ const Category = () => {
         <div className={cx('category')}>
             <h2>Browse by category</h2>
             <div className={cx('category-wrapper')}>
-                {!posts.length ? (
-                    <div />
-                ) : (
-                    <>
-                        {posts.map((post) => (
-                            <div key={post._id}>
-                                <Link to="/detail">
-                                    <CategoryItem post={post} />
-                                </Link>
-                            </div>
-                        ))}
-                    </>
-                )}
+                <Marquee>
+                    {!posts.length ? (
+                        <div />
+                    ) : (
+                        <>
+                            {posts.map((post) => (
+                                <div key={post._id}>
+                                    <Link to="/detail">
+                                        <CategoryItem post={post} />
+                                    </Link>
+                                </div>
+                            ))}
+                        </>
+                    )}
+                </Marquee>
             </div>
         </div>
     );
