@@ -11,6 +11,7 @@ const cx = classNames.bind(styles);
 
 const Admin = () => {
     const posts = useSelector((state) => state.posts);
+    console.log(posts);
     return (
         <div>
             <Header title="ADMIN" />

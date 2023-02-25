@@ -12,21 +12,26 @@ const AdminItems = ({ post }) => {
     return (
         <>
             <div className={cx('table-item')}>
-                <div className={cx('list-collection')}>
-                    <span>1</span>
-                    <img src={post.selectedFile} alt="images" />
-                </div>
-
-                <div className={cx('list-menu')}>
+                <div className={cx('admin-menu-info')}>
+                    <div className={cx('item-menu')}>
+                        <img src={post.selectedFile} alt="images" />
+                    </div>
                     <div className={cx('item-menu')}>
                         <h3>{post.name}</h3>
                         <CheckName />
                     </div>
-
                     <div className={cx('item-menu')}>
                         <span>{post.title}</span>
                     </div>
+                </div>
 
+                <div className={cx('admin-menu-message')}>
+                    <div className={cx('item-menu')}>
+                        <p>{post.message}</p>
+                    </div>
+                </div>
+
+                <div className={cx('admin-menu-action')}>
                     <div className={cx('item-menu', 'item-menu-change')}>
                         <span>{post.tags.map((tag) => `#${tag} `)}</span>
                     </div>
