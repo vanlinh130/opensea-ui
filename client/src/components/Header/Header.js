@@ -40,7 +40,7 @@ const Header = ({ title, avatar = false }) => {
                     </Link>
 
                     <div className={cx('nav-avatar')}>
-                        <Search placeholder="Find products..." />
+                        <Search placeholder="Find products..." btnSearch />
                         {avatar && (
                             <>
                                 {user ? (

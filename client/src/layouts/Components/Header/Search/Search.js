@@ -6,23 +6,35 @@ import classNames from 'classnames/bind';
 import styles from './Search.module.scss';
 import { useDispatch } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
+import Button from '~/components/Button/Button';
+import { getPostsBySearch } from '~/actions/posts';
 
 const cx = classNames.bind(styles);
 function useQuery() {
     return new URLSearchParams(useLocation().search);
 }
 
-const Search = ({ placeholder }) => {
+const Search = ({ placeholder, btnSearch = false }) => {
     const dispatch = useDispatch();
     const query = useQuery();
     const page = query.get('page') || 1;
     const searchQuery = query.get('searchQuery');
     const [search, setSearch] = useState('');
+    // const [tags, setTags] = useState([]);
     const navigate = useNavigate();
+
+    const searchPost = () => {
+        if (search.trim()) {
+            dispatch(getPostsBySearch({ search }));
+            navigate(`/posts/admin?searchQuery=${search || 'none'}`);
+        } else {
+            navigate('/');
+        }
+    };
 
     const handleKeyPress = (e) => {
         if (e.keyCode === 13) {
-            //   searchPost();
+            searchPost();
         }
     };
 
@@ -39,6 +51,11 @@ const Search = ({ placeholder }) => {
                 />
                 <div className={cx('open-using')}>/</div>
             </div>
+            {btnSearch && (
+                <Button primary className={cx('btn-search')} onClick={searchPost}>
+                    Search
+                </Button>
+            )}
         </div>
     );
 };
