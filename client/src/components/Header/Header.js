@@ -39,28 +39,30 @@ const Header = ({ title, avatar = false }) => {
                         <h3>{title}</h3>
                     </Link>
 
-                    {avatar && (
-                        <div className={cx('nav-avatar')}>
-                            <Search placeholder="Find products..." />
-                            {user ? (
-                                <Link to={config.routes.profile} className={cx('img-avatar-no')}>
-                                    <Avatar
-                                        src={user.result.imageUrl}
-                                        alt={user.result.name}
-                                        className={cx('img-avatar')}
-                                    >
-                                        {user.result.name.charAt(0)}
-                                    </Avatar>
-                                    <h5>{user.result.name}</h5>
-                                </Link>
-                            ) : (
-                                <Link to={config.routes.auth} className={cx('img-avatar-no')}>
-                                    <Avatar src={images.no_avatar} alt="images"></Avatar>
-                                    <h5>Login</h5>
-                                </Link>
-                            )}
-                        </div>
-                    )}
+                    <div className={cx('nav-avatar')}>
+                        <Search placeholder="Find products..." />
+                        {avatar && (
+                            <>
+                                {user ? (
+                                    <Link to={config.routes.profile} className={cx('img-avatar-no')}>
+                                        <Avatar
+                                            src={user.result.imageUrl}
+                                            alt={user.result.name}
+                                            className={cx('img-avatar')}
+                                        >
+                                            {user.result.name.charAt(0)}
+                                        </Avatar>
+                                        <h5>{user.result.name}</h5>
+                                    </Link>
+                                ) : (
+                                    <Link to={config.routes.auth} className={cx('img-avatar-no')}>
+                                        <Avatar src={images.no_avatar} alt="images"></Avatar>
+                                        <h5>Login</h5>
+                                    </Link>
+                                )}
+                            </>
+                        )}
+                    </div>
                 </div>
             </div>
         </>

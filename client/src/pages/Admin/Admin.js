@@ -5,6 +5,8 @@ import Header from '~/components/Header/Header';
 import Collection from '~/components/Collection/Collection';
 import AdminItems from './AdminItems/AdminItems';
 import { useSelector } from 'react-redux';
+import { Paper } from '@material-ui/core';
+import Paginate from '~/components/Pagination/Pagination';
 
 const cx = classNames.bind(styles);
 
@@ -30,6 +32,9 @@ const Admin = () => {
                         <Collection title="ACTIONS" classes={cx('menu-item')} />
                     </div>
                 </div>
+                <Paper>
+                    <Paginate />
+                </Paper>
                 {!posts.length ? (
                     <div />
                 ) : (

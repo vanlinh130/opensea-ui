@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import styles from './Create.module.scss';
 import { createPost, updatePost } from '~/actions/posts';
 import { Link } from 'react-router-dom';
+import Header from '~/components/Header/Header';
 const cx = classNames.bind(styles);
 
 const Create = ({ currentId, setCurrentId }) => {
@@ -50,45 +51,47 @@ const Create = ({ currentId, setCurrentId }) => {
     }
 
     return (
-        <div className={cx('wrapper')}>
-            <form className={cx('form')} onSubmit={handleSubmit}>
-                <h3>Creating a Memory</h3>
+        <>
+            <div className={cx('wrapper')}>
+                <form className={cx('form')} onSubmit={handleSubmit}>
+                    <h3>Creating a Memory</h3>
 
-                <input
-                    name="title"
-                    placeholder="Tile"
-                    value={postData.title}
-                    onChange={(e) => setPostData({ ...postData, title: e.target.value })}
-                />
-                <input
-                    name="message"
-                    placeholder="Message"
-                    value={postData.message}
-                    onChange={(e) => setPostData({ ...postData, message: e.target.value })}
-                />
-                <input
-                    name="tags"
-                    placeholder="Tags"
-                    value={postData.tags}
-                    onChange={(e) => setPostData({ ...postData, tags: e.target.value.split(',') })}
-                />
-
-                <div className={cx('file-input')}>
-                    <FileBase
-                        type="file"
-                        multiple={false}
-                        onDone={({ base64 }) => setPostData({ ...postData, selectedFile: base64 })}
+                    <input
+                        name="title"
+                        placeholder="Tile"
+                        value={postData.title}
+                        onChange={(e) => setPostData({ ...postData, title: e.target.value })}
                     />
-                </div>
+                    <input
+                        name="message"
+                        placeholder="Message"
+                        value={postData.message}
+                        onChange={(e) => setPostData({ ...postData, message: e.target.value })}
+                    />
+                    <input
+                        name="tags"
+                        placeholder="Tags"
+                        value={postData.tags}
+                        onChange={(e) => setPostData({ ...postData, tags: e.target.value.split(',') })}
+                    />
 
-                <button className={cx('btn', 'btn-submit')} variant="contained" type="submit">
-                    Submit
-                </button>
-                <button className={cx('btn', 'btn-clear')} variant="contained" type="submit" onClick={clear}>
-                    Clear
-                </button>
-            </form>
-        </div>
+                    <div className={cx('file-input')}>
+                        <FileBase
+                            type="file"
+                            multiple={false}
+                            onDone={({ base64 }) => setPostData({ ...postData, selectedFile: base64 })}
+                        />
+                    </div>
+
+                    <button className={cx('btn', 'btn-submit')} variant="contained" type="submit">
+                        Submit
+                    </button>
+                    <button className={cx('btn', 'btn-clear')} variant="contained" type="submit" onClick={clear}>
+                        Clear
+                    </button>
+                </form>
+            </div>
+        </>
     );
 };
 

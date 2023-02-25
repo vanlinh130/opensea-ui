@@ -8,6 +8,8 @@ import moment from 'moment';
 import styles from './ProductItems.module.scss';
 import { deletePost } from '~/actions/posts';
 import CheckName from '~/components/CheckName/CheckName';
+import { Link } from 'react-router-dom';
+import config from '~/config';
 
 const cx = classNames.bind(styles);
 
@@ -47,12 +49,16 @@ const ProductItems = ({ post }) => {
                         </div>
 
                         <div className={cx('item-menu', 'item-menu-sale')}>
-                            <button className={cx('btn-product')}>
-                                <FontAwesomeIcon icon={faGlobe} />
-                            </button>
-                            <button className={cx('btn-product', 'btn-update')}>
-                                <FontAwesomeIcon icon={faPenToSquare} />
-                            </button>
+                            <Link to={config.routes.detail}>
+                                <button className={cx('btn-product')}>
+                                    <FontAwesomeIcon icon={faGlobe} />
+                                </button>
+                            </Link>
+                            <Link to={config.routes.createId}>
+                                <button className={cx('btn-product', 'btn-update')}>
+                                    <FontAwesomeIcon icon={faPenToSquare} />
+                                </button>
+                            </Link>
                             <button className={cx('btn-product', 'btn-delete')} onClick={handleDelete}>
                                 <FontAwesomeIcon icon={faTrash} />
                             </button>
