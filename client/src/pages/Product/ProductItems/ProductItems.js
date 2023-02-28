@@ -3,12 +3,12 @@ import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlobe, faPenToSquare, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import moment from 'moment';
 
 import styles from './ProductItems.module.scss';
 import { deletePost } from '~/actions/posts';
 import CheckName from '~/components/CheckName/CheckName';
-import { Link } from 'react-router-dom';
 import config from '~/config';
 
 const cx = classNames.bind(styles);

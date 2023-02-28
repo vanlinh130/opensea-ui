@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
+import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faSearch } from '@fortawesome/free-solid-svg-icons';
-import classNames from 'classnames/bind';
+import { useDispatch } from 'react-redux';
 
 import styles from './Search.module.scss';
-import { useDispatch } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Button from '~/components/Button/Button';
 import { getPostsBySearch } from '~/actions/posts';

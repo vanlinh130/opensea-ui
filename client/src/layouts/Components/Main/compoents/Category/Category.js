@@ -1,11 +1,11 @@
 import React from 'react';
 import classNames from 'classnames/bind';
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import Marquee from 'react-fast-marquee';
 
 import styles from './Category.module.scss';
 import CategoryItem from './CategoryItem/CategoryItem';
-import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import Marquee from 'react-fast-marquee';
 
 const cx = classNames.bind(styles);
 

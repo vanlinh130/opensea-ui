@@ -1,10 +1,10 @@
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
-import SlideItem from './SlideItem/SlideItem';
 import Marquee from 'react-fast-marquee';
-
-import styles from './Slide.module.scss';
 import { useSelector } from 'react-redux';
+
+import SlideItem from './SlideItem/SlideItem';
+import styles from './Slide.module.scss';
 const cx = classNames.bind(styles);
 
 function Slide() {

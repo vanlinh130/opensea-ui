@@ -1,7 +1,9 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEllipsis, faThumbsDown, faThumbsUp, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faEllipsis, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faThumbsUp as faNoLike } from '@fortawesome/free-regular-svg-icons';
+import { faThumbsUp as faLike } from '@fortawesome/free-solid-svg-icons';
 import moment from 'moment';
 import { useDispatch } from 'react-redux';
 
@@ -19,7 +21,7 @@ const CollectionItem = ({ post, setCurrentId }) => {
         if (post.likes.length > 0) {
             return post.likes.find((like) => like === (user?.result?.googleId || user?.result?._id)) ? (
                 <>
-                    <FontAwesomeIcon icon={faThumbsUp} />
+                    <FontAwesomeIcon icon={faLike} />
                     &nbsp;
                     {post.likes.length > 2
                         ? `You & ${post.likes.length - 1} others`
@@ -27,7 +29,7 @@ const CollectionItem = ({ post, setCurrentId }) => {
                 </>
             ) : (
                 <>
-                    <FontAwesomeIcon icon={faThumbsDown} />
+                    <FontAwesomeIcon icon={faNoLike} />
                     &nbsp;{post.likes.length} {post.likes.length === 1 ? 'Like' : 'Likes'}
                 </>
             );
@@ -35,7 +37,7 @@ const CollectionItem = ({ post, setCurrentId }) => {
 
         return (
             <>
-                <FontAwesomeIcon icon={faThumbsDown} />
+                <FontAwesomeIcon icon={faNoLike} />
                 &nbsp;Like
             </>
         );

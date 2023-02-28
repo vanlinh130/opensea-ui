@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
+import decode from 'jwt-decode';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { faCartShopping, faCircleUser, faRightToBracket } from '@fortawesome/free-solid-svg-icons';
-import decode from 'jwt-decode';
+import { useDispatch } from 'react-redux';
 
 import styles from './Header.module.scss';
 import config from '~/config';
@@ -22,7 +23,6 @@ import {
 } from './MenuItems';
 import MenuLanguage from '~/components/Popper/Menu/MenuLanguges';
 import MenuResource from './../../../components/Popper/Menu/MenuResoures';
-import { useDispatch } from 'react-redux';
 import Button from '~/components/Button';
 
 const cx = classNames.bind(styles);

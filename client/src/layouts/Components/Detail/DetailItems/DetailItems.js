@@ -5,7 +5,7 @@ import { faBars, faAngleDown, faList, faTable, faBorderAll, faChartBar } from '@
 
 import styles from './DetailItems.module.scss';
 import Search from '../../Header/Search/Search';
-import images from './../../../../assets/images/index';
+import images from '~/assets/images';
 
 const cx = classNames.bind(styles);
 

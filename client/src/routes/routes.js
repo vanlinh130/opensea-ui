@@ -15,8 +15,6 @@ import Product from '~/pages/Product/Product';
 import Admin from '~/pages/Admin/Admin';
 
 // pages admin
-// import Login from '~/layouts/Components/admin/Login';
-// import Register from '~/layouts/Components/admin/Register';
 import Auth from '~/layouts/Components/Auth';
 import Create from '~/layouts/Components/Create';
 

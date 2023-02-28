@@ -2,11 +2,10 @@ import React, { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import FileBase from 'react-file-base64';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import styles from './Create.module.scss';
 import { createPost, updatePost } from '~/actions/posts';
-import { Link } from 'react-router-dom';
-import Header from '~/components/Header/Header';
 const cx = classNames.bind(styles);
 
 const Create = ({ currentId, setCurrentId }) => {

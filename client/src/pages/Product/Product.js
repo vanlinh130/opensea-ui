@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
+import decode from 'jwt-decode';
 import { Link, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import decode from 'jwt-decode';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
