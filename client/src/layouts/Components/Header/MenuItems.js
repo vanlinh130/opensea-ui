@@ -40,7 +40,7 @@ export const MENU_ITEMS_DROPS = [
     },
     {
         title: 'Learn more',
-        to: './drops',
+        to: './learnMores',
     },
 ];
 

@@ -12,7 +12,7 @@ import Search from '~/layouts/Components/Header/Search/Search';
 
 const cx = classNames.bind(styles);
 
-const Header = ({ title, avatar = false }) => {
+const Header = ({ title, avatar = false, search = false }) => {
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
     const location = useLocation();
 
@@ -40,7 +40,7 @@ const Header = ({ title, avatar = false }) => {
                     </Link>
 
                     <div className={cx('nav-avatar')}>
-                        <Search placeholder="Find products..." btnSearch />
+                        {search && <Search placeholder="Find products..." btnSearch />}
                         {avatar && (
                             <>
                                 {user ? (

@@ -15,7 +15,7 @@ const Admin = () => {
     const posts = useSelector((state) => state.posts);
     return (
         <div>
-            <Header title="ADMIN" />
+            <Header title="ADMIN" search />
 
             <div className={cx('admin-content')}>
                 <div className={cx('admin-menu')}>

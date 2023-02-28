@@ -5,6 +5,7 @@ const routers = {
 
     drop: '/drops',
     Calendar: '/calendars',
+    LearnMore: '/learnMores',
 
     start: '/starts',
     resource: '/resources',
