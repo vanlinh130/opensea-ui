@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { faCartShopping, faCircleUser } from '@fortawesome/free-solid-svg-icons';
+import { faCartShopping, faCircleUser, faRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import decode from 'jwt-decode';
 
 import styles from './Header.module.scss';
@@ -121,7 +121,12 @@ function Header() {
                                     </div>
                                     <div>
                                         <Link onClick={logout} className={cx('fresnel-item', 'item-icon')}>
-                                            <Button outline rounded className={cx('btn-log')}>
+                                            <Button
+                                                outline
+                                                rounded
+                                                className={cx('btn-log')}
+                                                rightIcon={<FontAwesomeIcon icon={faRightToBracket} />}
+                                            >
                                                 Log out
                                             </Button>
                                         </Link>
@@ -136,7 +141,12 @@ function Header() {
                                     </MenuLanguage>
                                     <div>
                                         <Link to={config.routes.auth} className={cx('fresnel-item', 'item-icon')}>
-                                            <Button primary rounded className={cx('btn-log')}>
+                                            <Button
+                                                primary
+                                                rounded
+                                                className={cx('btn-log')}
+                                                rightIcon={<FontAwesomeIcon icon={faRightToBracket} />}
+                                            >
                                                 Sign in
                                             </Button>
                                         </Link>

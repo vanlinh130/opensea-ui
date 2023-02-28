@@ -32,9 +32,6 @@ const Admin = () => {
                         <Collection title="ACTIONS" classes={cx('menu-item')} />
                     </div>
                 </div>
-                <Paper>
-                    <Paginate />
-                </Paper>
                 {!posts.length ? (
                     <div />
                 ) : (
@@ -46,6 +43,11 @@ const Admin = () => {
                         ))}
                     </>
                 )}
+                <div className={cx('paginate')}>
+                    <Paper>
+                        <Paginate />
+                    </Paper>
+                </div>
             </div>
         </div>
     );

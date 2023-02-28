@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass, faSearch } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames/bind';
 
 import styles from './Search.module.scss';
@@ -53,7 +53,8 @@ const Search = ({ placeholder, btnSearch = false }) => {
             </div>
             {btnSearch && (
                 <Button primary className={cx('btn-search')} onClick={searchPost}>
-                    Search
+                    <FontAwesomeIcon icon={faSearch} />
+                    <span>Search</span>
                 </Button>
             )}
         </div>
