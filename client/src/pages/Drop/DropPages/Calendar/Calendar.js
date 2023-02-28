@@ -1,21 +1,22 @@
+import React from 'react';
 import classNames from 'classnames/bind';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 
-import styles from './Drop.module.scss';
-import DropItem from './DropItem/DropItem';
+import styles from './Calendar.module.scss';
 import Action from '~/components/Action/Action';
+import { Link } from 'react-router-dom';
+import DropItem from '../../DropItem/DropItem';
 
 const cx = classNames.bind(styles);
 
-function Drop() {
+const Calendar = () => {
     const posts = useSelector((state) => state.posts);
 
     return (
         <div className={cx('wrapper')}>
-            <h1>Drops</h1>
+            <h1>Calendars</h1>
             <div className={cx('drop-nav')}>
-                <Action title={'Action & upcoming'} />
+                <Action title={'Upcoming'} />
                 <Action title={'Past'} />
             </div>
             <>
@@ -26,7 +27,7 @@ function Drop() {
                         {posts.map((post) => (
                             <div key={post._id}>
                                 <Link to="">
-                                    <DropItem post={post} drop />
+                                    <DropItem post={post} calendar />
                                 </Link>
                             </div>
                         ))}
@@ -35,6 +36,6 @@ function Drop() {
             </>
         </div>
     );
-}
+};
 
-export default Drop;
+export default Calendar;

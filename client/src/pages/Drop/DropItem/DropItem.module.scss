@@ -63,6 +63,7 @@
     }
 }
 
+// Btn drop
 .btn-item-left {
     margin-top: 24px;
     border-radius: 10px;
@@ -117,5 +118,55 @@
 
     100% {
         box-shadow: rgb(52 199 123 / 0%) 0px 0px 0px 0px;
+    }
+}
+
+// Btn calendar
+.btn-calendar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: none;
+    margin-top: 24px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.24);
+    letter-spacing: 1px;
+    cursor: pointer;
+
+    span {
+        font-size: 14px;
+        letter-spacing: 2px;
+    }
+}
+
+.calendar-left {
+    display: flex;
+
+    .btn-calendar {
+        margin-right: 10px;
+        padding: 10px 13px;
+
+        span {
+            text-transform: uppercase;
+        }
+    }
+}
+
+.calendar-right {
+    display: flex;
+
+    .btn-calendar {
+        padding: 18px 20px;
+        margin-right: 10px;
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+        .icon {
+            color: white;
+            font-size: 22px;
+        }
     }
 }

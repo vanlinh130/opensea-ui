@@ -2,7 +2,10 @@ const routers = {
     home: '/',
     detail: '/detail',
     explore: '/explore',
+
     drop: '/drops',
+    Calendar: '/calendars',
+
     start: '/starts',
     resource: '/resources',
     profile: '/profile',
