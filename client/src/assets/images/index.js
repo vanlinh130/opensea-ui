@@ -33,6 +33,8 @@ const images = {
     profile_6: require('~/assets/images/image-profile/profile-6.png'),
 
     product_cart_no: require('~/assets/images/image-product/cart-no.png'),
+
+    drop_learn_more: require('~/assets/images/image-drops/learn-more.jpg'),
 };
 
 export default images;

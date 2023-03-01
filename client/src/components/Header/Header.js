@@ -12,7 +12,7 @@ import Search from '~/layouts/Components/Header/Search/Search';
 
 const cx = classNames.bind(styles);
 
-const Header = ({ title, avatar = false, search = false }) => {
+const Header = ({ title, classes, avatar = false, search = false }) => {
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
     const location = useLocation();
 
@@ -31,7 +31,7 @@ const Header = ({ title, avatar = false, search = false }) => {
     }, [location]);
     return (
         <>
-            <div className={cx('product-header')}>
+            <div className={cx('product-header', classes)}>
                 <div className={cx('nav')}>
                     <Link to={config.routes.home} className={cx('logo-link')}>
                         <img className={cx('logo-opensea')} src={images.logo} alt="opensea" />
