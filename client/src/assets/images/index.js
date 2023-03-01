@@ -35,6 +35,17 @@ const images = {
     product_cart_no: require('~/assets/images/image-product/cart-no.png'),
 
     drop_learn_more: require('~/assets/images/image-drops/learn-more.jpg'),
+    drop_partners_1: require('~/assets/images/image-drops/partners-1.png'),
+    drop_partners_2: require('~/assets/images/image-drops/partners-2.png'),
+    drop_partners_3: require('~/assets/images/image-drops/partners-3.png'),
+    drop_partners_4: require('~/assets/images/image-drops/partners-4.png'),
+    drop_partners_5: require('~/assets/images/image-drops/partners-5.png'),
+    drop_partners_6: require('~/assets/images/image-drops/partners-6.png'),
+    drop_partners_7: require('~/assets/images/image-drops/partners-7.png'),
+    drop_why_1: require('~/assets/images/image-drops/why-1.png'),
+    drop_why_2: require('~/assets/images/image-drops/why-2.png'),
+    drop_why_3: require('~/assets/images/image-drops/why-3.png'),
+    drop_why_4: require('~/assets/images/image-drops/why-4.png'),
 };
 
 export default images;
