@@ -1,9 +1,12 @@
 import React from 'react';
 import classNames from 'classnames/bind';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './LearnMore.module.scss';
 import Header from '~/components/Header/Header';
 import images from '~/assets/images';
+import Footer from '~/layouts/Components/Footer/Footer';
 
 const cx = classNames.bind(styles);
 
@@ -133,6 +136,53 @@ const LearnMore = () => {
                     </div>
                 </div>
             </div>
+
+            <div className={cx('faq-wrapper', 'wrapper')}>
+                <div className={cx('faq-content-wrapper')}>
+                    <h1>FAQ</h1>
+                    <div className={cx('faq-lists')}>
+                        <div className={cx('faq-item')}>
+                            <h5>Can anyone drop on OpenSea?</h5>
+                            <FontAwesomeIcon icon={faChevronDown} className={cx('faq-icon')} />
+                        </div>
+                        <div className={cx('faq-item')}>
+                            <h5>Will I be able to use my own contract?</h5>
+                            <FontAwesomeIcon icon={faChevronDown} className={cx('faq-icon')} />
+                        </div>
+                        <div className={cx('faq-item')}>
+                            <h5>What will my landing page look like?</h5>
+                            <FontAwesomeIcon icon={faChevronDown} className={cx('faq-icon')} />
+                        </div>
+                        <div className={cx('faq-item')}>
+                            <h5>Will my drop automatically be added to OpenSea's drop calendar?</h5>
+                            <FontAwesomeIcon icon={faChevronDown} className={cx('faq-icon')} />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className={cx('cta-wrapper', 'wrapper')}>
+                <div className={cx('cta-padding-wrapper')}>
+                    <div className={cx('cta-content')}>
+                        <div className={cx('cta-logo')}>
+                            <img
+                                className={cx('logo-one')}
+                                src="https://assets-global.website-files.com/639756150a63ed9f6f910b94/63a22e35f087ff1d14c249a6_Ship.svg"
+                                alt="images-logo"
+                            />
+                            <img
+                                className={cx('logo-tow')}
+                                src="https://assets-global.website-files.com/639756150a63ed9f6f910b94/63a260a2fa137f64c33763e9_Waves%20compressed.gif"
+                                alt="images-logo"
+                            />
+                        </div>
+                        <h2>Ready to drop? Get in touch.</h2>
+                        <button className={cx('cta-btn')}>Request early access</button>
+                    </div>
+                </div>
+            </div>
+
+            <Footer classes={cx('footer')}></Footer>
         </>
     );
 };

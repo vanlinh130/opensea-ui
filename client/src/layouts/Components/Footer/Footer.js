@@ -6,9 +6,9 @@ import images from '~/assets/images';
 
 const cx = classNames.bind(styles);
 
-function Footer() {
+function Footer({ classes }) {
     return (
-        <h2 className={cx('footer')}>
+        <h2 className={cx('footer', classes)}>
             <div className={cx('footer-container')}>
                 <div className={cx('footer-top')}>
                     <div className={cx('footer-top-left')}>

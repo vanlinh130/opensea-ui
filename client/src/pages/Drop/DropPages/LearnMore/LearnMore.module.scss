@@ -191,6 +191,7 @@
             background-color: #42a0ff;
             border-radius: 12px;
             margin: 35px 0;
+            cursor: pointer;
         }
     }
 }
@@ -243,4 +244,109 @@
             line-height: 40px;
         }
     }
+}
+
+// faq-wrapper
+.faq-wrapper {
+    display: flex;
+    justify-content: center;
+    padding-top: 80px;
+    padding-bottom: 20px;
+}
+
+.faq-content-wrapper {
+    width: 1270px;
+
+    h1 {
+        font-size: 48px;
+        color: var(--color-white);
+    }
+}
+
+.faq-lists {
+    margin-top: 50px;
+
+    .faq-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 40px 0;
+        border-top: 1px solid #4c505c;
+        // border-bottom: 1px solid #4c505c;
+
+        h5 {
+            font-size: 28px;
+            color: var(--color-white);
+        }
+
+        .faq-icon {
+            color: var(--color-white);
+            font-size: 18px;
+        }
+    }
+}
+
+// cta-wrapper
+.cta-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 57px 0;
+}
+
+.cta-padding-wrapper {
+    width: 1270px;
+    border-radius: 20px;
+    background-color: #202225;
+}
+
+.cta-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 69px 0;
+
+    .cta-logo {
+        height: 115px;
+        width: 115px;
+        margin: 15px 0;
+        position: relative;
+
+        img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+
+        .logo-one {
+            z-index: 9999;
+        }
+
+        .logo-tow {
+            border-radius: 50%;
+        }
+    }
+
+    h2 {
+        font-size: 30px;
+        color: var(--color-white);
+        padding: 10px;
+    }
+
+    .cta-btn {
+        border: none;
+        padding: 22px;
+        font-weight: 600;
+        color: #fff;
+        background-color: #42a0ff;
+        border-radius: 12px;
+        margin: 20px 0;
+        font-size: 13px;
+        cursor: pointer;
+    }
+}
+
+// footer
+.footer {
+    background-color: #121212;
 }
