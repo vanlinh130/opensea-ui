@@ -46,6 +46,9 @@ const images = {
     drop_why_2: require('~/assets/images/image-drops/why-2.png'),
     drop_why_3: require('~/assets/images/image-drops/why-3.png'),
     drop_why_4: require('~/assets/images/image-drops/why-4.png'),
+    drop_values_1: require('~/assets/images/image-drops/values-1.png'),
+    drop_values_2: require('~/assets/images/image-drops/values-2.png'),
+    drop_values_3: require('~/assets/images/image-drops/values-3.png'),
 };
 
 export default images;

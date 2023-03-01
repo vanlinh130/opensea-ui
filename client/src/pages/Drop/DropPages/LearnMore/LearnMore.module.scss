@@ -116,3 +116,131 @@
         }
     }
 }
+
+// why-drop-wrapper
+.why-drop-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.why-drop {
+    width: 1024px;
+}
+
+.why-drop-column-wrapper {
+    display: flex;
+    flex-direction: row;
+    padding-top: 13.75em;
+    padding-bottom: 11em;
+}
+
+.why-drop_left-col {
+    width: 50%;
+
+    .drop-image-one {
+        position: relative;
+        width: 80%;
+        margin-left: 59px;
+    }
+    .drop-image-tow {
+        position: absolute;
+        width: 15%;
+        left: 39%;
+        top: 180%;
+        transform: rotateZ(-11.6824deg);
+    }
+    .drop-image-three {
+        position: absolute;
+        width: 12%;
+        left: 11%;
+        top: 288%;
+        transform: rotateZ(-13.6824deg);
+    }
+    .drop-image-four {
+        position: absolute;
+        width: 18%;
+        left: 8%;
+        top: 230%;
+    }
+}
+
+.why-drop-right-col {
+    width: 50%;
+
+    .why-drop-content {
+        padding-top: 76px;
+        margin-left: 50px;
+
+        h2 {
+            font-size: 48px;
+            line-height: 117%;
+            color: #fff;
+        }
+
+        span {
+            font-size: 20px;
+            color: #fff;
+            line-height: 40px;
+        }
+
+        .why-drop-btn {
+            border: none;
+            padding: 22px;
+            font-weight: 600;
+            color: #fff;
+            background-color: #42a0ff;
+            border-radius: 12px;
+            margin: 35px 0;
+        }
+    }
+}
+
+// values-wrapper
+.values-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.values-lists {
+    width: 1270px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.values-item {
+    padding: 61px 34px;
+    background-color: #202225;
+    width: 30%;
+    border-radius: 24px;
+
+    .values-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 61px;
+        height: 61px;
+        border-radius: 50px;
+        background-color: #4c505c;
+        margin-bottom: 10px;
+
+        img {
+            width: 30px;
+        }
+    }
+
+    .values-content {
+        .values-heading {
+            color: var(--color-white);
+            font-size: 26px;
+            line-height: 40px;
+            margin: 20px 0;
+        }
+
+        .values-des {
+            color: var(--color-white);
+            font-size: 20px;
+            line-height: 40px;
+        }
+    }
+}

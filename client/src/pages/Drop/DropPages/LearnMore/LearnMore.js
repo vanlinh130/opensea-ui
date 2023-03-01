@@ -69,14 +69,68 @@ const LearnMore = () => {
             </div>
 
             <div className={cx('why-drop-wrapper', 'wrapper')}>
-                <div className={cx('why-drop-column-wrapper')}>
-                    <div className={cx('why-drop_left-col')}>
-                        <img src={images.drop_why_1} alt="drop-images" />
-                        <img src={images.drop_why_2} alt="drop-images" />
-                        <img src={images.drop_why_3} alt="drop-images" />
-                        <img src={images.drop_why_4} alt="drop-images" />
+                <div className={cx('why-drop')}>
+                    <div className={cx('why-drop-column-wrapper')}>
+                        <div className={cx('why-drop_left-col')}>
+                            <img src={images.drop_why_1} className={cx('drop-image-one')} alt="drop-images" />
+                            <img src={images.drop_why_2} className={cx('drop-image-tow')} alt="drop-images" />
+                            <img src={images.drop_why_3} className={cx('drop-image-three')} alt="drop-images" />
+                            <img src={images.drop_why_4} className={cx('drop-image-four')} alt="drop-images" />
+                        </div>
+                        <div className={cx('why-drop-right-col')}>
+                            <div className={cx('why-drop-content')}>
+                                <h2>Why drop a collection on OpenSea?</h2>
+                                <span>
+                                    With OpenSea, your drop can reach the largest NFT audience in the world. Tell your
+                                    story with all of the sizzle and none of the work required of a custom web page. Go
+                                    zero-to-one on any EVM chain in minutes. And, have confidence that you and your
+                                    community will be protected every step of the way.
+                                </span>
+                                <button className={cx('why-drop-btn')}>Request early access</button>
+                            </div>
+                        </div>
                     </div>
-                    <div className={cx('why-right-col')}></div>
+                </div>
+            </div>
+
+            <div className={cx('values-wrapper', 'wrapper')}>
+                <div className={cx('values-lists')}>
+                    <div className={cx('values-item')}>
+                        <div className={cx('values-icon')}>
+                            <img src={images.drop_values_1} alt="values-images" />
+                        </div>
+                        <div className={cx('values-content')}>
+                            <h4 className={cx('values-heading')}>Save time</h4>
+                            <span className={cx('values-des')}>
+                                Build your brand without constraints. Configure allowlists, adjust drop mechanics, and
+                                personalize your landing page across Ethereum, Polygon and other EVM chains.
+                            </span>
+                        </div>
+                    </div>
+                    <div className={cx('values-item')}>
+                        <div className={cx('values-icon')}>
+                            <img src={images.drop_values_2} alt="values-images" />
+                        </div>
+                        <div className={cx('values-content')}>
+                            <h4 className={cx('values-heading')}>Customize your experience</h4>
+                            <span className={cx('values-des')}>
+                                We’ve built easy-to-use tools to help you get started quickly. Enjoy the freedom to
+                                focus on the things that matter most – like growing & supporting your community.
+                            </span>
+                        </div>
+                    </div>
+                    <div className={cx('values-item')}>
+                        <div className={cx('values-icon')}>
+                            <img src={images.drop_values_3} alt="values-images" />
+                        </div>
+                        <div className={cx('values-content')}>
+                            <h4 className={cx('values-heading')}>Drop with confidence</h4>
+                            <span className={cx('values-des')}>
+                                Our audited SeaDrop smart contract makes us the safest place to mint. Use the NFT
+                                ecosystem’s most sophisticated copymint detection and theft prevention technologies.
+                            </span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>
