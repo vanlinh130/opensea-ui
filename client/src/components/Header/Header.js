@@ -8,7 +8,7 @@ import styles from './Header.module.scss';
 import { LogoIcon } from '~/components/Icons';
 import config from '~/config';
 import images from '~/assets/images';
-import Search from '~/layouts/Components/Header/Search/Search';
+import SearchPost from './../Search/SearchPost';
 
 const cx = classNames.bind(styles);
 
@@ -40,7 +40,7 @@ const Header = ({ title, classes, avatar = false, search = false }) => {
                     </Link>
 
                     <div className={cx('nav-avatar')}>
-                        {search && <Search placeholder="Find products..." btnSearch />}
+                        {search && <SearchPost placeholder="Search opensea" />}
                         {avatar && (
                             <>
                                 {user ? (

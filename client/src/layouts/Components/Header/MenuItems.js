@@ -58,7 +58,7 @@ export const MENU_ITEMS_STARTS = [
 export const MENU_ITEMS_RESOURCE = [
     {
         title: 'Admin',
-        to: './admin',
+        to: './posts',
     },
     {
         title: 'Learn',

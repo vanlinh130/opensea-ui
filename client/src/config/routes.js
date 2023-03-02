@@ -12,10 +12,10 @@ const routers = {
     profile: '/profile',
     product: '/products',
     auth: '/auth',
-    admin: '/admin',
+    admin: '/posts',
+    adminSearch: '/posts/search',
 
     create: '/create',
-    createId: '/posts/:id',
 };
 
 export default routers;

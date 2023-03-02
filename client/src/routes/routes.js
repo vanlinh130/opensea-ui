@@ -35,11 +35,12 @@ const publicRoutes = [
     { path: config.routes.detail, component: Detail, layout: null },
     { path: config.routes.resource, component: Resource, layout: null },
     { path: config.routes.product, component: Product, layout: null },
+
     { path: config.routes.admin, component: Admin, layout: null },
+    { path: config.routes.adminSearch, component: Admin, layout: null },
 
     { path: config.routes.auth, component: Auth, layout: null },
     { path: config.routes.create, component: Create, layout: null },
-    { path: config.routes.createId, component: Create, layout: null },
 ];
 
 // Private routes : dang nhap vao dc

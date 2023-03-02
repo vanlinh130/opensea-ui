@@ -1,35 +1,36 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import classNames from 'classnames/bind';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch } from 'react-redux';
-
-import styles from './Search.module.scss';
 import { useNavigate } from 'react-router-dom';
-import Button from '~/components/Button/Button';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+
+import styles from './SearchPost.module.scss';
 import { getPostsBySearch } from '~/actions/posts';
 
 const cx = classNames.bind(styles);
 
-const Search = ({ placeholder, btnSearch = false }) => {
-    const dispatch = useDispatch();
+const SearchPost = ({ placeholder }) => {
     const [search, setSearch] = useState('');
+    const dispatch = useDispatch();
     const navigate = useNavigate();
+    const inputRef = useRef();
 
     const searchPost = () => {
         if (search.trim()) {
             dispatch(getPostsBySearch({ search }));
             navigate(`/posts/search?searchQuery=${search || 'none'}`);
+            setSearch('');
+            inputRef.current.focus();
         } else {
             navigate('/posts');
         }
     };
-
     return (
         <div className={cx('search')}>
             <div className={cx('search-input')}>
-                <FontAwesomeIcon className={cx('icon-search')} icon={faMagnifyingGlass} />
                 <input
+                    ref={inputRef}
                     name="search"
                     value={search}
                     placeholder={placeholder}
@@ -37,14 +38,11 @@ const Search = ({ placeholder, btnSearch = false }) => {
                 />
                 <div className={cx('open-using')}>/</div>
             </div>
-            {btnSearch && (
-                <Button primary className={cx('btn-search')} onClick={searchPost}>
-                    <FontAwesomeIcon icon={faSearch} />
-                    <span>Search</span>
-                </Button>
-            )}
+            <button className={cx('btn-search')} onClick={searchPost}>
+                <FontAwesomeIcon icon={faSearch} className={cx('icon-search')} />
+            </button>
         </div>
     );
 };
 
-export default Search;
+export default SearchPost;

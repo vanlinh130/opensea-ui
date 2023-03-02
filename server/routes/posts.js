@@ -6,7 +6,7 @@ const router = express.Router();
 import auth from '../middleware/auth.js';
 
 // http://localhost:5000/posts
-router.get('/admin', getPostsBySearch);
+router.get('/search', getPostsBySearch);
 
 router.get('/', getPosts);
 router.post('/', auth, createPost);
