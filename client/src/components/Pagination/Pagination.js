@@ -23,7 +23,7 @@ function Paginate({ page }) {
             count={numberOfPages}
             page={Number(page) || 1}
             variant="outlined"
-            renderItem={(item) => <PaginationItem {...item} component={Link} to={`/posts?page=${item.page}`} />}
+            renderItem={(item) => <PaginationItem {...item} component={Link} to={`/admins?page=${item.page}`} />}
         />
     );
 }

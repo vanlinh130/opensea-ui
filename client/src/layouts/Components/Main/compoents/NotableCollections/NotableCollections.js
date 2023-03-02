@@ -9,9 +9,9 @@ import CollectionItem from './CollectionItem/CollectionItem';
 const cx = classNames.bind(styles);
 
 const NotableCollections = ({ setCurrentId }) => {
-    const posts = useSelector((state) => state.posts);
+    const { posts } = useSelector((state) => state.posts);
 
-    return !posts.length ? (
+    return !posts?.length ? (
         <div />
     ) : (
         <>

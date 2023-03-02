@@ -10,7 +10,7 @@ import DropItem from '../../DropItem/DropItem';
 const cx = classNames.bind(styles);
 
 const Calendar = () => {
-    const posts = useSelector((state) => state.posts);
+    const { posts } = useSelector((state) => state.posts);
 
     return (
         <div className={cx('wrapper')}>
@@ -20,7 +20,7 @@ const Calendar = () => {
                 <Action title={'Past'} />
             </div>
             <>
-                {!posts.length ? (
+                {!posts?.length ? (
                     <div />
                 ) : (
                     <>

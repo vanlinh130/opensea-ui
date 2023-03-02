@@ -8,11 +8,20 @@ import Header from '~/components/Header/Header';
 import Collection from '~/components/Collection/Collection';
 import AdminItems from './AdminItems/AdminItems';
 import Paginate from '~/components/Pagination/Pagination';
+import { useLocation } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
+function useQuery() {
+    return new URLSearchParams(useLocation().search);
+}
+
 const Admin = () => {
-    const posts = useSelector((state) => state.posts);
+    const { posts } = useSelector((state) => state.posts);
+    const query = useQuery();
+    const page = query.get('page') || 1;
+    const searchQuery = query.get('searchQuery');
+
     return (
         <div>
             <Header title="ADMIN" search />
@@ -33,7 +42,7 @@ const Admin = () => {
                         <Collection title="ACTIONS" classes={cx('menu-item')} />
                     </div>
                 </div>
-                {!posts.length ? (
+                {!posts?.length ? (
                     <div />
                 ) : (
                     <>
@@ -46,7 +55,7 @@ const Admin = () => {
                 )}
                 <div className={cx('paginate')}>
                     <Paper>
-                        <Paginate />
+                        <Paginate page={page} />
                     </Paper>
                 </div>
             </div>

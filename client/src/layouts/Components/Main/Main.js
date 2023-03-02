@@ -10,18 +10,26 @@ import TopCollector from './compoents/TopCollector/TopCollector';
 import NFT from './compoents/NFT/NFT';
 import Category from './compoents/Category/Category';
 import { getPosts } from '~/actions/posts';
+import { Paper } from '@material-ui/core';
+import Paginate from '~/components/Pagination/Pagination';
+import { useLocation } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
+function useQuery() {
+    return new URLSearchParams(useLocation().search);
+}
 
 function Main() {
     const [currentId, setCurrentId] = useState(null);
+    const query = useQuery();
+    const page = query.get('page') || 1;
+    const searchQuery = query.get('searchQuery');
 
     const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(getPosts())
-  }, [currentId, dispatch]);
-
+    useEffect(() => {
+        dispatch(getPosts());
+    }, [currentId, dispatch]);
 
     return (
         <div className={cx('main')}>
@@ -31,6 +39,9 @@ function Main() {
             <TopCollector />
             <NFT />
             <Category />
+            <Paper>
+                <Paginate page={page} />
+            </Paper>
         </div>
     );
 }

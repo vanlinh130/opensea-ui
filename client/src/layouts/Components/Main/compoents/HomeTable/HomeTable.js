@@ -14,7 +14,7 @@ import Collection from '~/components/Collection/Collection';
 const cx = classNames.bind(styles);
 
 function HomeTable({ currentId, setCurrentId }) {
-    const posts = useSelector((state) => state.posts);
+    const { posts } = useSelector((state) => state.posts);
 
     return (
         <div className={cx('main')}>
@@ -55,7 +55,7 @@ function HomeTable({ currentId, setCurrentId }) {
                         </div>
                     </div>
 
-                    {!posts.length ? (
+                    {!posts?.length ? (
                         <div />
                     ) : (
                         <>

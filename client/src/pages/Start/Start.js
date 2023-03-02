@@ -15,7 +15,7 @@ import StartItems from './StartItem/StartItems';
 const cx = classNames.bind(styles);
 
 function Start() {
-    const posts = useSelector((state) => state.posts);
+    const { posts } = useSelector((state) => state.posts);
 
     return (
         <div className={cx('start')}>
@@ -82,7 +82,7 @@ function Start() {
             </div>
 
             <>
-                {!posts.length ? (
+                {!posts?.length ? (
                     <div />
                 ) : (
                     <>
