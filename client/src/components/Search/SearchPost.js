@@ -10,7 +10,7 @@ import { getPostsBySearch } from '~/actions/posts';
 
 const cx = classNames.bind(styles);
 
-const SearchPost = ({ placeholder }) => {
+const SearchPost = ({ placeholder, navigates, navigateHome }) => {
     const [search, setSearch] = useState('');
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -19,11 +19,11 @@ const SearchPost = ({ placeholder }) => {
     const searchPost = () => {
         if (search.trim()) {
             dispatch(getPostsBySearch({ search }));
-            navigate(`/posts/search?searchQuery=${search || 'none'}`);
+            navigate(`${navigates}?searchQuery=${search || 'none'}`);
             setSearch('');
             inputRef.current.focus();
         } else {
-            navigate('/posts');
+            navigate(navigateHome);
         }
     };
     return (

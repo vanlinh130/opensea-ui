@@ -10,7 +10,6 @@ import styles from './Header.module.scss';
 import config from '~/config';
 import images from '~/assets/images';
 import { LogoIcon } from '~/components/Icons/Icons';
-import Search from './Search/Search';
 import Menu from '~/components/Popper/Menu';
 import { Avatar } from '@material-ui/core';
 import {
@@ -24,6 +23,7 @@ import {
 import MenuLanguage from '~/components/Popper/Menu/MenuLanguges';
 import MenuResource from './../../../components/Popper/Menu/MenuResoures';
 import Button from '~/components/Button';
+import { SearchPost } from '~/components/Search';
 
 const cx = classNames.bind(styles);
 
@@ -65,7 +65,11 @@ function Header() {
 
                 {/* search */}
 
-                <Search placeholder="Search items, collections, and accounts" />
+                <SearchPost
+                    placeholder="Search items, collections, and accounts"
+                    navigates="/search"
+                    navigateHome="/"
+                />
 
                 {/* Actions */}
                 <ul className={cx('fresnel-container')}>

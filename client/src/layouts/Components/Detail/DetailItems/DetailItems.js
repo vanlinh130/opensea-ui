@@ -4,8 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faAngleDown, faList, faTable, faBorderAll, faChartBar } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './DetailItems.module.scss';
-import Search from '../../Header/Search/Search';
 import images from '~/assets/images';
+import { SearchPost } from '~/components/Search';
 
 const cx = classNames.bind(styles);
 
@@ -17,7 +17,7 @@ const DetailItems = () => {
                     <FontAwesomeIcon icon={faBars} />
                 </div>
                 <div className={cx('search')}>
-                    <Search placeholder="Search by name or attribute" />
+                    <SearchPost placeholder="Search by name or attribute" />
                 </div>
                 <div className={cx('search-price')}>
                     <div className={cx('search-icon')}>

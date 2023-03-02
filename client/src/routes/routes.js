@@ -24,6 +24,7 @@ import Create from '~/layouts/Components/Create';
 // Public routes : ko can dang nhap vao dc
 const publicRoutes = [
     { path: config.routes.home, component: Home },
+    { path: config.routes.homeSearch, component: Home },
     { path: config.routes.explore, component: Explore, layout: HeaderOnly },
 
     { path: config.routes.drop, component: Drop, layout: HeaderOnly },

@@ -1,5 +1,6 @@
 const routers = {
     home: '/',
+    homeSearch: '/search',
     detail: '/detail',
     explore: '/explore',
 
@@ -12,8 +13,8 @@ const routers = {
     profile: '/profile',
     product: '/products',
     auth: '/auth',
-    admin: '/posts',
-    adminSearch: '/posts/search',
+    admin: '/admins',
+    adminSearch: '/admins/search',
 
     create: '/create',
 };
