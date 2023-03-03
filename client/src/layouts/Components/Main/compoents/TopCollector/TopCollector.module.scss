@@ -18,29 +18,3 @@
     width: 100%;
     height: 100%;
 }
-
-// collector items
-.collector-items {
-    &:nth-last-child(6),
-    &:nth-last-child(7),
-    &:nth-last-child(8),
-    &:nth-last-child(9),
-    &:nth-last-child(10),
-    &:nth-last-child(11),
-    &:nth-last-child(12),
-    &:nth-last-child(13),
-    &:nth-last-child(14),
-    &:nth-last-child(15),
-    &:nth-last-child(16),
-    &:nth-last-child(17),
-    &:nth-last-child(18),
-    &:nth-last-child(19),
-    &:nth-last-child(20),
-    &:nth-last-child(21),
-    &:nth-last-child(22),
-    &:nth-last-child(23),
-    &:nth-last-child(24),
-    &:nth-last-child(25) {
-        display: none;
-    }
-}

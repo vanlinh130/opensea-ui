@@ -60,7 +60,7 @@ function HomeTable({ currentId, setCurrentId }) {
                     ) : (
                         <>
                             {posts.map((post) => (
-                                <div key={post._id} className={cx('table-items')}>
+                                <div key={post._id}>
                                     <Link to="/detail">
                                         <TableItems post={post} setCurrentId={setCurrentId} />
                                     </Link>

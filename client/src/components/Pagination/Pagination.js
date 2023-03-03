@@ -8,7 +8,7 @@ import { getPosts } from '~/actions/posts';
 import styles from './Pagination.module.scss';
 const cx = classNames.bind(styles);
 
-function Paginate({ page }) {
+function Paginate({ page, navigate }) {
     const { numberOfPages } = useSelector((state) => state.posts);
     const dispatch = useDispatch();
 
@@ -23,7 +23,7 @@ function Paginate({ page }) {
             count={numberOfPages}
             page={Number(page) || 1}
             variant="outlined"
-            renderItem={(item) => <PaginationItem {...item} component={Link} to={`/admins?page=${item.page}`} />}
+            renderItem={(item) => <PaginationItem {...item} component={Link} to={`${navigate}?page=${item.page}`} />}
         />
     );
 }

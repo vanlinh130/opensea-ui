@@ -39,9 +39,11 @@ function Main() {
             <TopCollector />
             <NFT />
             <Category />
-            <Paper>
-                <Paginate page={page} />
-            </Paper>
+            <div className={cx('paginate')}>
+                <Paper>
+                    <Paginate page={page} navigate="/home" />
+                </Paper>
+            </div>
         </div>
     );
 }

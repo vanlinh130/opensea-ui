@@ -8,7 +8,7 @@ import NFTItem from './NFTItem/NFTItem';
 const cx = classNames.bind(styles);
 
 const NFT = () => {
-    const posts = useSelector((state) => state.posts);
+    const { posts } = useSelector((state) => state.posts);
 
     return (
         <div className={cx('nft')}>
@@ -20,12 +20,12 @@ const NFT = () => {
                 <button>Learn more</button>
             </div>
             <div className={cx('nft-wrapper')}>
-                {!posts.length ? (
+                {!posts?.length ? (
                     <div />
                 ) : (
                     <>
                         {posts.map((post) => (
-                            <div key={post._id} className={cx('nft-items')}>
+                            <div key={post._id}>
                                 <Link to="/detail">
                                     <NFTItem post={post} />
                                 </Link>

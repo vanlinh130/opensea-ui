@@ -55,7 +55,7 @@ const Admin = () => {
                 )}
                 <div className={cx('paginate')}>
                     <Paper>
-                        <Paginate page={page} />
+                        <Paginate page={page} navigate="/admins" />
                     </Paper>
                 </div>
             </div>

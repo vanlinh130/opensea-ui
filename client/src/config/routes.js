@@ -1,5 +1,6 @@
 const routers = {
     home: '/',
+    homePagination: '/home',
     homeSearch: '/search',
     detail: '/detail',
     explore: '/explore',
