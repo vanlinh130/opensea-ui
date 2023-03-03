@@ -7,12 +7,12 @@ import SlideItem from './SlideItem/SlideItem';
 import styles from './Slide.module.scss';
 const cx = classNames.bind(styles);
 
-function Slide() {
+function Slide({ title }) {
     const { posts } = useSelector((state) => state.posts);
     return (
         <div className={cx('slide')}>
             <div className={cx('slide-content')}>
-                <h1>Explore, collect, and sell NFTs</h1>
+                <h1>{title}</h1>
             </div>
             <Marquee>
                 <div className={cx('slide-list')}>

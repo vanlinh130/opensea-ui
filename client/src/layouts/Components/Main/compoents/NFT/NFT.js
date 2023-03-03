@@ -7,14 +7,14 @@ import styles from './NFT.module.scss';
 import NFTItem from './NFTItem/NFTItem';
 const cx = classNames.bind(styles);
 
-const NFT = () => {
+const NFT = ({ title }) => {
     const { posts } = useSelector((state) => state.posts);
 
     return (
         <div className={cx('nft')}>
             <div className={cx('nft-heading')}>
                 <div>
-                    <h2>Photography NFT spotlight</h2>
+                    <h2>{title}</h2>
                     <span>Get comfortable with the basics.</span>
                 </div>
                 <button>Learn more</button>

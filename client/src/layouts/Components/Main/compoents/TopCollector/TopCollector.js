@@ -8,12 +8,12 @@ import CollectorItem from './CollectorItem/CollectorItem';
 
 const cx = classNames.bind(style);
 
-const TopCollector = () => {
+const TopCollector = ({ title, classes }) => {
     const { posts } = useSelector((state) => state.posts);
 
     return (
-        <div className={cx('collector')}>
-            <h2>Top collector buys today</h2>
+        <div className={cx('collector', classes)}>
+            <h2>{title}</h2>
             <div className={cx('collector-wrapper')}>
                 {!posts?.length ? (
                     <div />

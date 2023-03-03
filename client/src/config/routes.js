@@ -3,7 +3,9 @@ const routers = {
     homePagination: '/home',
     homeSearch: '/search',
     detail: '/detail',
+
     explore: '/explore',
+    explorePagination: '/explore/pagination',
 
     drop: '/drops',
     Calendar: '/calendars',

@@ -33,11 +33,11 @@ function Main() {
 
     return (
         <div className={cx('main')}>
-            <Slide />
+            <Slide title="Explore, collect, and sell NFTs" />
             <HomeTable currentId={currentId} setCurrentId={setCurrentId} />
             <NotableCollections setCurrentId={setCurrentId} />
-            <TopCollector />
-            <NFT />
+            <TopCollector title="Top collector buys today" />
+            <NFT title="Photography NFT spotlight" />
             <Category />
             <div className={cx('paginate')}>
                 <Paper>
