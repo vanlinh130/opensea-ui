@@ -20,7 +20,7 @@ const TopCollector = ({ title, classes }) => {
                 ) : (
                     <>
                         {posts.map((post) => (
-                            <div key={post._id}>
+                            <div key={post._id} className={cx('collector-item')}>
                                 <Link to="/detail">
                                     <CollectorItem post={post} />
                                 </Link>

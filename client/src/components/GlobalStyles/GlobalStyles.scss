@@ -52,11 +52,36 @@ a {
 
 // Pagination
 .MuiPaper-elevation1 {
-    width: 30%;
+    width: 70%;
     margin-top: 13px;
     box-shadow: none !important;
 }
 
 .MuiPagination-ul {
     justify-content: center;
+}
+
+.MuiPaginationItem-page.Mui-selected:hover,
+.MuiPaginationItem-page.Mui-selected.Mui-focusVisible {
+    background-color: rgba(22, 155, 233, 0.252) !important;
+}
+
+.MuiPaginationItem-page.Mui-selected {
+    background-color: rgba(22, 155, 233, 0.252) !important;
+}
+
+.MuiPaginationItem-outlined {
+    border: 1px solid rgba(22, 155, 233, 0.252) !important;
+}
+
+.MuiPaginationItem-root {
+    min-width: 40px !important;
+    height: 40px !important;
+    border-radius: 20px !important;
+    margin: 0 10px !important;
+    font-size: 13px !important;
+}
+
+.MuiPaginationItem-icon {
+    font-size: 20px !important;
 }

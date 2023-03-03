@@ -5,9 +5,9 @@ import CheckName from '~/components/CheckName/CheckName';
 
 const cx = classNames.bind(style);
 
-const CollectorItem = ({ post }) => {
+const CollectorItem = ({ post, classes }) => {
     return (
-        <div className={cx('collector-item')}>
+        <div className={cx('collector-item', classes)}>
             <div className={cx('item-image')}>
                 <img src={post.selectedFile} alt="images" />
             </div>

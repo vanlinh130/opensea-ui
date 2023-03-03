@@ -15,13 +15,22 @@ import Collection from '~/components/Collection/Collection';
 import ProductItems from './ProductItems/ProductItems';
 import { CollectorItem } from '~/layouts/Components/Main/compoents';
 import Header from '~/components/Header/Header';
+import Marquee from 'react-fast-marquee';
+import { Paper } from '@material-ui/core';
+import Paginate from '~/components/Pagination/Pagination';
 
 const cx = classNames.bind(styles);
+function useQuery() {
+    return new URLSearchParams(useLocation().search);
+}
 
 const Product = () => {
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
     const { posts } = useSelector((state) => state.posts);
     const location = useLocation();
+
+    const query = useQuery();
+    const page = query.get('page') || 1;
 
     useEffect(() => {
         const token = user?.token;
@@ -105,19 +114,46 @@ const Product = () => {
             <div className={cx('product-other')}>
                 <h2>Various favorite products</h2>
                 <div className={cx('product-other-item')}>
-                    {!posts.length ? (
+                    {!posts?.length ? (
                         <div />
                     ) : (
                         <>
                             {posts.map((post) => (
                                 <div key={post._id} className={cx('collector-item')}>
                                     <Link to="/detail">
-                                        <CollectorItem post={post} />
+                                        <div className={cx('collector-items')}>
+                                            <CollectorItem post={post} classes={cx('item')} />
+                                        </div>
                                     </Link>
                                 </div>
                             ))}
                         </>
                     )}
+                </div>
+                <h2>Various favorite products</h2>
+                <Marquee>
+                    <div className={cx('product-other-item')}>
+                        {!posts?.length ? (
+                            <div />
+                        ) : (
+                            <>
+                                {posts.map((post) => (
+                                    <div key={post._id} className={cx('collector-item')}>
+                                        <Link to="/detail">
+                                            <div className={cx('collector-items')}>
+                                                <CollectorItem post={post} classes={cx('item')} />
+                                            </div>
+                                        </Link>
+                                    </div>
+                                ))}
+                            </>
+                        )}
+                    </div>
+                </Marquee>
+                <div className={cx('paginate')}>
+                    <Paper>
+                        <Paginate page={page} navigate="/products" />
+                    </Paper>
                 </div>
             </div>
 

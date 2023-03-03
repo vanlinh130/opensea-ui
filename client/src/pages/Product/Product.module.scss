@@ -49,13 +49,32 @@
     width: 1200px;
     margin: auto;
     padding: 50px 0;
+
+    h2 {
+        margin-top: 25px;
+    }
 }
 
 .product-other-item {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .collector-item {
+    margin-right: 16px;
     margin-bottom: 16px;
+
+    .collector-items {
+        width: 223.2px;
+    }
+}
+
+// paginate
+.paginate {
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+    margin-top: 35px;
+    border-top: 1px solid rgb(234, 235, 236);
 }

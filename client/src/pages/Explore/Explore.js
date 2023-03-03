@@ -23,7 +23,7 @@ function Explore() {
 
             <div className={cx('paginate')}>
                 <Paper>
-                    <Paginate page={page} navigate="/explore/pagination" />
+                    <Paginate page={page} navigate="/explore" />
                 </Paper>
             </div>
         </div>

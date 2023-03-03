@@ -28,18 +28,17 @@ const publicRoutes = [
     { path: config.routes.homeSearch, component: Home },
 
     { path: config.routes.explore, component: Explore, layout: HeaderOnly },
-    { path: config.routes.explorePagination, component: Explore, layout: HeaderOnly },
 
     { path: config.routes.drop, component: Drop, layout: HeaderOnly },
     { path: config.routes.Calendar, component: Calendar, layout: HeaderOnly },
     { path: config.routes.LearnMore, component: LearnMore, layout: null },
 
     { path: config.routes.start, component: Start, layout: HeaderOnly },
-    { path: config.routes.startPagination, component: Start, layout: HeaderOnly },
 
     { path: config.routes.profile, component: Profile, layout: HeaderOnly },
     { path: config.routes.detail, component: Detail, layout: null },
     { path: config.routes.resource, component: Resource, layout: null },
+
     { path: config.routes.product, component: Product, layout: null },
 
     { path: config.routes.admin, component: Admin, layout: null },

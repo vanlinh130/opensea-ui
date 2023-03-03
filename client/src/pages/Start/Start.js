@@ -105,7 +105,7 @@ function Start() {
             </>
             <div className={cx('paginate')}>
                 <Paper>
-                    <Paginate page={page} navigate="/starts/pagination" />
+                    <Paginate page={page} navigate="/starts" />
                 </Paper>
             </div>
         </div>
