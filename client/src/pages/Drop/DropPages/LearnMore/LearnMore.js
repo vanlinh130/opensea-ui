@@ -182,7 +182,7 @@ const LearnMore = () => {
                 </div>
             </div>
 
-            <Footer classes={cx('footer')}></Footer>
+            <Footer classes={cx('footer')} btnFooter={false}></Footer>
         </>
     );
 };

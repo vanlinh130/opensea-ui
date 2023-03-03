@@ -184,7 +184,7 @@ const Auth = () => {
                     </div>
                 </div>
             </div>
-            <Footer />
+            <Footer btnFooter={false} />
         </div>
     );
 };

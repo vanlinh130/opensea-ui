@@ -1,0 +1,19 @@
+.header {
+    background-color: transparent !important;
+}
+.learn-images {
+    z-index: 0;
+    height: 150vh;
+    background-image: url(https://assets-global.website-files.com/6297ced5c59919a3d53d5cc7/6304186236fae04950bc8154_bg-img-hero-learn-blue.png),
+        url(https://assets-global.website-files.com/6297ced5c59919a3d53d5cc7/6304186202a7667dc07b37a2_bg-img-hero-learn-yellow.png),
+        url(https://assets-global.website-files.com/6297ced5c59919a3d53d5cc7/630418972e8785a94155c3f5_bg-img-hero-learn-bg.png);
+    background-position: 0px 0px, 100% 0%, 50% 0%;
+    background-size: 21.625em, 24.875em, 100%;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    position: relative;
+}
+
+.learn-content {
+    position: absolute;
+    margin: 0 158px;
+}

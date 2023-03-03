@@ -6,48 +6,50 @@ import images from '~/assets/images';
 
 const cx = classNames.bind(styles);
 
-function Footer({ classes }) {
+function Footer({ classes, btnFooter = true }) {
     return (
         <h2 className={cx('footer', classes)}>
             <div className={cx('footer-container')}>
-                <div className={cx('footer-top')}>
-                    <div className={cx('footer-top-left')}>
-                        <h3>Stay in the loop</h3>
-                        <span>
-                            Join our mailing list to stay in the loop with our newest feature releases, NFT drops, and
-                            tips and tricks for navigating OpenSea.
-                        </span>
-                        <form className={cx('form')}>
-                            <div className={cx('form-input')}>
-                                <input placeholder="Your email address" name="email" />
+                {btnFooter && (
+                    <div className={cx('footer-top')}>
+                        <div className={cx('footer-top-left')}>
+                            <h3>Stay in the loop</h3>
+                            <span>
+                                Join our mailing list to stay in the loop with our newest feature releases, NFT drops,
+                                and tips and tricks for navigating OpenSea.
+                            </span>
+                            <form className={cx('form')}>
+                                <div className={cx('form-input')}>
+                                    <input placeholder="Your email address" name="email" />
+                                </div>
+                                <button>Sign up</button>
+                            </form>
+                        </div>
+                        <div className={cx('footer-top-right')}>
+                            <h3>Join the community</h3>
+                            <div className={cx('info-icons')}>
+                                <button>
+                                    <IconBird />
+                                </button>
+                                <button>
+                                    <IconInstagram />
+                                </button>
+                                <button>
+                                    <IconFace />
+                                </button>
+                                <button>
+                                    <IconClown />
+                                </button>
+                                <button>
+                                    <IconYoutube />
+                                </button>
+                                <button>
+                                    <IconTiktok />
+                                </button>
                             </div>
-                            <button>Sign up</button>
-                        </form>
-                    </div>
-                    <div className={cx('footer-top-right')}>
-                        <h3>Join the community</h3>
-                        <div className={cx('info-icons')}>
-                            <button>
-                                <IconBird />
-                            </button>
-                            <button>
-                                <IconInstagram />
-                            </button>
-                            <button>
-                                <IconFace />
-                            </button>
-                            <button>
-                                <IconClown />
-                            </button>
-                            <button>
-                                <IconYoutube />
-                            </button>
-                            <button>
-                                <IconTiktok />
-                            </button>
                         </div>
                     </div>
-                </div>
+                )}
 
                 <div className={cx('footer-center')}>
                     <div className={cx('footer-center-left')}>

@@ -157,7 +157,7 @@ const Product = () => {
                 </div>
             </div>
 
-            <Footer />
+            <Footer btnFooter={false} />
         </div>
     );
 };
