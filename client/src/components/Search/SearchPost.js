@@ -35,6 +35,7 @@ const SearchPost = ({ placeholder, navigates, navigateHome }) => {
                     value={search}
                     placeholder={placeholder}
                     onChange={(e) => setSearch(e.target.value)}
+                    autoComplete="off"
                 />
                 <div className={cx('open-using')}>/</div>
             </div>

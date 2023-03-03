@@ -10,6 +10,8 @@ const routers = {
     LearnMore: '/learnMores',
 
     start: '/starts',
+    startPagination: '/starts/pagination',
+
     resource: '/resources',
     profile: '/profile',
     product: '/products',

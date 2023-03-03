@@ -33,6 +33,8 @@ const publicRoutes = [
     { path: config.routes.LearnMore, component: LearnMore, layout: null },
 
     { path: config.routes.start, component: Start, layout: HeaderOnly },
+    { path: config.routes.startPagination, component: Start, layout: HeaderOnly },
+
     { path: config.routes.profile, component: Profile, layout: HeaderOnly },
     { path: config.routes.detail, component: Detail, layout: null },
     { path: config.routes.resource, component: Resource, layout: null },

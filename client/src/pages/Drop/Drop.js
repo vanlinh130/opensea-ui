@@ -9,7 +9,7 @@ import Action from '~/components/Action/Action';
 const cx = classNames.bind(styles);
 
 function Drop() {
-    const posts = useSelector((state) => state.posts);
+    const { posts } = useSelector((state) => state.posts);
 
     return (
         <div className={cx('wrapper')}>
@@ -19,7 +19,7 @@ function Drop() {
                 <Action title={'Past'} />
             </div>
             <>
-                {!posts.length ? (
+                {!posts?.length ? (
                     <div />
                 ) : (
                     <>

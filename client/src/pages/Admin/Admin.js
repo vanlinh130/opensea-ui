@@ -20,7 +20,7 @@ const Admin = () => {
     const { posts } = useSelector((state) => state.posts);
     const query = useQuery();
     const page = query.get('page') || 1;
-    const searchQuery = query.get('searchQuery');
+    // const searchQuery = query.get('searchQuery');
 
     return (
         <div>

@@ -20,7 +20,7 @@ const cx = classNames.bind(styles);
 
 const Product = () => {
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
-    const posts = useSelector((state) => state.posts);
+    const { posts } = useSelector((state) => state.posts);
     const location = useLocation();
 
     useEffect(() => {
@@ -74,7 +74,7 @@ const Product = () => {
                         </div>
 
                         <>
-                            {!posts.length ? (
+                            {!posts?.length ? (
                                 <div />
                             ) : (
                                 <>
