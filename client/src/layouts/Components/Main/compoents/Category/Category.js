@@ -10,14 +10,15 @@ import CategoryItem from './CategoryItem/CategoryItem';
 const cx = classNames.bind(styles);
 
 const Category = () => {
-    const { posts } = useSelector((state) => state.posts);
+    const { posts, isLoading } = useSelector((state) => state.posts);
+    if (!posts.length && !isLoading) return 'No posts';
 
     return (
         <div className={cx('category')}>
             <h2>Browse by category</h2>
             <div className={cx('category-wrapper')}>
                 <Marquee>
-                    {!posts?.length ? (
+                    {isLoading ? (
                         <div />
                     ) : (
                         <>

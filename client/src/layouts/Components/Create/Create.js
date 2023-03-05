@@ -15,7 +15,10 @@ const Create = ({ currentId, setCurrentId }) => {
         tags: '',
         selectedFile: '',
     });
-    const post = useSelector((state) => (currentId ? state.posts.find((p) => p._id === currentId) : null));
+    // const post = useSelector((state) => (currentId ? state.posts.find((p) => p._id === currentId) : null));
+    const post = useSelector((state) =>
+        currentId ? state.posts.posts.find((message) => message._id === currentId) : null,
+    );
     const dispatch = useDispatch();
     const user = JSON.parse(localStorage.getItem('profile'));
 

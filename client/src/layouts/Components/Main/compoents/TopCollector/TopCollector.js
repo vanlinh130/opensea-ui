@@ -9,13 +9,14 @@ import CollectorItem from './CollectorItem/CollectorItem';
 const cx = classNames.bind(style);
 
 const TopCollector = ({ title, classes }) => {
-    const { posts } = useSelector((state) => state.posts);
+    const { posts, isLoading } = useSelector((state) => state.posts);
+    if (!posts.length && !isLoading) return 'No posts';
 
     return (
         <div className={cx('collector', classes)}>
             <h2>{title}</h2>
             <div className={cx('collector-wrapper')}>
-                {!posts?.length ? (
+                {isLoading ? (
                     <div />
                 ) : (
                     <>

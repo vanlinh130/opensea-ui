@@ -8,7 +8,9 @@ import NFTItem from './NFTItem/NFTItem';
 const cx = classNames.bind(styles);
 
 const NFT = ({ title }) => {
-    const { posts } = useSelector((state) => state.posts);
+    const { posts, isLoading } = useSelector((state) => state.posts);
+
+    if (!posts.length && !isLoading) return 'No posts';
 
     return (
         <div className={cx('nft')}>
@@ -20,7 +22,7 @@ const NFT = ({ title }) => {
                 <button>Learn more</button>
             </div>
             <div className={cx('nft-wrapper')}>
-                {!posts?.length ? (
+                {isLoading ? (
                     <div />
                 ) : (
                     <>

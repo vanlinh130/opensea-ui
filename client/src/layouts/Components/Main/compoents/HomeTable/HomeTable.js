@@ -14,7 +14,9 @@ import Collection from '~/components/Collection/Collection';
 const cx = classNames.bind(styles);
 
 function HomeTable({ currentId, setCurrentId }) {
-    const { posts } = useSelector((state) => state.posts);
+    const { posts, isLoading } = useSelector((state) => state.posts);
+
+    if (!posts.length && !isLoading) return 'No posts';
 
     return (
         <div className={cx('main')}>
@@ -55,7 +57,7 @@ function HomeTable({ currentId, setCurrentId }) {
                         </div>
                     </div>
 
-                    {!posts?.length ? (
+                    {isLoading ? (
                         <div />
                     ) : (
                         <>

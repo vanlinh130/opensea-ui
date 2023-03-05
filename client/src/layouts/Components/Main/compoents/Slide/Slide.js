@@ -8,7 +8,10 @@ import styles from './Slide.module.scss';
 const cx = classNames.bind(styles);
 
 function Slide({ title }) {
-    const { posts } = useSelector((state) => state.posts);
+    const { posts, isLoading } = useSelector((state) => state.posts);
+
+    if (!posts.length && !isLoading) return 'No posts';
+
     return (
         <div className={cx('slide')}>
             <div className={cx('slide-content')}>
@@ -16,7 +19,7 @@ function Slide({ title }) {
             </div>
             <Marquee>
                 <div className={cx('slide-list')}>
-                    {!posts?.length ? (
+                    {isLoading ? (
                         <div />
                     ) : (
                         <>
