@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faEllipsis, faShareAlt } from '@fortawesome/free-solid-svg-icons';
@@ -17,10 +17,25 @@ import {
 import DetailItems from './DetailItems/DetailItems';
 import Header from './../Header/Header';
 import CheckName from '~/components/CheckName/CheckName';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate, useParams } from 'react-router-dom';
+import { getPost } from '~/actions/posts';
 
 const cx = classNames.bind(styles);
 
 const Detail = () => {
+    const { post, posts, isLoading } = useSelector((state) => state.posts);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const { id } = useParams();
+
+    useEffect(() => {
+        dispatch(getPost(id));
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [id]);
+
+    if (!post) return null;
+
     return (
         <>
             <Header />
@@ -36,7 +51,7 @@ const Detail = () => {
 
                 <div className={cx('detail-name')}>
                     <div className={cx('name')}>
-                        <h1>SmallBrosNFT</h1>
+                        <h1>{post.title}</h1>
                         <CheckName classes={cx('icon')} />
                     </div>
                     <div className={cx('icon-lists')}>

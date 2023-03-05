@@ -36,7 +36,6 @@ const publicRoutes = [
     { path: config.routes.start, component: Start, layout: HeaderOnly },
 
     { path: config.routes.profile, component: Profile, layout: HeaderOnly },
-    { path: config.routes.detail, component: Detail, layout: null },
     { path: config.routes.resource, component: Resource, layout: null },
 
     { path: config.routes.product, component: Product, layout: null },
@@ -44,6 +43,7 @@ const publicRoutes = [
     { path: config.routes.admin, component: Admin, layout: null },
     { path: config.routes.adminSearch, component: Admin, layout: null },
 
+    { path: config.routes.detail, component: Detail, layout: null },
     { path: config.routes.auth, component: Auth, layout: null },
     { path: config.routes.create, component: Create, layout: null },
 ];

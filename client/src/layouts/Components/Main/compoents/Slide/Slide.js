@@ -1,5 +1,4 @@
 import classNames from 'classnames/bind';
-import { Link } from 'react-router-dom';
 import Marquee from 'react-fast-marquee';
 import { useSelector } from 'react-redux';
 
@@ -25,9 +24,7 @@ function Slide({ title }) {
                         <>
                             {posts.map((post) => (
                                 <div key={post._id}>
-                                    <Link to="/detail">
-                                        <SlideItem post={post} />
-                                    </Link>
+                                    <SlideItem post={post} />
                                 </div>
                             ))}
                         </>

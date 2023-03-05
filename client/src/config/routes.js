@@ -2,7 +2,7 @@ const routers = {
     home: '/',
     homePagination: '/home',
     homeSearch: '/search',
-    detail: '/detail',
+    detail: '/posts/:id',
 
     explore: '/explore',
 
