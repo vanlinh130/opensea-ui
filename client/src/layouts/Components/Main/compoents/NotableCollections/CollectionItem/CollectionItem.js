@@ -46,7 +46,6 @@ const CollectionItem = ({ post, setCurrentId }) => {
     };
 
     const openPost = () => {
-        console.log('kkk');
         navigate(`/posts/${post._id}`);
     };
 

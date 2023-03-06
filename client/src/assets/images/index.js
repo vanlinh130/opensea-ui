@@ -49,6 +49,10 @@ const images = {
     drop_values_1: require('~/assets/images/image-drops/values-1.png'),
     drop_values_2: require('~/assets/images/image-drops/values-2.png'),
     drop_values_3: require('~/assets/images/image-drops/values-3.png'),
+
+    resource_1: require('~/assets/images/image-resource/resource-1.png'),
+    resource_2: require('~/assets/images/image-resource/resource-2.png'),
+    resource_card_1: require('~/assets/images/image-resource/card-1.svg').default,
 };
 
 export default images;
