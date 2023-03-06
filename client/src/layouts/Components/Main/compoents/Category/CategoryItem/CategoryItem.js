@@ -10,7 +10,7 @@ const CategoryItem = ({ post }) => {
     const navigate = useNavigate();
 
     const openPost = () => {
-        navigate(`/posts/${post._id}`);
+        navigate(`/details/${post._id}`);
     };
 
     return (

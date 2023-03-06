@@ -47,7 +47,7 @@ const Detail = () => {
     const recommendedPosts = posts.filter(({ _id }) => _id !== post._id);
 
     const openPost = (_id) => {
-        navigate(`/posts/${_id}`);
+        navigate(`/details/${_id}`);
     };
 
     return (

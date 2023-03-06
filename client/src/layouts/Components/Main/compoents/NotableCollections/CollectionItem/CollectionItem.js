@@ -46,11 +46,11 @@ const CollectionItem = ({ post, setCurrentId }) => {
     };
 
     const openPost = () => {
-        navigate(`/posts/${post._id}`);
+        navigate(`/details/${post._id}`);
     };
 
     return (
-        <div className={cx('collection-item')} onClick={openPost}>
+        <div className={cx('collection-item')}>
             <div className={cx('item-image')}>
                 <img src={post.selectedFile} alt="images" />
                 <div className={cx('overlay')}>
