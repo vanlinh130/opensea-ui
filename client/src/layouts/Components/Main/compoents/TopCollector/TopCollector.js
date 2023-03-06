@@ -1,6 +1,5 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import style from './TopCollector.module.scss';
@@ -22,9 +21,7 @@ const TopCollector = ({ title, classes }) => {
                     <>
                         {posts.map((post) => (
                             <div key={post._id} className={cx('collector-item')}>
-                                <Link to="/detail">
-                                    <CollectorItem post={post} />
-                                </Link>
+                                <CollectorItem post={post} />
                             </div>
                         ))}
                     </>

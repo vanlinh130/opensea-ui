@@ -1,6 +1,5 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Marquee from 'react-fast-marquee';
 
@@ -24,9 +23,7 @@ const Category = () => {
                         <>
                             {posts.map((post) => (
                                 <div key={post._id}>
-                                    <Link to="/detail">
-                                        <CategoryItem post={post} />
-                                    </Link>
+                                    <CategoryItem post={post} />
                                 </div>
                             ))}
                         </>

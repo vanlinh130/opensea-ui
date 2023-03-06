@@ -1,7 +1,6 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 
 import styles from './NotableCollections.module.scss';
 import CollectionItem from './CollectionItem/CollectionItem';
@@ -20,9 +19,7 @@ const NotableCollections = ({ setCurrentId }) => {
             <div className={cx('collections')}>
                 {posts.map((post) => (
                     <div key={post._id}>
-                        <Link to="">
-                            <CollectionItem post={post} setCurrentId={setCurrentId} />
-                        </Link>
+                        <CollectionItem post={post} setCurrentId={setCurrentId} />
                     </div>
                 ))}
             </div>

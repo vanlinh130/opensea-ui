@@ -1,6 +1,5 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import styles from './NFT.module.scss';
@@ -28,9 +27,7 @@ const NFT = ({ title }) => {
                     <>
                         {posts.map((post) => (
                             <div key={post._id}>
-                                <Link to="/detail">
-                                    <NFTItem post={post} />
-                                </Link>
+                                <NFTItem post={post} />
                             </div>
                         ))}
                     </>

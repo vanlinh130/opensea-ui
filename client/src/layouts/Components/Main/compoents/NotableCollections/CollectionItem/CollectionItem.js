@@ -10,11 +10,13 @@ import { useDispatch } from 'react-redux';
 import styles from './CollectionItem.module.scss';
 import { deletePost, likePost } from '~/actions/posts';
 import CheckName from '~/components/CheckName/CheckName';
+import { useNavigate } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
 const CollectionItem = ({ post, setCurrentId }) => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const user = JSON.parse(localStorage.getItem('profile'));
 
     const Likes = () => {
@@ -43,8 +45,13 @@ const CollectionItem = ({ post, setCurrentId }) => {
         );
     };
 
+    const openPost = () => {
+        console.log('kkk');
+        navigate(`/posts/${post._id}`);
+    };
+
     return (
-        <div className={cx('collection-item')}>
+        <div className={cx('collection-item')} onClick={openPost}>
             <div className={cx('item-image')}>
                 <img src={post.selectedFile} alt="images" />
                 <div className={cx('overlay')}>

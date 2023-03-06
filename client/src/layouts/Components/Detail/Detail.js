@@ -30,7 +30,6 @@ const Detail = () => {
     useEffect(() => {
         if (post) {
             dispatch(getPostsBySearch({ search: 'none', tags: post?.tags.join('#') }));
-            console.log('ddd');
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [post]);

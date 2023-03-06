@@ -1,6 +1,5 @@
 import classNames from 'classnames/bind';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 
 import styles from './HomeTable.module.scss';
 import TableItems from './TableItems/TableItems';
@@ -63,9 +62,7 @@ function HomeTable({ currentId, setCurrentId }) {
                         <>
                             {posts.map((post) => (
                                 <div key={post._id}>
-                                    <Link to="/detail">
-                                        <TableItems post={post} setCurrentId={setCurrentId} />
-                                    </Link>
+                                    <TableItems post={post} setCurrentId={setCurrentId} />
                                 </div>
                             ))}
                         </>
