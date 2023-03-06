@@ -1,25 +1,18 @@
 import React, { useEffect } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDown, faEllipsis, faShareAlt } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown, faBars, faList, faTable, faBorderAll, faChartBar } from '@fortawesome/free-solid-svg-icons';
 
 import images from '~/assets/images';
 import styles from './Detail.module.scss';
-import {
-    IconDetailBrands,
-    IconDetailDiscord,
-    IconDetailWebsite,
-    IconDetailMedium,
-    IconDetailInstagram,
-    IconDetailTwitter,
-    IconDetailAdd,
-} from '~/components/Icons';
-import DetailItems from './DetailItems/DetailItems';
 import Header from './../Header/Header';
 import CheckName from '~/components/CheckName/CheckName';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
-import { getPost } from '~/actions/posts';
+import { getPost, getPostsBySearch } from '~/actions/posts';
+import { CircularProgress, Paper } from '@material-ui/core';
+import { SearchPost } from '~/components/Search';
+import DetailName from './DetailName/DetailName';
 
 const cx = classNames.bind(styles);
 
@@ -34,7 +27,29 @@ const Detail = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [id]);
 
+    useEffect(() => {
+        if (post) {
+            dispatch(getPostsBySearch({ search: 'none', tags: post?.tags.join('#') }));
+            console.log('ddd');
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [post]);
+
     if (!post) return null;
+
+    if (isLoading) {
+        return (
+            <Paper elevation={6}>
+                <CircularProgress size="7em" />
+            </Paper>
+        );
+    }
+
+    const recommendedPosts = posts.filter(({ _id }) => _id !== post._id);
+
+    const openPost = (_id) => {
+        navigate(`/posts/${_id}`);
+    };
 
     return (
         <>
@@ -45,54 +60,15 @@ const Detail = () => {
                 </div>
                 <div className={cx('detail-avatar')}>
                     <div className={cx('avatar-img')}>
-                        <img src={images.detail_avatar} alt="images-avatar" />
+                        <img src={post.selectedFile} alt="images-avatar" />
                     </div>
                 </div>
 
-                <div className={cx('detail-name')}>
-                    <div className={cx('name')}>
-                        <h1>{post.title}</h1>
-                        <CheckName classes={cx('icon')} />
-                    </div>
-                    <div className={cx('icon-lists')}>
-                        <div className={cx('icon-list-info')}>
-                            <div className={cx('icon-item')}>
-                                <IconDetailBrands />
-                            </div>
-                            <div className={cx('icon-item')}>
-                                <IconDetailWebsite />
-                            </div>
-                            <div className={cx('icon-item')}>
-                                <IconDetailDiscord />
-                            </div>
-                            <div className={cx('icon-item')}>
-                                <IconDetailMedium />
-                            </div>
-                            <div className={cx('icon-item')}>
-                                <IconDetailInstagram />
-                            </div>
-                            <div className={cx('icon-item')}>
-                                <IconDetailTwitter />
-                            </div>
-                        </div>
-                        <div className={cx('between')}></div>
-                        <div className={cx('icon-list-info')}>
-                            <div className={cx('icon-item')}>
-                                <IconDetailAdd />
-                            </div>
-                            <div className={cx('icon-item')}>
-                                <FontAwesomeIcon style={{ fontSize: '18px' }} icon={faShareAlt} />
-                            </div>
-                            <div className={cx('icon-item')}>
-                                <FontAwesomeIcon style={{ fontSize: '24px' }} icon={faEllipsis} />
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <DetailName post={post} />
 
                 <div className={cx('detail-heading')}>
                     <span>
-                        By<h3> SmallBrosNFT_Official</h3>
+                        By<h3> {post.title}</h3>
                     </span>
                     <CheckName />
                 </div>
@@ -102,7 +78,7 @@ const Detail = () => {
                         <div className={cx('content-price-lists')}>
                             <div className={cx('price-item')}>
                                 <span>Items</span>
-                                <b>20.866</b>
+                                <b>{post.tags}</b>
                             </div>
                             <div className={cx('price-item')}>
                                 <span>Created</span>
@@ -123,12 +99,7 @@ const Detail = () => {
                         </div>
 
                         <div className={cx('content-text')}>
-                            <p>
-                                Lil Pudgys is a collection of 22,222 NFTs originating from Pudgy Penguins. Don’t let
-                                their small stature fool you, Lil Pudgys are an integral piece of the Pudgy Penguins
-                                history. Their story began during the most frigid of winters. In the midst of adversity,
-                                the birth of the Lil Pudgys helped spark new-life into the Pudgy Penguins community.{' '}
-                            </p>
+                            <p>{post.message}</p>
                             <div className={cx('content-text-more')}>
                                 <span>See more</span>
                                 <FontAwesomeIcon icon={faAngleDown} />
@@ -137,7 +108,7 @@ const Detail = () => {
 
                         <div className={cx('content-eth-lists')}>
                             <div className={cx('content-eth-item')}>
-                                <b>5.764 ETH</b>
+                                <b>{post.tags} ETH</b>
                                 <span>total volume</span>
                             </div>
                             <div className={cx('content-eth-item')}>
@@ -168,9 +139,54 @@ const Detail = () => {
                         <h3>Analytics</h3>
                         <h3>Activity</h3>
                     </div>
-                    <div className={cx('content-table')}>
-                        <DetailItems />
+
+                    <div className={cx('content-nav')}>
+                        <div className={cx('content-nav-header')}>
+                            <div className={cx('icon-bar')}>
+                                <FontAwesomeIcon icon={faBars} />
+                            </div>
+                            <div className={cx('search')}>
+                                <SearchPost placeholder="Search by name or attribute" />
+                            </div>
+                            <div className={cx('search-price')}>
+                                <div className={cx('search-icon')}>
+                                    <h3>Price low to high</h3>
+                                    <FontAwesomeIcon icon={faAngleDown} />
+                                </div>
+                            </div>
+                            <div className={cx('icon-list')}>
+                                <button>
+                                    <FontAwesomeIcon className={cx('icon-item')} icon={faList} />
+                                </button>
+                                <button>
+                                    <FontAwesomeIcon className={cx('icon-item')} icon={faTable} />
+                                </button>
+                                <button>
+                                    <FontAwesomeIcon className={cx('icon-item')} icon={faBorderAll} />
+                                </button>
+                                <button>
+                                    <FontAwesomeIcon className={cx('icon-item')} icon={faChartBar} />
+                                </button>
+                            </div>
+                        </div>
                     </div>
+
+                    {recommendedPosts.length && (
+                        <div className={cx('detail-list')}>
+                            {recommendedPosts.map(({ title, name, likes, selectedFile, _id }) => (
+                                <div className={cx('detail-item')} onClick={() => openPost(_id)} key={_id}>
+                                    <div className={cx('item-image')}>
+                                        <img src={selectedFile} alt="images" />
+                                    </div>
+                                    <div className={cx('item-content')}>
+                                        <span>{title}</span>
+                                        <h3>{name}</h3>
+                                        <p>You might a like: {likes.length}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    )}
                 </div>
             </div>
         </>
