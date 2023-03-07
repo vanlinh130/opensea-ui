@@ -5,10 +5,15 @@ import Footer from '~/layouts/Components/Footer/Footer';
 import images from '~/assets/images';
 import ResourceItem from './ResourceItem/ResourceItem';
 import Marquee from 'react-fast-marquee';
+import { useSelector } from 'react-redux';
 
 const cx = classNames.bind(styles);
 
 function Resource() {
+    const { posts, isLoading } = useSelector((state) => state.posts);
+
+    if (!posts.length && !isLoading) return 'No posts';
+
     return (
         <>
             <Header title="Resource" avatar classes={cx('header')} />
@@ -62,7 +67,17 @@ function Resource() {
                         <span>Get comfortable with the basics.</span>
                     </div>
                     <div className={cx('resource-item')}>
-                        <ResourceItem title="What is an NFT?" />
+                        {isLoading ? (
+                            <div />
+                        ) : (
+                            <>
+                                {posts.map((post) => (
+                                    <div key={post._id}>
+                                        <ResourceItem post={post} name />
+                                    </div>
+                                ))}
+                            </>
+                        )}
                     </div>
                 </div>
 
@@ -71,11 +86,21 @@ function Resource() {
                         <h2>Intro to web3</h2>
                         <span>Learn more about web3 concepts.</span>
                     </div>
-                    <div className={cx('resource-item')}>
-                        <Marquee>
-                            <ResourceItem title="What is cryptocurrency?" />
-                        </Marquee>
-                    </div>
+                    <Marquee>
+                        <div className={cx('resource-item')}>
+                            {isLoading ? (
+                                <div />
+                            ) : (
+                                <>
+                                    {posts.map((post) => (
+                                        <div key={post._id}>
+                                            <ResourceItem post={post} title />
+                                        </div>
+                                    ))}
+                                </>
+                            )}
+                        </div>
+                    </Marquee>
                 </div>
 
                 <div className={cx('resource-list')}>
@@ -84,7 +109,17 @@ function Resource() {
                         <span>Understand the technology behind cryptocurrency and NFTs.</span>
                     </div>
                     <div className={cx('resource-item')}>
-                        <ResourceItem title="What is blockchain?" />
+                        {isLoading ? (
+                            <div />
+                        ) : (
+                            <>
+                                {posts.map((post) => (
+                                    <div key={post._id}>
+                                        <ResourceItem post={post} tags />
+                                    </div>
+                                ))}
+                            </>
+                        )}
                     </div>
                 </div>
 
@@ -94,7 +129,17 @@ function Resource() {
                         <span>Learn about important NFT concepts.</span>
                     </div>
                     <div className={cx('resource-item')}>
-                        <ResourceItem title="What is blockchain?" />
+                        {isLoading ? (
+                            <div />
+                        ) : (
+                            <>
+                                {posts.map((post) => (
+                                    <div key={post._id}>
+                                        <ResourceItem post={post} title />
+                                    </div>
+                                ))}
+                            </>
+                        )}
                     </div>
                 </div>
             </div>
