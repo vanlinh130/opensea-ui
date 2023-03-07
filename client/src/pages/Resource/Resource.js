@@ -3,6 +3,7 @@ import styles from './Resource.module.scss';
 import Header from '~/components/Header/Header';
 import Footer from '~/layouts/Components/Footer/Footer';
 import images from '~/assets/images';
+import ResourceItem from './ResourceItem/ResourceItem';
 
 const cx = classNames.bind(styles);
 
@@ -45,11 +46,54 @@ function Resource() {
                                 <img src={images.resource_card_1} alt="" />
                                 <span>Who is OpenSea?</span>
                             </div>
-                            <div className={cx('card-video')}></div>
+                            <div className={cx('card-video')}>
+                                <img src={images.resource_video_1} alt="" />
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div className={cx('resource-list')}>
+                <div className={cx('resource-title')}>
+                    <h2>NFT 101</h2>
+                    <span>Get comfortable with the basics.</span>
+                </div>
+                <div className={cx('resource-item')}>
+                    <ResourceItem title="What is an NFT?" />
+                </div>
+            </div>
+
+            <div className={cx('resource-list')}>
+                <div className={cx('resource-title')}>
+                    <h2>Intro to web3</h2>
+                    <span>Learn more about web3 concepts.</span>
+                </div>
+                <div className={cx('resource-item')}>
+                    <ResourceItem title="What is cryptocurrency?" />
+                </div>
+            </div>
+
+            <div className={cx('resource-list')}>
+                <div className={cx('resource-title')}>
+                    <h2>Blockchain basics</h2>
+                    <span>Understand the technology behind cryptocurrency and NFTs.</span>
+                </div>
+                <div className={cx('resource-item')}>
+                    <ResourceItem title="What is blockchain?" />
+                </div>
+            </div>
+
+            <div className={cx('resource-list')}>
+                <div className={cx('resource-title')}>
+                    <h2>Watch and learn</h2>
+                    <span>Learn about important NFT concepts.</span>
+                </div>
+                <div className={cx('resource-item')}>
+                    <ResourceItem title="What is blockchain?" />
+                </div>
+            </div>
+
             <Footer btnFooter={false} />
         </>
     );
