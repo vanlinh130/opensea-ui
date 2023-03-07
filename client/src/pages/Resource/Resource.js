@@ -4,6 +4,7 @@ import Header from '~/components/Header/Header';
 import Footer from '~/layouts/Components/Footer/Footer';
 import images from '~/assets/images';
 import ResourceItem from './ResourceItem/ResourceItem';
+import Marquee from 'react-fast-marquee';
 
 const cx = classNames.bind(styles);
 
@@ -54,43 +55,83 @@ function Resource() {
                 </div>
             </div>
 
-            <div className={cx('resource-list')}>
-                <div className={cx('resource-title')}>
-                    <h2>NFT 101</h2>
-                    <span>Get comfortable with the basics.</span>
+            <div className={cx('resource-content')}>
+                <div className={cx('resource-list')}>
+                    <div className={cx('resource-title')}>
+                        <h2>NFT 101</h2>
+                        <span>Get comfortable with the basics.</span>
+                    </div>
+                    <div className={cx('resource-item')}>
+                        <ResourceItem title="What is an NFT?" />
+                    </div>
                 </div>
-                <div className={cx('resource-item')}>
-                    <ResourceItem title="What is an NFT?" />
+
+                <div className={cx('resource-list')}>
+                    <div className={cx('resource-title')}>
+                        <h2>Intro to web3</h2>
+                        <span>Learn more about web3 concepts.</span>
+                    </div>
+                    <div className={cx('resource-item')}>
+                        <Marquee>
+                            <ResourceItem title="What is cryptocurrency?" />
+                        </Marquee>
+                    </div>
+                </div>
+
+                <div className={cx('resource-list')}>
+                    <div className={cx('resource-title')}>
+                        <h2>Blockchain basics</h2>
+                        <span>Understand the technology behind cryptocurrency and NFTs.</span>
+                    </div>
+                    <div className={cx('resource-item')}>
+                        <ResourceItem title="What is blockchain?" />
+                    </div>
+                </div>
+
+                <div className={cx('resource-list')}>
+                    <div className={cx('resource-title')}>
+                        <h2>Watch and learn</h2>
+                        <span>Learn about important NFT concepts.</span>
+                    </div>
+                    <div className={cx('resource-item')}>
+                        <ResourceItem title="What is blockchain?" />
+                    </div>
                 </div>
             </div>
 
-            <div className={cx('resource-list')}>
-                <div className={cx('resource-title')}>
-                    <h2>Intro to web3</h2>
-                    <span>Learn more about web3 concepts.</span>
-                </div>
-                <div className={cx('resource-item')}>
-                    <ResourceItem title="What is cryptocurrency?" />
-                </div>
-            </div>
+            <div className={cx('link')}>
+                <div className={cx('link-list')}>
+                    <div className={cx('link-item')}>
+                        <div className={cx('link-content')}>
+                            <img src={images.resource_link_1} alt="images-link" />
+                            <div className={cx('link-title')}>
+                                <h4>Get help with a specific issue</h4>
+                                <span>Check out our Help Center</span>
+                            </div>
+                        </div>
+                        <img src={images.resource_link} alt="images-link" />
+                    </div>
 
-            <div className={cx('resource-list')}>
-                <div className={cx('resource-title')}>
-                    <h2>Blockchain basics</h2>
-                    <span>Understand the technology behind cryptocurrency and NFTs.</span>
-                </div>
-                <div className={cx('resource-item')}>
-                    <ResourceItem title="What is blockchain?" />
-                </div>
-            </div>
-
-            <div className={cx('resource-list')}>
-                <div className={cx('resource-title')}>
-                    <h2>Watch and learn</h2>
-                    <span>Learn about important NFT concepts.</span>
-                </div>
-                <div className={cx('resource-item')}>
-                    <ResourceItem title="What is blockchain?" />
+                    <div className={cx('link-item')}>
+                        <div className={cx('link-content')}>
+                            <img src={images.resource_link_2} alt="images-link" />
+                            <div className={cx('link-title')}>
+                                <h4>Catch up on OpenSea news</h4>
+                                <span>Visit our Blog</span>
+                            </div>
+                        </div>
+                        <img src={images.resource_link} alt="images-link" />
+                    </div>
+                    <div className={cx('link-item')}>
+                        <div className={cx('link-content')}>
+                            <img src={images.resource_link_3} alt="images-link" />
+                            <div className={cx('link-title')}>
+                                <h4>Start exploring</h4>
+                                <span>Check out featured projects</span>
+                            </div>
+                        </div>
+                        <img src={images.resource_link} alt="images-link" />
+                    </div>
                 </div>
             </div>
 

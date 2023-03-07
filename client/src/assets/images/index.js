@@ -54,6 +54,10 @@ const images = {
     resource_2: require('~/assets/images/image-resource/resource-2.png'),
     resource_card_1: require('~/assets/images/image-resource/card-1.svg').default,
     resource_video_1: require('~/assets/images/image-resource/video-1.jpg'),
+    resource_link: require('~/assets/images/image-resource/link.svg').default,
+    resource_link_1: require('~/assets/images/image-resource/link-1.svg').default,
+    resource_link_2: require('~/assets/images/image-resource/link-2.svg').default,
+    resource_link_3: require('~/assets/images/image-resource/link-3.svg').default,
 };
 
 export default images;
