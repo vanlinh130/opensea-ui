@@ -6,7 +6,9 @@ import { HeaderOnly } from '~/layouts';
 // pages
 import Home from '~/pages/Home/Home';
 import Detail from '~/layouts/Components/Detail';
+
 import Explore from '~/pages/Explore/Explore';
+import { AllNFTs, ArtSc } from '~/pages/Explore/ExploreItem';
 
 import Drop from '~/pages/Drop/Drop';
 import { Calendar, LearnMore } from '~/pages/Drop/DropPages';
@@ -28,6 +30,8 @@ const publicRoutes = [
     { path: config.routes.homeSearch, component: Home },
 
     { path: config.routes.explore, component: Explore, layout: HeaderOnly },
+    { path: config.routes.allNFTs, component: AllNFTs, layout: HeaderOnly },
+    { path: config.routes.artSc, component: ArtSc, layout: HeaderOnly },
 
     { path: config.routes.drop, component: Drop, layout: HeaderOnly },
     { path: config.routes.Calendar, component: Calendar, layout: HeaderOnly },

@@ -5,6 +5,8 @@ const routers = {
     detail: '/details/:id',
 
     explore: '/explore',
+    allNFTs: '/allNFTs',
+    artSc: '/artScs',
 
     drop: '/drops',
     Calendar: '/calendars',

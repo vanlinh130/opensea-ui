@@ -6,10 +6,12 @@ export const MENU_ITEMS_EXPLORE = [
     {
         icon: <img src={images.explore_1} alt="images" />,
         title: 'ALL NFTs',
+        to: '/allNFTs',
     },
     {
         icon: <img src={images.explore_2} alt="images" />,
         title: 'Art sc  ',
+        to: '/artScs',
     },
     {
         icon: <img src={images.explore_3} alt="images" />,
