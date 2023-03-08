@@ -16,14 +16,37 @@
 
     .item-title {
         padding: 10px 0;
+        padding-right: 38px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
 
-        h3 {
-            font-size: 18px;
-            font-weight: 600;
+        .item-des {
+            display: flex;
+            align-items: center;
+
+            h3 {
+                font-size: 18px;
+                font-weight: 600;
+            }
         }
     }
 
     &:hover {
         transform: translate(0px, -12px);
+    }
+}
+
+.btn-item {
+    z-index: 999999;
+    border-radius: 5px;
+    border: none;
+    color: var(--color-white);
+    padding: 5px 15px;
+    cursor: pointer;
+    background-color: var(--color-green);
+
+    &:hover {
+        opacity: 0.9;
     }
 }

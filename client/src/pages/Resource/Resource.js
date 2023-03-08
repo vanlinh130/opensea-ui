@@ -6,6 +6,7 @@ import images from '~/assets/images';
 import ResourceItem from './ResourceItem/ResourceItem';
 import Marquee from 'react-fast-marquee';
 import { useSelector } from 'react-redux';
+import { CollectorItem } from '~/layouts/Components/Main/compoents';
 
 const cx = classNames.bind(styles);
 
@@ -73,7 +74,7 @@ function Resource() {
                             <>
                                 {posts.map((post) => (
                                     <div key={post._id}>
-                                        <ResourceItem post={post} name />
+                                        <CollectorItem post={post} />
                                     </div>
                                 ))}
                             </>
@@ -115,7 +116,7 @@ function Resource() {
                             <>
                                 {posts.map((post) => (
                                     <div key={post._id}>
-                                        <ResourceItem post={post} tags />
+                                        <ResourceItem post={post} tags btnLikes />
                                     </div>
                                 ))}
                             </>
@@ -128,19 +129,21 @@ function Resource() {
                         <h2>Watch and learn</h2>
                         <span>Learn about important NFT concepts.</span>
                     </div>
-                    <div className={cx('resource-item')}>
-                        {isLoading ? (
-                            <div />
-                        ) : (
-                            <>
-                                {posts.map((post) => (
-                                    <div key={post._id}>
-                                        <ResourceItem post={post} title />
-                                    </div>
-                                ))}
-                            </>
-                        )}
-                    </div>
+                    <Marquee>
+                        <div className={cx('resource-item')}>
+                            {isLoading ? (
+                                <div />
+                            ) : (
+                                <>
+                                    {posts.map((post) => (
+                                        <div key={post._id}>
+                                            <ResourceItem post={post} name checkName moments />
+                                        </div>
+                                    ))}
+                                </>
+                            )}
+                        </div>
+                    </Marquee>
                 </div>
             </div>
 
