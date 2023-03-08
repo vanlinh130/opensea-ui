@@ -4,13 +4,21 @@ import { useSelector } from 'react-redux';
 
 import styles from './Calendar.module.scss';
 import Action from '~/components/Action/Action';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import DropItem from '../../DropItem/DropItem';
+import { Paper } from '@material-ui/core';
+import Paginate from '~/components/Pagination/Pagination';
 
 const cx = classNames.bind(styles);
+function useQuery() {
+    return new URLSearchParams(useLocation().search);
+}
 
 const Calendar = () => {
     const { posts } = useSelector((state) => state.posts);
+
+    const query = useQuery();
+    const page = query.get('page') || 1;
 
     return (
         <div className={cx('wrapper')}>
@@ -34,6 +42,12 @@ const Calendar = () => {
                     </>
                 )}
             </>
+
+            <div className={cx('paginate')}>
+                <Paper>
+                    <Paginate page={page} navigate="/calendars" />
+                </Paper>
+            </div>
         </div>
     );
 };
