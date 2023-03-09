@@ -17,7 +17,7 @@ const cx = classNames.bind(styles);
 function useQuery() {
     return new URLSearchParams(useLocation().search);
 }
-function Start() {
+function Start({ title = true, nav = true, paginate = true }) {
     const { posts } = useSelector((state) => state.posts);
 
     const query = useQuery();
@@ -26,13 +26,15 @@ function Start() {
 
     return (
         <div className={cx('start')}>
-            <h1>Collection starts</h1>
+            {title && <h1>Collection starts</h1>}
 
-            <div className={cx('start-nav')}>
-                <Action title={'Top'} />
-                <Action title={'Trending'} />
-                <Action title={'Watchlist'} />
-            </div>
+            {nav && (
+                <div className={cx('start-nav')}>
+                    <Action title={'Top'} />
+                    <Action title={'Trending'} />
+                    <Action title={'Watchlist'} />
+                </div>
+            )}
 
             <div className={cx('start-view')}>
                 <div className={cx('start-view-btn')}>
@@ -103,11 +105,13 @@ function Start() {
                     </>
                 )}
             </>
-            <div className={cx('paginate')}>
-                <Paper>
-                    <Paginate page={page} navigate="/starts" />
-                </Paper>
-            </div>
+            {paginate && (
+                <div className={cx('paginate')}>
+                    <Paper>
+                        <Paginate page={page} navigate="/starts" />
+                    </Paper>
+                </div>
+            )}
         </div>
     );
 }
