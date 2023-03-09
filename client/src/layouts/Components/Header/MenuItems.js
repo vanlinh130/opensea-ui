@@ -16,6 +16,7 @@ export const MENU_ITEMS_EXPLORE = [
     {
         icon: <img src={images.explore_3} alt="images" />,
         title: 'Gaming',
+        to: '/explore/gaming',
     },
     {
         icon: <img src={images.explore_4} alt="images" />,

@@ -4,7 +4,7 @@ import Marquee from 'react-fast-marquee';
 import { useSelector } from 'react-redux';
 
 import styles from './AllNFTs.module.scss';
-import { Content, HeaderExplore } from '../../Components';
+import { Content, HeaderExplore, HeaderTitle } from '../../Components';
 import { Category, TopCollector } from '~/layouts/Components/Main/compoents';
 import Start from '~/pages/Start/Start';
 import { PaginationItem } from '~/components/Pagination';
@@ -16,6 +16,7 @@ const AllNFTs = () => {
 
     return (
         <>
+            <HeaderTitle title=" All NETs " />
             <HeaderExplore />
             <Marquee>
                 <>

@@ -7,6 +7,7 @@ const routers = {
     explore: '/explore',
     explore_allNFTs: '/explore/allNFTs',
     explore_artSc: '/explore/artScs',
+    explore_gaming: '/explore/gaming',
 
     drop: '/drops',
     drop_calendar: '/drops/calendars',

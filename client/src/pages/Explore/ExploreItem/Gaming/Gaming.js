@@ -1,22 +1,22 @@
 import React from 'react';
-import Marquee from 'react-fast-marquee';
 import classNames from 'classnames/bind';
-import { useSelector } from 'react-redux';
 
-import styles from './ArtSc.module.scss';
-import Start from '~/pages/Start/Start';
+import styles from './Gaming.mudule.scss';
+import { useSelector } from 'react-redux';
 import { Content, HeaderExplore, HeaderTitle } from '../../Components';
+import Marquee from 'react-fast-marquee';
+import Start from '~/pages/Start/Start';
 import { Category, TopCollector } from '~/layouts/Components/Main/compoents';
 import { PaginationItem } from '~/components/Pagination';
 
 const cx = classNames.bind(styles);
 
-const ArtSc = () => {
+const Gaming = () => {
     const { posts } = useSelector((state) => state.posts);
 
     return (
         <>
-            <HeaderTitle title=" Art sc " />
+            <HeaderTitle title=" Gaming " />
             <HeaderExplore />
             <Marquee>
                 <>
@@ -26,7 +26,7 @@ const ArtSc = () => {
                         <>
                             {posts.map((post) => (
                                 <div key={post._id}>
-                                    <Content post={post} artSc />
+                                    <Content post={post} gaming />
                                 </div>
                             ))}
                         </>
@@ -37,16 +37,16 @@ const ArtSc = () => {
                 <Start title={false} nav={false} paginate={false} />
             </div>
             <div className={cx('content')}>
-                <TopCollector title="Art spotlight" />
-                <TopCollector title="Trending in Digital Art" />
-                <TopCollector title="Trending in Abstract Art" />
-                <TopCollector title="Trending in Generative Art" />
+                <TopCollector title="Top Collector Buys Today" />
+                <TopCollector title="International Women's Day Spotlight" />
+                <TopCollector title="Trending in Art" />
+                <TopCollector title="Trending in Gaming" />
                 <Category />
             </div>
 
-            <PaginationItem navigate="/explore/artScs" />
+            <PaginationItem navigate="/explore/gaming" />
         </>
     );
 };
 
-export default ArtSc;
+export default Gaming;
