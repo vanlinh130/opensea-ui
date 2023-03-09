@@ -1,13 +1,14 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import styles from './ExploreItems.module.scss';
+
+import styles from './Content.module.scss';
 import Button from '~/components/Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 
-const ExploreItems = ({ post, allNFTs = false, artSc = false }) => {
+const Content = ({ post, allNFTs = false, artSc = false }) => {
     return (
         <div className={cx('wrapper')}>
             <div className={cx('explore-content')}>
@@ -78,4 +79,4 @@ const ExploreItems = ({ post, allNFTs = false, artSc = false }) => {
     );
 };
 
-export default ExploreItems;
+export default Content;

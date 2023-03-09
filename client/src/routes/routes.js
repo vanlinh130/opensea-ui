@@ -30,8 +30,8 @@ const publicRoutes = [
     { path: config.routes.homeSearch, component: Home },
 
     { path: config.routes.explore, component: Explore, layout: HeaderOnly },
-    { path: config.routes.allNFTs, component: AllNFTs, layout: HeaderOnly },
-    { path: config.routes.artSc, component: ArtSc, layout: HeaderOnly },
+    { path: config.routes.explore_allNFTs, component: AllNFTs, layout: HeaderOnly },
+    { path: config.routes.explore_artSc, component: ArtSc, layout: HeaderOnly },
 
     { path: config.routes.drop, component: Drop, layout: HeaderOnly },
     { path: config.routes.Calendar, component: Calendar, layout: HeaderOnly },

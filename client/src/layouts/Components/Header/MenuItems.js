@@ -6,28 +6,28 @@ export const MENU_ITEMS_EXPLORE = [
     {
         icon: <img src={images.explore_1} alt="images" />,
         title: 'ALL NFTs',
-        to: '/allNFTs',
+        to: '/explore/allNFTs',
     },
     {
         icon: <img src={images.explore_2} alt="images" />,
         title: 'Art sc  ',
-        to: '/artScs',
+        to: '/explore/artScs',
     },
     {
         icon: <img src={images.explore_3} alt="images" />,
-        title: 'Collectibles',
+        title: 'Gaming',
     },
     {
         icon: <img src={images.explore_4} alt="images" />,
-        title: 'Domain Names',
-    },
-    {
-        icon: <img src={images.explore_5} alt="images" />,
-        title: 'Music',
+        title: 'Memberships',
     },
     {
         icon: <img src={images.explore_6} alt="images" />,
         title: 'Photography',
+    },
+    {
+        icon: <img src={images.explore_5} alt="images" />,
+        title: 'Music',
     },
     {
         icon: <img src={images.explore_7} alt="images" />,

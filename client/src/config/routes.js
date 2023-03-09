@@ -5,8 +5,8 @@ const routers = {
     detail: '/details/:id',
 
     explore: '/explore',
-    allNFTs: '/allNFTs',
-    artSc: '/artScs',
+    explore_allNFTs: '/explore/allNFTs',
+    explore_artSc: '/explore/artScs',
 
     drop: '/drops',
     Calendar: '/calendars',

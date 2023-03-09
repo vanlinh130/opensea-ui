@@ -1,13 +1,14 @@
 import React from 'react';
 import Marquee from 'react-fast-marquee';
 import { useSelector } from 'react-redux';
-import ExploreItems from '../ExploreItems/ExploreItems';
+import { Content, HeaderExplore } from '../../Components';
 
 const AllNFTs = () => {
     const { posts } = useSelector((state) => state.posts);
 
     return (
         <>
+            <HeaderExplore />
             <Marquee>
                 <>
                     {!posts?.length ? (
@@ -16,7 +17,7 @@ const AllNFTs = () => {
                         <>
                             {posts.map((post) => (
                                 <div key={post._id}>
-                                    <ExploreItems post={post} allNFTs />
+                                    <Content post={post} allNFTs />
                                 </div>
                             ))}
                         </>
