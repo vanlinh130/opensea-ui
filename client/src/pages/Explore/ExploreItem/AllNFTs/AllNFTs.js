@@ -7,6 +7,7 @@ import styles from './AllNFTs.module.scss';
 import { Content, HeaderExplore } from '../../Components';
 import { Category, TopCollector } from '~/layouts/Components/Main/compoents';
 import Start from '~/pages/Start/Start';
+import { PaginationItem } from '~/components/Pagination';
 
 const cx = classNames.bind(styles);
 
@@ -41,6 +42,8 @@ const AllNFTs = () => {
                 <TopCollector title="Trending in Gaming" />
                 <Category />
             </div>
+
+            <PaginationItem navigate="/explore/allNFTs" />
         </>
     );
 };
