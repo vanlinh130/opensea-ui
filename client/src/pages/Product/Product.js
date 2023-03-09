@@ -16,21 +16,14 @@ import ProductItems from './ProductItems/ProductItems';
 import { CollectorItem } from '~/layouts/Components/Main/compoents';
 import Header from '~/components/Header/Header';
 import Marquee from 'react-fast-marquee';
-import { Paper } from '@material-ui/core';
-import Paginate from '~/components/Pagination/Pagination';
+import { PaginationItem } from '~/components/Pagination';
 
 const cx = classNames.bind(styles);
-function useQuery() {
-    return new URLSearchParams(useLocation().search);
-}
 
 const Product = () => {
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
     const { posts } = useSelector((state) => state.posts);
     const location = useLocation();
-
-    const query = useQuery();
-    const page = query.get('page') || 1;
 
     useEffect(() => {
         const token = user?.token;
@@ -150,11 +143,7 @@ const Product = () => {
                         )}
                     </div>
                 </Marquee>
-                <div className={cx('paginate')}>
-                    <Paper>
-                        <Paginate page={page} navigate="/products" />
-                    </Paper>
-                </div>
+                <PaginationItem navigate="/products" />
             </div>
 
             <Footer btnFooter={false} />

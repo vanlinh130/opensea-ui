@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import { faArrowsUpDown, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useSelector } from 'react-redux';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import styles from './Start.module.scss';
 import { Chains, ChainsIcons, ChevronDown } from '~/components/Chain';
@@ -10,19 +10,12 @@ import { IconOne, IconTow, IconThree, Iconfour, Iconfive, IconSix, IconServer, I
 import Action from '~/components/Action/Action';
 import Collection from '~/components/Collection/Collection';
 import StartItems from './StartItem/StartItems';
-import { Paper } from '@material-ui/core';
-import Paginate from '~/components/Pagination/Pagination';
+import { PaginationItem } from '~/components/Pagination';
 
 const cx = classNames.bind(styles);
-function useQuery() {
-    return new URLSearchParams(useLocation().search);
-}
+
 function Start({ title = true, nav = true, paginate = true }) {
     const { posts } = useSelector((state) => state.posts);
-
-    const query = useQuery();
-    const page = query.get('page') || 1;
-    // const searchQuery = query.get('searchQuery');
 
     return (
         <div className={cx('start')}>
@@ -105,13 +98,7 @@ function Start({ title = true, nav = true, paginate = true }) {
                     </>
                 )}
             </>
-            {paginate && (
-                <div className={cx('paginate')}>
-                    <Paper>
-                        <Paginate page={page} navigate="/starts" />
-                    </Paper>
-                </div>
-            )}
+            {paginate && <PaginationItem navigate="/starts" />}
         </div>
     );
 }

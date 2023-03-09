@@ -10,20 +10,12 @@ import TopCollector from './compoents/TopCollector/TopCollector';
 import NFT from './compoents/NFT/NFT';
 import Category from './compoents/Category/Category';
 import { getPosts } from '~/actions/posts';
-import { Paper } from '@material-ui/core';
-import Paginate from '~/components/Pagination/Pagination';
-import { useLocation } from 'react-router-dom';
+import { PaginationItem } from '~/components/Pagination';
 
 const cx = classNames.bind(styles);
-function useQuery() {
-    return new URLSearchParams(useLocation().search);
-}
 
 function Main() {
     const [currentId, setCurrentId] = useState(null);
-    const query = useQuery();
-    const page = query.get('page') || 1;
-    // const searchQuery = query.get('searchQuery');
 
     const dispatch = useDispatch();
 
@@ -39,11 +31,8 @@ function Main() {
             <TopCollector title="Top collector buys today" />
             <NFT title="Photography NFT spotlight" />
             <Category />
-            <div className={cx('paginate')}>
-                <Paper>
-                    <Paginate page={page} navigate="/home" />
-                </Paper>
-            </div>
+
+            <PaginationItem navigate="/home" />
         </div>
     );
 }

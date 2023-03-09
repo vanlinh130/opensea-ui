@@ -1,26 +1,17 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import { Paper } from '@material-ui/core';
 import { useSelector } from 'react-redux';
 
 import styles from './Admin.modules.scss';
 import Header from '~/components/Header/Header';
 import Collection from '~/components/Collection/Collection';
 import AdminItems from './AdminItems/AdminItems';
-import Paginate from '~/components/Pagination/Pagination';
-import { useLocation } from 'react-router-dom';
+import { PaginationItem } from '~/components/Pagination';
 
 const cx = classNames.bind(styles);
 
-function useQuery() {
-    return new URLSearchParams(useLocation().search);
-}
-
 const Admin = () => {
     const { posts } = useSelector((state) => state.posts);
-    const query = useQuery();
-    const page = query.get('page') || 1;
-    // const searchQuery = query.get('searchQuery');
 
     return (
         <div>
@@ -53,11 +44,7 @@ const Admin = () => {
                         ))}
                     </>
                 )}
-                <div className={cx('paginate')}>
-                    <Paper>
-                        <Paginate page={page} navigate="/admins" />
-                    </Paper>
-                </div>
+                <PaginationItem navigate="/admins" />
             </div>
         </div>
     );

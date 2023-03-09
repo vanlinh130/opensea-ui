@@ -9,8 +9,8 @@ const routers = {
     explore_artSc: '/explore/artScs',
 
     drop: '/drops',
-    Calendar: '/calendars',
-    LearnMore: '/learnMores',
+    drop_calendar: '/drops/calendars',
+    drop_learnMore: '/drops/learnMores',
 
     start: '/starts',
 

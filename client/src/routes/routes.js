@@ -34,8 +34,8 @@ const publicRoutes = [
     { path: config.routes.explore_artSc, component: ArtSc, layout: HeaderOnly },
 
     { path: config.routes.drop, component: Drop, layout: HeaderOnly },
-    { path: config.routes.Calendar, component: Calendar, layout: HeaderOnly },
-    { path: config.routes.LearnMore, component: LearnMore, layout: null },
+    { path: config.routes.drop_calendar, component: Calendar, layout: HeaderOnly },
+    { path: config.routes.drop_learnMore, component: LearnMore, layout: null },
 
     { path: config.routes.start, component: Start, layout: HeaderOnly },
 

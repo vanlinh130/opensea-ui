@@ -1,30 +1,20 @@
 import classNames from 'classnames/bind';
-import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { Paper } from '@material-ui/core';
 import Marquee from 'react-fast-marquee';
 
 import styles from './Resource.module.scss';
 import Header from '~/components/Header/Header';
 import Footer from '~/layouts/Components/Footer/Footer';
 import images from '~/assets/images';
-import Paginate from '~/components/Pagination/Pagination';
 import ResourceItem from './ResourceItem/ResourceItem';
 import { CollectorItem } from '~/layouts/Components/Main/compoents';
+import { PaginationItem } from '~/components/Pagination';
 
 const cx = classNames.bind(styles);
-function useQuery() {
-    return new URLSearchParams(useLocation().search);
-}
-
 function Resource() {
     const { posts, isLoading } = useSelector((state) => state.posts);
 
     if (!posts.length && !isLoading) return 'No posts';
-
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const query = useQuery();
-    const page = query.get('page') || 1;
 
     return (
         <>
@@ -158,11 +148,7 @@ function Resource() {
                 </div>
             </div>
 
-            <div className={cx('paginate')}>
-                <Paper>
-                    <Paginate page={page} navigate="/resources" />
-                </Paper>
-            </div>
+            <PaginationItem navigate="/resources" />
 
             <div className={cx('link')}>
                 <div className={cx('link-list')}>

@@ -38,11 +38,11 @@ export const MENU_ITEMS_EXPLORE = [
 export const MENU_ITEMS_DROPS = [
     {
         title: 'Calendar',
-        to: './calendars',
+        to: '/drops/calendars',
     },
     {
         title: 'Learn more',
-        to: './learnMores',
+        to: '/drops/learnMores',
     },
 ];
 
@@ -60,7 +60,7 @@ export const MENU_ITEMS_STARTS = [
 export const MENU_ITEMS_RESOURCE = [
     {
         title: 'Admin',
-        to: './admins',
+        to: '/admins',
     },
     {
         title: 'Learn',
