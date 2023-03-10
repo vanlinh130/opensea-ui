@@ -26,6 +26,7 @@ export const MENU_ITEMS_EXPLORE = [
     {
         icon: <img src={images.explore_6} alt="images" />,
         title: 'Photography',
+        to: '/express/photography',
     },
     {
         icon: <img src={images.explore_5} alt="images" />,

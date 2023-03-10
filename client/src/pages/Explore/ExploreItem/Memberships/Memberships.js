@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 
 import styles from './Memberships.module.scss';
 import HeaderTitle from './../../Components/HeaderTitle/HeaderTitle';
-import { Content, HeaderExplore } from '../../Components';
+import { Content, HeaderNav } from '../../Components';
 import Marquee from 'react-fast-marquee';
 import Start from '~/pages/Start/Start';
 import { Category, TopCollector } from '~/layouts/Components/Main/compoents';
@@ -18,7 +18,7 @@ const Memberships = () => {
     return (
         <>
             <HeaderTitle title="Memberships" />
-            <HeaderExplore />
+            <HeaderNav classesMemberShips />
             <Marquee>
                 <>
                     {!posts?.length ? (
@@ -45,7 +45,7 @@ const Memberships = () => {
                 <Category />
             </div>
 
-            <PaginationItem navigate="/explore/gaming" />
+            <PaginationItem navigate="/express/memberships" />
         </>
     );
 };

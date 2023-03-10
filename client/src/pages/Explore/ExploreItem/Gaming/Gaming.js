@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 
 import styles from './Gaming.mudule.scss';
 import { useSelector } from 'react-redux';
-import { Content, HeaderExplore, HeaderTitle } from '../../Components';
+import { Content, HeaderNav, HeaderTitle } from '../../Components';
 import Marquee from 'react-fast-marquee';
 import Start from '~/pages/Start/Start';
 import { Category, TopCollector } from '~/layouts/Components/Main/compoents';
@@ -17,7 +17,7 @@ const Gaming = () => {
     return (
         <>
             <HeaderTitle title="Gaming" />
-            <HeaderExplore />
+            <HeaderNav classesGaming />
             <Marquee>
                 <>
                     {!posts?.length ? (

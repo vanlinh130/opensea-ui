@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 
 import styles from './ArtSc.module.scss';
 import Start from '~/pages/Start/Start';
-import { Content, HeaderExplore, HeaderTitle } from '../../Components';
+import { Content, HeaderNav, HeaderTitle } from '../../Components';
 import { Category, TopCollector } from '~/layouts/Components/Main/compoents';
 import { PaginationItem } from '~/components/Pagination';
 
@@ -17,7 +17,7 @@ const ArtSc = () => {
     return (
         <>
             <HeaderTitle title="Art Sc" />
-            <HeaderExplore />
+            <HeaderNav classesArtSc />
             <Marquee>
                 <>
                     {!posts?.length ? (

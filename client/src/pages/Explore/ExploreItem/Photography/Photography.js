@@ -1,23 +1,22 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import Marquee from 'react-fast-marquee';
-import { useSelector } from 'react-redux';
-
-import styles from './AllNFTs.module.scss';
+import styles from './Photography.module.scss';
 import { Content, HeaderNav, HeaderTitle } from '../../Components';
-import { Category, TopCollector } from '~/layouts/Components/Main/compoents';
+import Marquee from 'react-fast-marquee';
 import Start from '~/pages/Start/Start';
+import { Category, TopCollector } from '~/layouts/Components/Main/compoents';
 import { PaginationItem } from '~/components/Pagination';
+import { useSelector } from 'react-redux';
 
 const cx = classNames.bind(styles);
 
-const AllNFTs = () => {
+const Photography = () => {
     const { posts } = useSelector((state) => state.posts);
 
     return (
         <>
-            <HeaderTitle title="All NETs" />
-            <HeaderNav classesAllNFTs />
+            <HeaderTitle title="Photography" />
+            <HeaderNav classesPhotography />
             <Marquee>
                 <>
                     {!posts?.length ? (
@@ -26,7 +25,7 @@ const AllNFTs = () => {
                         <>
                             {posts.map((post) => (
                                 <div key={post._id}>
-                                    <Content post={post} title="All NFTs" allNFTs />
+                                    <Content post={post} title="Photography" photography />
                                 </div>
                             ))}
                         </>
@@ -38,15 +37,15 @@ const AllNFTs = () => {
             </div>
             <div className={cx('content')}>
                 <TopCollector title="Top Collector Buys Today" />
-                <TopCollector title="International Women's Day Spotlight" />
-                <TopCollector title="Trending in All NETs" />
-                <TopCollector title="Trending in Gaming" />
+                <TopCollector title="Trending in Digital Photography" />
+                <TopCollector title="Trending in Art" />
+                <TopCollector title="Trending in Photography" />
                 <Category />
             </div>
 
-            <PaginationItem navigate="/explore/allNFTs" />
+            <PaginationItem navigate="/express/photography" />
         </>
     );
 };
 
-export default AllNFTs;
+export default Photography;

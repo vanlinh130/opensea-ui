@@ -8,7 +8,15 @@ import { faBell } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 
-const Content = ({ post, title, allNFTs = false, artSc = false, gaming = false, memberships = false }) => {
+const Content = ({
+    post,
+    title,
+    allNFTs = false,
+    artSc = false,
+    gaming = false,
+    memberships = false,
+    photography = false,
+}) => {
     return (
         <div className={cx('wrapper')}>
             <div className={cx('explore-content')}>
@@ -35,6 +43,27 @@ const Content = ({ post, title, allNFTs = false, artSc = false, gaming = false, 
                             )}
 
                             {artSc && (
+                                <div className={cx('calendar-left')}>
+                                    <button className={cx('btn-calendar')}>
+                                        <span>1</span>
+                                        <span>Day</span>
+                                    </button>
+                                    <button className={cx('btn-calendar')}>
+                                        <span>23</span>
+                                        <span>hsr</span>
+                                    </button>
+                                    <button className={cx('btn-calendar')}>
+                                        <span>39</span>
+                                        <span>Min</span>
+                                    </button>
+                                    <button className={cx('btn-calendar')}>
+                                        <span>13</span>
+                                        <span>Sec</span>
+                                    </button>
+                                </div>
+                            )}
+
+                            {photography && (
                                 <div className={cx('calendar-left')}>
                                     <button className={cx('btn-calendar')}>
                                         <span>1</span>
