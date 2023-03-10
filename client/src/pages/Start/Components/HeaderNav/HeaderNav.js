@@ -25,7 +25,7 @@ const HeaderNav = ({ classStarts = false, classRangKings = false, classActivity 
                 </li>
                 <li className={cx('item')}>
                     <Link
-                        to={config.routes.drop_learnMore}
+                        to={config.routes.start_activity}
                         className={cx('item-link', classActivity && 'item-link-first')}
                     >
                         Activity

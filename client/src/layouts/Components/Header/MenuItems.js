@@ -58,7 +58,7 @@ export const MENU_ITEMS_STARTS = [
     },
     {
         title: 'Activity',
-        to: './starts',
+        to: '/starts/activity',
     },
 ];
 

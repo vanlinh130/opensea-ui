@@ -1,0 +1,76 @@
+.start {
+    margin-bottom: 30px;
+}
+
+// activity
+.activity {
+    display: flex;
+}
+
+// activity left
+.activity-left {
+    width: 25%;
+    margin-right: 16px;
+}
+
+.activity-left-event {
+    padding-top: 6px;
+    padding-right: 16px;
+
+    .event-type {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 10px;
+        height: 48px;
+        cursor: pointer;
+
+        h3 {
+            font-weight: 600;
+        }
+
+        &:hover {
+            background: rgba(229, 232, 235, 0.2);
+        }
+    }
+}
+
+.event-list {
+    .event-item {
+        display: flex;
+        align-items: center;
+        height: 48px;
+        border-radius: 8px;
+        cursor: pointer;
+        padding: 0 10px;
+
+        input[type='checkbox'] {
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+            cursor: pointer;
+        }
+
+        input[type='checkbox']:before {
+            content: '';
+            display: block;
+            width: 17px;
+            height: 17px;
+            border: 2px solid rgb(227, 227, 227);
+        }
+
+        span {
+            font-weight: 400;
+            font-size: 16px;
+        }
+
+        &:hover {
+            background: rgb(242, 244, 245);
+        }
+    }
+}
+
+// activity right
+.activity-right {
+    width: 75%;
+}

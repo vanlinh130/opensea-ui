@@ -19,6 +19,7 @@ const routers = {
 
     start: '/starts',
     start_rangKings: '/starts/rangKings',
+    start_activity: '/starts/activity',
 
     resource: '/resources',
     profile: '/profile',
