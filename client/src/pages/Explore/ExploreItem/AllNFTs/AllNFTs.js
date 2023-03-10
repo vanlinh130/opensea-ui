@@ -17,7 +17,7 @@ const AllNFTs = () => {
     return (
         <>
             <HeaderTitle title="All NETs" />
-            <HeaderNav classesAllNFTs />
+            <HeaderNav classAllNFTs />
             <Marquee>
                 <>
                     {!posts?.length ? (

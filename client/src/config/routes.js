@@ -10,6 +10,7 @@ const routers = {
     explore_gaming: '/explore/gaming',
     explore_memberships: '/express/memberships',
     explore_photography: '/express/photography',
+    explore_music: '/express/music',
 
     drop: '/drops',
     drop_calendar: '/drops/calendars',

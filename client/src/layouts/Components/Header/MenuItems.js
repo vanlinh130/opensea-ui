@@ -31,6 +31,7 @@ export const MENU_ITEMS_EXPLORE = [
     {
         icon: <img src={images.explore_5} alt="images" />,
         title: 'Music',
+        to: '/express/music',
     },
     {
         icon: <img src={images.explore_7} alt="images" />,

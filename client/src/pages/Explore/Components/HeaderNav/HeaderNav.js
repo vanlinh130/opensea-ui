@@ -7,11 +7,12 @@ import styles from './HeaderNav.module.scss';
 const cx = classNames.bind(styles);
 
 const HeaderNav = ({
-    classesAllNFTs = false,
-    classesArtSc = false,
-    classesGaming = false,
-    classesMemberShips = false,
-    classesPhotography = false,
+    classAllNFTs = false,
+    classArtSc = false,
+    classGaming = false,
+    classMemberShips = false,
+    classPhotography = false,
+    classMusic = false,
 }) => {
     return (
         <div className={cx('header')}>
@@ -19,23 +20,20 @@ const HeaderNav = ({
                 <li className={cx('item')}>
                     <Link
                         to={config.routes.explore_allNFTs}
-                        className={cx('item-link', classesAllNFTs && 'item-link-first')}
+                        className={cx('item-link', classAllNFTs && 'item-link-first')}
                     >
                         All NFTs
                     </Link>
                 </li>
                 <li className={cx('item')}>
-                    <Link
-                        to={config.routes.explore_artSc}
-                        className={cx('item-link', classesArtSc && 'item-link-first')}
-                    >
+                    <Link to={config.routes.explore_artSc} className={cx('item-link', classArtSc && 'item-link-first')}>
                         Art sc
                     </Link>
                 </li>
                 <li className={cx('item')}>
                     <Link
                         to={config.routes.explore_gaming}
-                        className={cx('item-link', classesGaming && 'item-link-first')}
+                        className={cx('item-link', classGaming && 'item-link-first')}
                     >
                         Gaming
                     </Link>
@@ -43,7 +41,7 @@ const HeaderNav = ({
                 <li className={cx('item')}>
                     <Link
                         to={config.routes.explore_memberships}
-                        className={cx('item-link', classesMemberShips && 'item-link-first')}
+                        className={cx('item-link', classMemberShips && 'item-link-first')}
                     >
                         Memberships
                     </Link>
@@ -51,13 +49,13 @@ const HeaderNav = ({
                 <li className={cx('item')}>
                     <Link
                         to={config.routes.explore_photography}
-                        className={cx('item-link', classesPhotography && 'item-link-first')}
+                        className={cx('item-link', classPhotography && 'item-link-first')}
                     >
                         Photography
                     </Link>
                 </li>
                 <li className={cx('item')}>
-                    <Link to="" className={cx('item-link')}>
+                    <Link to={config.routes.explore_music} className={cx('item-link', classMusic && 'item-link-first')}>
                         Music
                     </Link>
                 </li>

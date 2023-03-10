@@ -18,7 +18,7 @@ const Memberships = () => {
     return (
         <>
             <HeaderTitle title="Memberships" />
-            <HeaderNav classesMemberShips />
+            <HeaderNav classMemberShips />
             <Marquee>
                 <>
                     {!posts?.length ? (

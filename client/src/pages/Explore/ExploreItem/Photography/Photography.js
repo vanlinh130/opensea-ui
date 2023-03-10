@@ -16,7 +16,7 @@ const Photography = () => {
     return (
         <>
             <HeaderTitle title="Photography" />
-            <HeaderNav classesPhotography />
+            <HeaderNav classPhotography />
             <Marquee>
                 <>
                     {!posts?.length ? (

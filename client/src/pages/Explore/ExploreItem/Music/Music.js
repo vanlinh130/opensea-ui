@@ -1,23 +1,24 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 
-import styles from './Gaming.mudule.scss';
-import { useSelector } from 'react-redux';
-import { Content, HeaderNav, HeaderTitle } from '../../Components';
+import styles from './Music.module.scss';
+import HeaderTitle from './../../Components/HeaderTitle/HeaderTitle';
+import { Content, HeaderNav } from '../../Components';
 import Marquee from 'react-fast-marquee';
 import Start from '~/pages/Start/Start';
 import { Category, TopCollector } from '~/layouts/Components/Main/compoents';
 import { PaginationItem } from '~/components/Pagination';
+import { useSelector } from 'react-redux';
 
 const cx = classNames.bind(styles);
 
-const Gaming = () => {
+const Music = () => {
     const { posts } = useSelector((state) => state.posts);
 
     return (
         <>
-            <HeaderTitle title="Gaming" />
-            <HeaderNav classGaming />
+            <HeaderTitle title="Music" />
+            <HeaderNav classMusic />
             <Marquee>
                 <>
                     {!posts?.length ? (
@@ -26,7 +27,7 @@ const Gaming = () => {
                         <>
                             {posts.map((post) => (
                                 <div key={post._id}>
-                                    <Content post={post} title="Gaming" gaming />
+                                    <Content post={post} title="Music" />
                                 </div>
                             ))}
                         </>
@@ -38,15 +39,15 @@ const Gaming = () => {
             </div>
             <div className={cx('content')}>
                 <TopCollector title="Top Collector Buys Today" />
-                <TopCollector title="Trending in Digital Gaming" />
+                <TopCollector title="Trending in Digital Music" />
                 <TopCollector title="Trending in Art" />
-                <TopCollector title="Trending in Gaming" />
+                <TopCollector title="Trending in Music" />
                 <Category />
             </div>
 
-            <PaginationItem navigate="/explore/gaming" />
+            <PaginationItem navigate="/express/music" />
         </>
     );
 };
 
-export default Gaming;
+export default Music;

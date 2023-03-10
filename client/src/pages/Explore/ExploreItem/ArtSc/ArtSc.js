@@ -17,7 +17,7 @@ const ArtSc = () => {
     return (
         <>
             <HeaderTitle title="Art Sc" />
-            <HeaderNav classesArtSc />
+            <HeaderNav classArtSc />
             <Marquee>
                 <>
                     {!posts?.length ? (
