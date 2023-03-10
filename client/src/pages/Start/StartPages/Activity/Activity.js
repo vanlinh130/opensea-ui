@@ -4,6 +4,10 @@ import styles from './Activity.module.scss';
 import { HeaderNav, HeaderTitle } from '../../Components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import Collection from '~/components/Collection/Collection';
+import { IconActivity } from '~/components/Icons';
+import images from '~/assets/images';
+import CheckName from '~/components/CheckName/CheckName';
 
 const cx = classNames.bind(styles);
 
@@ -53,7 +57,54 @@ const Activity = () => {
                     </div>
                 </div>
 
-                <div className={cx('activity-right')}>sd</div>
+                <div className={cx('activity-right')}>
+                    <div className={cx('activity-right-menu')}>
+                        <div className={cx('menu-item')}>
+                            <Collection title={'ITEM'} />
+                        </div>
+                        <div className={cx('menu-price')}>
+                            <Collection title={'PRICE'} classes={cx('price-one')} />
+                            <Collection title={'PARITY'} classes={cx('price-tow')} />
+                            <Collection title={'QUANTITY'} classes={cx('price-three')} />
+                        </div>
+                        <div className={cx('menu-info')}>
+                            <Collection title={'FORM'} />
+                            <Collection title={'TO'} />
+                            <Collection title={'TIME'} />
+                        </div>
+                    </div>
+
+                    <div className={cx('activity-right-content')}>
+                        <div className={cx('content-item')}>
+                            <div className={cx('item-offer')}>
+                                <IconActivity />
+                                <span>Offer</span>
+                            </div>
+                            <div className={cx('item-img')}>
+                                <img src={images.collector_1} alt="" />
+                                <span>Van Linh </span>
+                                <CheckName />
+                            </div>
+                        </div>
+                        <div className={cx('content-price')}>
+                            <div className={cx('price-one')}>
+                                <span>2.0000 ETH</span>
+                                <p>$140.2</p>
+                            </div>
+                            <div className={cx('price-tow')}>
+                                <span>#333</span>
+                            </div>
+                            <div className={cx('price-three')}>
+                                <h4>1</h4>
+                            </div>
+                        </div>
+                        <div className={cx('content-info')}>
+                            <h4>Thua Thien Hue</h4>
+                            <span>---</span>
+                            <span>5m ago</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );

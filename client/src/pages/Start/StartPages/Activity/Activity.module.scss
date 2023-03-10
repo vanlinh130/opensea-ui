@@ -74,3 +74,126 @@
 .activity-right {
     width: 75%;
 }
+
+.activity-right-menu {
+    display: flex;
+    padding: 5px 0;
+
+    .menu-item {
+        width: 32%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .menu-price {
+        width: 34%;
+        display: flex;
+
+        .price-one {
+            width: 34%;
+        }
+        .price-tow {
+            width: 33%;
+        }
+        .price-three {
+            width: 33%;
+        }
+    }
+
+    .menu-info {
+        width: 34%;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+// activity right content
+.activity-right-content {
+    display: flex;
+    height: 80px;
+    padding: 5px 10px;
+    cursor: pointer;
+
+    &:hover {
+        transition: all 0.2s ease 0s;
+        box-shadow: rgba(4, 17, 29, 0.25) 0px 0px 8px 0px;
+        background-color: rgb(251, 253, 255);
+    }
+}
+
+.content-item {
+    width: 32%;
+    display: flex;
+
+    .item-offer {
+        display: flex;
+        align-items: center;
+        width: 45%;
+
+        span {
+            padding: 0 10px;
+            font-weight: 600;
+        }
+    }
+
+    .item-img {
+        width: 55%;
+        display: flex;
+        align-items: center;
+
+        img {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+        }
+
+        span {
+            padding: 0 10px;
+            font-weight: 600;
+        }
+    }
+}
+
+.content-price {
+    width: 34%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .price-one {
+        width: 34%;
+        display: flex;
+        flex-direction: column;
+
+        span {
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        p {
+            color: #707a83;
+            font-size: 12px;
+        }
+    }
+    .price-tow {
+        width: 33%;
+
+        span {
+            color: #707a83;
+        }
+    }
+    .price-three {
+        width: 33%;
+
+        h4 {
+            color: #707a83;
+        }
+    }
+}
+
+.content-info {
+    width: 34%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
