@@ -1,19 +1,19 @@
+import React from 'react';
 import classNames from 'classnames/bind';
+import styles from './RangKings.module.scss';
+import { HeaderNav, HeaderTitle, StartItems, StartMenu, StartView } from '../../Components';
 import { useSelector } from 'react-redux';
-
-import styles from './Start.module.scss';
 import { PaginationItem } from '~/components/Pagination';
-import { HeaderNav, HeaderTitle, StartItems, StartMenu, StartView } from './Components';
 
 const cx = classNames.bind(styles);
 
-function Start() {
+const RangKings = () => {
     const { posts } = useSelector((state) => state.posts);
 
     return (
         <div className={cx('start')}>
-            <HeaderTitle title="Starts" />
-            <HeaderNav classStarts />
+            <HeaderTitle title="RangKings" />
+            <HeaderNav classRangKings />
             <StartView />
             <StartMenu />
             <>
@@ -29,9 +29,9 @@ function Start() {
                     </>
                 )}
             </>
-            <PaginationItem navigate="/starts" />
+            <PaginationItem navigate="/starts/rangKings" />
         </div>
     );
-}
+};
 
-export default Start;
+export default RangKings;

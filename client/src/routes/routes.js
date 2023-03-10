@@ -14,6 +14,8 @@ import Drop from '~/pages/Drop/Drop';
 import { Calendar, LearnMore } from '~/pages/Drop/DropPages';
 
 import Start from '~/pages/Start/Start';
+import { RangKings } from '~/pages/Start/StartPages';
+
 import Resource from '~/pages/Resource/Resource';
 import Profile from '~/pages/Profile/Profile';
 import Product from '~/pages/Product/Product';
@@ -43,6 +45,7 @@ const publicRoutes = [
     { path: config.routes.drop_learnMore, component: LearnMore, layout: null },
 
     { path: config.routes.start, component: Start, layout: HeaderOnly },
+    { path: config.routes.start_rangKings, component: RangKings, layout: HeaderOnly },
 
     { path: config.routes.profile, component: Profile, layout: HeaderOnly },
     { path: config.routes.resource, component: Resource, layout: null },

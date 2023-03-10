@@ -18,6 +18,7 @@ const routers = {
     drop_learnMore: '/drops/learnMores',
 
     start: '/starts',
+    start_rangKings: '/starts/rangKings',
 
     resource: '/resources',
     profile: '/profile',

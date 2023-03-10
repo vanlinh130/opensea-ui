@@ -54,7 +54,7 @@ export const MENU_ITEMS_DROPS = [
 export const MENU_ITEMS_STARTS = [
     {
         title: 'Rankings',
-        to: './starts',
+        to: '/starts/rangKings',
     },
     {
         title: 'Activity',
