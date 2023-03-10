@@ -36,6 +36,7 @@ export const MENU_ITEMS_EXPLORE = [
     {
         icon: <img src={images.explore_7} alt="images" />,
         title: 'Sports',
+        to: '/express/sports',
     },
 ];
 

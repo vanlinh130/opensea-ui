@@ -1,14 +1,13 @@
 import React from 'react';
 import classNames from 'classnames/bind';
+import Marquee from 'react-fast-marquee';
+import { useSelector } from 'react-redux';
 
 import styles from './Memberships.module.scss';
-import HeaderTitle from './../../Components/HeaderTitle/HeaderTitle';
-import { Content, HeaderNav } from '../../Components';
-import Marquee from 'react-fast-marquee';
 import Start from '~/pages/Start/Start';
+import { Content, HeaderTitle, HeaderNav } from '../../Components';
 import { Category, TopCollector } from '~/layouts/Components/Main/compoents';
 import { PaginationItem } from '~/components/Pagination';
-import { useSelector } from 'react-redux';
 
 const cx = classNames.bind(styles);
 

@@ -3,21 +3,21 @@ import classNames from 'classnames/bind';
 import Marquee from 'react-fast-marquee';
 import { useSelector } from 'react-redux';
 
-import styles from './AllNFTs.module.scss';
+import styles from './Sports.module.scss';
 import Start from '~/pages/Start/Start';
 import { Content, HeaderTitle, HeaderNav } from '../../Components';
-import { Category, TopCollector } from '~/layouts/Components/Main/compoents';
+import { TopCollector, Category } from '~/layouts/Components/Main/compoents';
 import { PaginationItem } from '~/components/Pagination';
 
 const cx = classNames.bind(styles);
 
-const AllNFTs = () => {
+const Sports = () => {
     const { posts } = useSelector((state) => state.posts);
 
     return (
         <>
-            <HeaderTitle title="All NETs" />
-            <HeaderNav classAllNFTs />
+            <HeaderTitle title="Sports" />
+            <HeaderNav classSports />
             <Marquee>
                 <>
                     {!posts?.length ? (
@@ -26,7 +26,7 @@ const AllNFTs = () => {
                         <>
                             {posts.map((post) => (
                                 <div key={post._id}>
-                                    <Content post={post} title="All NFTs" allNFTs />
+                                    <Content post={post} title="Sports" />
                                 </div>
                             ))}
                         </>
@@ -38,15 +38,15 @@ const AllNFTs = () => {
             </div>
             <div className={cx('content')}>
                 <TopCollector title="Top Collector Buys Today" />
-                <TopCollector title="International Women's Day Spotlight" />
-                <TopCollector title="Trending in All NETs" />
-                <TopCollector title="Trending in Gaming" />
+                <TopCollector title="Trending in Digital Sports" />
+                <TopCollector title="Trending in Art" />
+                <TopCollector title="Trending in Sports" />
                 <Category />
             </div>
 
-            <PaginationItem navigate="/explore/allNFTs" />
+            <PaginationItem navigate="/express/sports" />
         </>
     );
 };
 
-export default AllNFTs;
+export default Sports;

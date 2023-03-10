@@ -1,11 +1,11 @@
 import React from 'react';
-import Marquee from 'react-fast-marquee';
 import classNames from 'classnames/bind';
+import Marquee from 'react-fast-marquee';
 import { useSelector } from 'react-redux';
 
 import styles from './ArtSc.module.scss';
 import Start from '~/pages/Start/Start';
-import { Content, HeaderNav, HeaderTitle } from '../../Components';
+import { Content, HeaderTitle, HeaderNav } from '../../Components';
 import { Category, TopCollector } from '~/layouts/Components/Main/compoents';
 import { PaginationItem } from '~/components/Pagination';
 

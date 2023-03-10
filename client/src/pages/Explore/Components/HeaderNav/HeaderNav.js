@@ -1,8 +1,8 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
-import config from '~/config';
 
+import config from '~/config';
 import styles from './HeaderNav.module.scss';
 const cx = classNames.bind(styles);
 
@@ -13,6 +13,7 @@ const HeaderNav = ({
     classMemberShips = false,
     classPhotography = false,
     classMusic = false,
+    classSports = false,
 }) => {
     return (
         <div className={cx('header')}>
@@ -60,7 +61,10 @@ const HeaderNav = ({
                     </Link>
                 </li>
                 <li className={cx('item')}>
-                    <Link to="" className={cx('item-link')}>
+                    <Link
+                        to={config.routes.explore_sports}
+                        className={cx('item-link', classSports && 'item-link-first')}
+                    >
                         Sports
                     </Link>
                 </li>

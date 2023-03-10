@@ -1,10 +1,10 @@
 import React from 'react';
 import classNames from 'classnames/bind';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBell } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './Content.module.scss';
 import Button from '~/components/Button/Button';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBell } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 
