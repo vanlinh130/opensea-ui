@@ -7,6 +7,7 @@ import styles from './HeaderNav.module.scss';
 const cx = classNames.bind(styles);
 
 const HeaderNav = ({
+    classAll = false,
     classAllNFTs = false,
     classArtSc = false,
     classGaming = false,
@@ -18,6 +19,11 @@ const HeaderNav = ({
     return (
         <div className={cx('header')}>
             <ul className={cx('list')}>
+                <li className={cx('item')}>
+                    <Link to={config.routes.explore} className={cx('item-link', classAll && 'item-link-first')}>
+                        All
+                    </Link>
+                </li>
                 <li className={cx('item')}>
                     <Link
                         to={config.routes.explore_allNFTs}

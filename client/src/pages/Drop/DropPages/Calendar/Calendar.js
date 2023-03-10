@@ -3,10 +3,9 @@ import classNames from 'classnames/bind';
 import { useSelector } from 'react-redux';
 
 import styles from './Calendar.module.scss';
-import Action from '~/components/Action/Action';
 import { Link } from 'react-router-dom';
-import DropItem from '../../DropItem/DropItem';
 import { PaginationItem } from '~/components/Pagination';
+import { Content, HeaderNav } from '../../Components';
 
 const cx = classNames.bind(styles);
 
@@ -16,10 +15,7 @@ const Calendar = () => {
     return (
         <div className={cx('wrapper')}>
             <h1>Calendars</h1>
-            <div className={cx('drop-nav')}>
-                <Action title={'Upcoming'} />
-                <Action title={'Past'} />
-            </div>
+            <HeaderNav classCalendar />
             <>
                 {!posts?.length ? (
                     <div />
@@ -28,7 +24,7 @@ const Calendar = () => {
                         {posts.map((post) => (
                             <div key={post._id}>
                                 <Link to="">
-                                    <DropItem post={post} calendar />
+                                    <Content post={post} title="Calendar" calendar />
                                 </Link>
                             </div>
                         ))}
