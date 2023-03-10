@@ -26,7 +26,7 @@ const HeaderExplore = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to="" className={cx('item-link')}>
+                    <Link to={config.routes.explore_memberships} className={cx('item-link')}>
                         Memberships
                     </Link>
                 </li>

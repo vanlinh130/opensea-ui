@@ -21,6 +21,7 @@ export const MENU_ITEMS_EXPLORE = [
     {
         icon: <img src={images.explore_4} alt="images" />,
         title: 'Memberships',
+        to: '/express/memberships',
     },
     {
         icon: <img src={images.explore_6} alt="images" />,

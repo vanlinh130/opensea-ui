@@ -16,7 +16,7 @@ const Gaming = () => {
 
     return (
         <>
-            <HeaderTitle title=" Gaming " />
+            <HeaderTitle title="Gaming" />
             <HeaderExplore />
             <Marquee>
                 <>
@@ -26,7 +26,7 @@ const Gaming = () => {
                         <>
                             {posts.map((post) => (
                                 <div key={post._id}>
-                                    <Content post={post} gaming />
+                                    <Content post={post} title="Gaming" gaming />
                                 </div>
                             ))}
                         </>
@@ -38,7 +38,7 @@ const Gaming = () => {
             </div>
             <div className={cx('content')}>
                 <TopCollector title="Top Collector Buys Today" />
-                <TopCollector title="International Women's Day Spotlight" />
+                <TopCollector title="Trending in Digital Gaming" />
                 <TopCollector title="Trending in Art" />
                 <TopCollector title="Trending in Gaming" />
                 <Category />

@@ -1,22 +1,23 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import Marquee from 'react-fast-marquee';
-import { useSelector } from 'react-redux';
 
-import styles from './AllNFTs.module.scss';
-import { Content, HeaderExplore, HeaderTitle } from '../../Components';
-import { Category, TopCollector } from '~/layouts/Components/Main/compoents';
+import styles from './Memberships.module.scss';
+import HeaderTitle from './../../Components/HeaderTitle/HeaderTitle';
+import { Content, HeaderExplore } from '../../Components';
+import Marquee from 'react-fast-marquee';
 import Start from '~/pages/Start/Start';
+import { Category, TopCollector } from '~/layouts/Components/Main/compoents';
 import { PaginationItem } from '~/components/Pagination';
+import { useSelector } from 'react-redux';
 
 const cx = classNames.bind(styles);
 
-const AllNFTs = () => {
+const Memberships = () => {
     const { posts } = useSelector((state) => state.posts);
 
     return (
         <>
-            <HeaderTitle title="All NETs" />
+            <HeaderTitle title="Memberships" />
             <HeaderExplore />
             <Marquee>
                 <>
@@ -26,7 +27,7 @@ const AllNFTs = () => {
                         <>
                             {posts.map((post) => (
                                 <div key={post._id}>
-                                    <Content post={post} title="All NFTs" allNFTs />
+                                    <Content post={post} title="Memberships" memberships />
                                 </div>
                             ))}
                         </>
@@ -38,15 +39,15 @@ const AllNFTs = () => {
             </div>
             <div className={cx('content')}>
                 <TopCollector title="Top Collector Buys Today" />
-                <TopCollector title="International Women's Day Spotlight" />
-                <TopCollector title="Trending in All NETs" />
-                <TopCollector title="Trending in Gaming" />
+                <TopCollector title="Trending in Digital Memberships" />
+                <TopCollector title="Trending in Art" />
+                <TopCollector title="Trending in Memberships" />
                 <Category />
             </div>
 
-            <PaginationItem navigate="/explore/allNFTs" />
+            <PaginationItem navigate="/explore/gaming" />
         </>
     );
 };
 
-export default AllNFTs;
+export default Memberships;

@@ -16,7 +16,7 @@ const ArtSc = () => {
 
     return (
         <>
-            <HeaderTitle title=" Art sc " />
+            <HeaderTitle title="Art Sc" />
             <HeaderExplore />
             <Marquee>
                 <>
@@ -26,7 +26,7 @@ const ArtSc = () => {
                         <>
                             {posts.map((post) => (
                                 <div key={post._id}>
-                                    <Content post={post} artSc />
+                                    <Content post={post} title="Art Sc" artSc />
                                 </div>
                             ))}
                         </>

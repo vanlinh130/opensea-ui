@@ -8,7 +8,7 @@ import Home from '~/pages/Home/Home';
 import Detail from '~/layouts/Components/Detail';
 
 import Explore from '~/pages/Explore/Explore';
-import { AllNFTs, ArtSc, Gaming } from '~/pages/Explore/ExploreItem';
+import { AllNFTs, ArtSc, Gaming, Memberships } from '~/pages/Explore/ExploreItem';
 
 import Drop from '~/pages/Drop/Drop';
 import { Calendar, LearnMore } from '~/pages/Drop/DropPages';
@@ -33,6 +33,7 @@ const publicRoutes = [
     { path: config.routes.explore_allNFTs, component: AllNFTs, layout: HeaderOnly },
     { path: config.routes.explore_artSc, component: ArtSc, layout: HeaderOnly },
     { path: config.routes.explore_gaming, component: Gaming, layout: HeaderOnly },
+    { path: config.routes.explore_memberships, component: Memberships, layout: HeaderOnly },
 
     { path: config.routes.drop, component: Drop, layout: HeaderOnly },
     { path: config.routes.drop_calendar, component: Calendar, layout: HeaderOnly },
