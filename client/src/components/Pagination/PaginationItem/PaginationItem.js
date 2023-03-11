@@ -11,13 +11,13 @@ function useQuery() {
     return new URLSearchParams(useLocation().search);
 }
 
-const PaginationItem = ({ navigate }) => {
+const PaginationItem = ({ navigate, classes }) => {
     const query = useQuery();
     const page = query.get('page') || 1;
 
     return (
         <>
-            <div className={cx('paginate')}>
+            <div className={cx('paginate', classes)}>
                 <Paper>
                     <Paginate page={page} navigate={navigate} />
                 </Paper>

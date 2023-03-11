@@ -6,7 +6,7 @@ import styles from './Resource.module.scss';
 import Header from '~/components/Header/Header';
 import Footer from '~/layouts/Components/Footer/Footer';
 import images from '~/assets/images';
-import ResourceItem from './ResourceItem/ResourceItem';
+import { ResourceItem } from './Components';
 import { CollectorItem } from '~/layouts/Components/Main/compoents';
 import { PaginationItem } from '~/components/Pagination';
 
@@ -18,7 +18,7 @@ function Resource() {
 
     return (
         <>
-            <Header title="Resource" avatar classes={cx('header')} />
+            <Header title="Learn" avatar classes={cx('header')} />
             <div className={cx('learn')}>
                 <div className={cx('learn-images')}></div>
                 <div className={cx('learn-container')}>

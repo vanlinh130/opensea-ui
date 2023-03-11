@@ -22,6 +22,8 @@ const routers = {
     start_activity: '/starts/activity',
 
     resource: '/resources',
+    resource_helpCenter: '/resources/help-center',
+
     profile: '/profile',
     product: '/products',
 

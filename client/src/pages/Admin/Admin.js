@@ -44,7 +44,7 @@ const Admin = () => {
                         ))}
                     </>
                 )}
-                <PaginationItem navigate="/admins" />
+                <PaginationItem navigate="/admins" classes={cx('paginates')} />
             </div>
         </div>
     );

@@ -18,7 +18,9 @@ const MenuResItem = () => {
     return (
         <header className={cx('resource')}>
             <IconResBird className={cx('resource-icon')} />
-            <IconResInstagram />
+            <a href="https://www.instagram.com/opensea/">
+                <IconResInstagram />
+            </a>
             <IconResFace />
             <IconResClown />
             <IconResYoutube />

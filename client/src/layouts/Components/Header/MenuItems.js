@@ -64,14 +64,12 @@ export const MENU_ITEMS_STARTS = [
 
 export const MENU_ITEMS_RESOURCE = [
     {
-        title: 'Admin',
-        to: '/admins',
-    },
-    {
         title: 'Learn',
+        to: '/resources',
     },
     {
         title: 'Help center',
+        to: '/resources/help-center',
     },
     {
         title: 'PLatform Status',
