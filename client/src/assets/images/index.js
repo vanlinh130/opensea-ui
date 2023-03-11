@@ -58,6 +58,16 @@ const images = {
     resource_link_1: require('~/assets/images/image-resource/link-1.svg').default,
     resource_link_2: require('~/assets/images/image-resource/link-2.svg').default,
     resource_link_3: require('~/assets/images/image-resource/link-3.svg').default,
+
+    resource_helpCenter_1: require('~/assets/images/image-resource/help-center-2.png'),
+    resource_helpCenter_2: require('~/assets/images/image-resource/help-center-3.png'),
+    resource_helpCenter_3: require('~/assets/images/image-resource/help-center-4.png'),
+    resource_helpCenter_4: require('~/assets/images/image-resource/help-center-5.png'),
+    resource_helpCenter_5: require('~/assets/images/image-resource/help-center-6.png'),
+    resource_helpCenter_6: require('~/assets/images/image-resource/help-center-7.png'),
+    resource_helpCenter_7: require('~/assets/images/image-resource/help-center-8.png'),
+    resource_helpCenter_8: require('~/assets/images/image-resource/help-center-9.png'),
+    resource_helpCenter_9: require('~/assets/images/image-resource/help-center-10.png'),
 };
 
 export default images;
