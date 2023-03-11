@@ -1,8 +1,9 @@
 import React from 'react';
 import classNames from 'classnames/bind';
+import { useSelector } from 'react-redux';
+
 import styles from './RangKings.module.scss';
 import { HeaderNav, HeaderTitle, StartItems, StartMenu, StartView } from '../../Components';
-import { useSelector } from 'react-redux';
 import { PaginationItem } from '~/components/Pagination';
 
 const cx = classNames.bind(styles);

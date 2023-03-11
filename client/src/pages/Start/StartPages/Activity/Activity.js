@@ -1,17 +1,20 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import styles from './Activity.module.scss';
-import { HeaderNav, HeaderTitle } from '../../Components';
+import { useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
+
+import styles from './Activity.module.scss';
 import Collection from '~/components/Collection/Collection';
-import { IconActivity } from '~/components/Icons';
-import images from '~/assets/images';
-import CheckName from '~/components/CheckName/CheckName';
+import { HeaderNav, HeaderTitle } from '../../Components';
+import ActivityItems from './ActivityItems/ActivityItems';
+import { PaginationItem } from '~/components/Pagination';
 
 const cx = classNames.bind(styles);
 
 const Activity = () => {
+    const { posts } = useSelector((state) => state.posts);
+
     return (
         <div className={cx('start')}>
             <HeaderTitle title="RangKings" />
@@ -63,47 +66,32 @@ const Activity = () => {
                             <Collection title={'ITEM'} />
                         </div>
                         <div className={cx('menu-price')}>
-                            <Collection title={'PRICE'} classes={cx('price-one')} />
-                            <Collection title={'PARITY'} classes={cx('price-tow')} />
-                            <Collection title={'QUANTITY'} classes={cx('price-three')} />
+                            <Collection title={'PRICE'} classes={cx('price-price')} />
+                            <Collection title={'PARITY'} classes={cx('price-parity')} />
+                            <Collection title={'QUANTITY'} classes={cx('price-quantity')} />
                         </div>
                         <div className={cx('menu-info')}>
-                            <Collection title={'FORM'} />
-                            <Collection title={'TO'} />
-                            <Collection title={'TIME'} />
+                            <Collection title={'CONTENT'} classes={cx('info-content')} />
+                            <Collection title={'TO'} classes={cx('info-to')} />
+                            <Collection title={'TIME'} classes={cx('info-time')} />
                         </div>
                     </div>
 
-                    <div className={cx('activity-right-content')}>
-                        <div className={cx('content-item')}>
-                            <div className={cx('item-offer')}>
-                                <IconActivity />
-                                <span>Offer</span>
-                            </div>
-                            <div className={cx('item-img')}>
-                                <img src={images.collector_1} alt="" />
-                                <span>Van Linh </span>
-                                <CheckName />
-                            </div>
-                        </div>
-                        <div className={cx('content-price')}>
-                            <div className={cx('price-one')}>
-                                <span>2.0000 ETH</span>
-                                <p>$140.2</p>
-                            </div>
-                            <div className={cx('price-tow')}>
-                                <span>#333</span>
-                            </div>
-                            <div className={cx('price-three')}>
-                                <h4>1</h4>
-                            </div>
-                        </div>
-                        <div className={cx('content-info')}>
-                            <h4>Thua Thien Hue</h4>
-                            <span>---</span>
-                            <span>5m ago</span>
-                        </div>
-                    </div>
+                    <>
+                        {!posts?.length ? (
+                            <div />
+                        ) : (
+                            <>
+                                {posts.map((post) => (
+                                    <div key={post._id}>
+                                        <ActivityItems post={post} />
+                                    </div>
+                                ))}
+                            </>
+                        )}
+                    </>
+
+                    <PaginationItem navigate="/starts/activity" />
                 </div>
             </div>
         </div>
