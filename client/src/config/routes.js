@@ -24,6 +24,7 @@ const routers = {
     resource: '/resources',
     resource_helpCenter: '/resources/help-center',
     resource_platformStatus: '/resources/platform-status',
+    resource_partners: '/resources/partners',
 
     profile: '/profile',
     product: '/products',

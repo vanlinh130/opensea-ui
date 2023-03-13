@@ -77,6 +77,7 @@ export const MENU_ITEMS_RESOURCE = [
     },
     {
         title: 'Partners',
+        to: '/resources/partners',
     },
     {
         title: 'Blog',

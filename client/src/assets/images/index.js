@@ -70,6 +70,14 @@ const images = {
     resource_helpCenter_9: require('~/assets/images/image-resource/help-center-10.png'),
 
     resource_platformStatus: require('~/assets/images/image-resource/platform-status-1.png'),
+    resource_partners: require('~/assets/images/image-resource/partners-1.svg').default,
+    resource_partners_1: require('~/assets/images/image-resource/partners-2.svg').default,
+    resource_partners_2: require('~/assets/images/image-resource/partners-3.svg').default,
+    resource_partners_3: require('~/assets/images/image-resource/partners-4.svg').default,
+    resource_partners_4: require('~/assets/images/image-resource/partners-5.svg').default,
+    resource_partners_5: require('~/assets/images/image-resource/partners-6.svg').default,
+    resource_partners_info_1: require('~/assets/images/image-resource/partner-7.svg').default,
+    resource_partners_info_2: require('~/assets/images/image-resource/partner-8.png'),
 };
 
 export default images;
