@@ -68,6 +68,8 @@ const images = {
     resource_helpCenter_7: require('~/assets/images/image-resource/help-center-8.png'),
     resource_helpCenter_8: require('~/assets/images/image-resource/help-center-9.png'),
     resource_helpCenter_9: require('~/assets/images/image-resource/help-center-10.png'),
+
+    resource_platformStatus: require('~/assets/images/image-resource/platform-status-1.png'),
 };
 
 export default images;

@@ -6,12 +6,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import images from '~/assets/images';
 import { Link } from 'react-router-dom';
+import Footer from '~/layouts/Components/Footer/Footer';
 
 const cx = classNames.bind(styles);
 
 const HelpCenter = () => {
     return (
-        <div className={cx('')}>
+        <div>
             <Header title="Help Center" avatar />
             <section className={cx('main-content')}>
                 <div className={cx('hero-inner')}>
@@ -80,6 +81,32 @@ const HelpCenter = () => {
                     </ul>
                 </div>
             </section>
+
+            <section className={cx('Promoted')}>
+                <div className={cx('Promoted-container')}>
+                    <h2>Promoted articles</h2>
+                    <ul className={cx('Promoted-list')}>
+                        <li className={cx('Promoted-item')}>
+                            <Link className={cx('Promoted-link')}>How do I sell an NFT?</Link>
+                        </li>
+                        <li className={cx('Promoted-item')}>
+                            <Link className={cx('Promoted-link')}>How do I create an OpenSea account?</Link>
+                        </li>
+                        <li className={cx('Promoted-item')}>
+                            <Link className={cx('Promoted-link')}>What crypto wallets can I use with OpenSea?</Link>
+                        </li>
+                    </ul>
+                    <ul className={cx('Promoted-list-tow')}>
+                        <li className={cx('Promoted-item-tow')}>
+                            <Link className={cx('Promoted-link-tow')}>How do I sweep a collection?</Link>
+                        </li>
+                        <li className={cx('Promoted-item-tow')}>
+                            <Link className={cx('Promoted-link-tow')}>How do I create an NFT?</Link>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <Footer btnFooter={false}></Footer>
         </div>
     );
 };

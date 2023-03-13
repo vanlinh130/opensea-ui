@@ -73,6 +73,7 @@ export const MENU_ITEMS_RESOURCE = [
     },
     {
         title: 'PLatform Status',
+        to: '/resources/platform-status',
     },
     {
         title: 'Partners',

@@ -17,7 +17,7 @@ const Activity = () => {
 
     return (
         <div className={cx('start')}>
-            <HeaderTitle title="RangKings" />
+            <HeaderTitle title="Activity" />
             <HeaderNav classActivity />
 
             <div className={cx('activity')}>

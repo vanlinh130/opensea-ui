@@ -17,7 +17,7 @@ import Start from '~/pages/Start/Start';
 import { RangKings, Activity } from '~/pages/Start/StartPages';
 
 import Resource from '~/pages/Resource/Resource';
-import { HelpCenter } from '~/pages/Resource/ResourcePages';
+import { HelpCenter, PlatformStatus } from '~/pages/Resource/ResourcePages';
 
 import Profile from '~/pages/Profile/Profile';
 import Product from '~/pages/Product/Product';
@@ -52,6 +52,7 @@ const publicRoutes = [
 
     { path: config.routes.resource, component: Resource, layout: null },
     { path: config.routes.resource_helpCenter, component: HelpCenter, layout: null },
+    { path: config.routes.resource_platformStatus, component: PlatformStatus, layout: null },
 
     { path: config.routes.profile, component: Profile, layout: HeaderOnly },
 

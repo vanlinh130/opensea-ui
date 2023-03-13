@@ -23,6 +23,7 @@ const routers = {
 
     resource: '/resources',
     resource_helpCenter: '/resources/help-center',
+    resource_platformStatus: '/resources/platform-status',
 
     profile: '/profile',
     product: '/products',
