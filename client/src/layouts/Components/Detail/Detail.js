@@ -10,7 +10,7 @@ import CheckName from '~/components/CheckName/CheckName';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getPost, getPostsBySearch } from '~/actions/posts';
-import { CircularProgress, Paper } from '@material-ui/core';
+import { CircularProgress, Paper } from '@mui/material';
 import { SearchPost } from '~/components/Search';
 import DetailName from './DetailName/DetailName';
 

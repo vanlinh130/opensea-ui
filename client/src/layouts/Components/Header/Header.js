@@ -11,7 +11,7 @@ import config from '~/config';
 import images from '~/assets/images';
 import { LogoIcon } from '~/components/Icons/Icons';
 import Menu from '~/components/Popper/Menu';
-import { Avatar } from '@material-ui/core';
+import { Avatar } from '@mui/material';
 import {
     MENU_ITEMS_EXPLORE,
     MENU_ITEMS_DROPS,

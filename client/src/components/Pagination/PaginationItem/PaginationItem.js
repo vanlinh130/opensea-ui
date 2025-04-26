@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import { useLocation } from 'react-router-dom';
-import { Paper } from '@material-ui/core';
+import { Paper } from '@mui/material';
 
 import styles from './PaginationItem.module.scss';
 import Paginate from '../Pagination';

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import decode from 'jwt-decode';
 import { useLocation } from 'react-router-dom';
-import { Avatar } from '@material-ui/core';
+import { Avatar } from '@mui/material';
 
 import styles from './Profile.module.scss';
 import images from '~/assets/images';

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import classNames from 'classnames/bind';
-import { GoogleLogin } from 'react-google-login';
+// import { GoogleLogin } from 'react-google-login';
 import { gapi } from 'gapi-script';
 import { useDispatch } from 'react-redux';
 
@@ -154,7 +154,7 @@ const Auth = () => {
                                         <span>Facebook</span>
                                     </button>
 
-                                    <GoogleLogin
+                                    {/* <GoogleLogin
                                         clientId={clientId}
                                         render={(renderProps) => (
                                             <button
@@ -169,7 +169,7 @@ const Auth = () => {
                                         onSuccess={googleSuccess}
                                         onFailure={googleFailure}
                                         cookiePolicy="single_host_origin"
-                                    />
+                                    /> */}
 
                                     <button>
                                         <img className={cx('icon-other')} src={images.apple} alt="apple" />

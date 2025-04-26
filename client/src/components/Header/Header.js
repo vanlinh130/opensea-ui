@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { Link, useLocation } from 'react-router-dom';
-import { Avatar } from '@material-ui/core';
+import { Avatar } from '@mui/material';
 import decode from 'jwt-decode';
 
 import styles from './Header.module.scss';
