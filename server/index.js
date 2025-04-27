@@ -2,9 +2,12 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
+import dotenv from 'dotenv';
 
 import postRoutes from './routes/posts.js';
 import userRoutes from './routes/users.js';
+
+dotenv.config();
 
 const app = express();
 
@@ -15,8 +18,7 @@ app.use(cors());
 app.use('/posts', postRoutes);
 app.use('/user', userRoutes);
 
-const CONNECTION_URL =
-    'mongodb+srv://linh1303:levanlinh1303@cluster0.rndhv.mongodb.net/opensea_ui?retryWrites=true&w=majority';
+const CONNECTION_URL = process.env.MONGODB_URI;
 const PORT = process.env.PORT || 5000;
 
 mongoose
