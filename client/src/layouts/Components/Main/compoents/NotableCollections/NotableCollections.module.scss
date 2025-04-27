@@ -7,6 +7,17 @@ h2 {
 .collections {
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     cursor: pointer;
+    gap: 16px;
+}
+
+.collections-item {
+    width: 100%;
+}
+
+@media (max-width: 767px) {
+    .collections {
+        flex-direction: column;
+    }
 }

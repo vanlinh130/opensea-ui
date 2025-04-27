@@ -58,3 +58,11 @@
         color: rgb(112, 122, 131);
     }
 }
+
+
+@media (max-width: 767px) {
+    .search-input {
+        width: 100%;
+        padding: 0 12px;
+    }
+}

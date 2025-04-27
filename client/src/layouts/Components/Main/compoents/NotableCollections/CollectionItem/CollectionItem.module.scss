@@ -139,3 +139,11 @@
         background-color: var(--color-red);
     }
 }
+
+
+@media (max-width: 767px) {
+    .collection-item {
+        width: 100%;
+        margin-right: 0;
+    }
+}

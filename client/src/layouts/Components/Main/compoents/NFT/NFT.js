@@ -26,7 +26,7 @@ const NFT = ({ title }) => {
                 ) : (
                     <>
                         {posts.map((post) => (
-                            <div key={post._id}>
+                            <div key={post._id} className={cx('nft-item')}>
                                 <NFTItem post={post} />
                             </div>
                         ))}

@@ -42,8 +42,6 @@
 .table-list {
     display: block;
     width: 46%;
-    height: 500px;
-    // background-color: red;
     margin-top: 2px;
 }
 
@@ -124,5 +122,18 @@
             line-height: 16px;
             color: rgb(4, 17, 29);
         }
+    }
+}
+
+
+@media (max-width: 767px) {
+    .view {
+       display: none;
+    }
+    .table {
+        flex-direction: column;
+    }
+    .table-list {
+        width: 100%;
     }
 }

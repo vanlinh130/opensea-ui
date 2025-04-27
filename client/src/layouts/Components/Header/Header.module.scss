@@ -3,7 +3,7 @@
     top: 0;
     right: 0;
     left: 0;
-    z-index: 1;
+    z-index: 9999;
     --transition-curve: cubic-bezier(0.05, 0, 0.2, 1);
     height: 72px;
     background-color: rgb(255, 255, 255);
@@ -53,10 +53,6 @@
         font-weight: 600;
         font-size: 16px;
 
-        // &:hover {
-        //     opacity: 0.8;
-        // }
-
         .fresnel-item {
             display: flex;
             align-items: center;
@@ -83,5 +79,27 @@
                 border-radius: 50%;
             }
         }
+    }
+}
+
+
+@media (max-width: 767px) {
+    .fresnel-container {
+        display: none;
+    }
+    .logo-opensea {
+        height: 30px;
+    }
+    .brand-name {
+        margin-left: 1px;
+        margin-top: 4px;    
+        height: 15px;
+    }
+    .inner {
+        padding: 0px 16px;
+    }
+
+    .logo-link {
+        padding-right: 16px;
     }
 }
